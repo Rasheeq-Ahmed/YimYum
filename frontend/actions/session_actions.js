@@ -1,4 +1,4 @@
-import {login, signup, logout} from '../util/session_api_util';
+import * as APIUtil from '../util/session_api_util';
 
 
 
@@ -24,10 +24,10 @@ const logoutCurrentUser = () => ({
 export const createNewUser = formUser => dispatch => signup(formUser)
     .then(user => dispatch(receiveCurrentUser(user)));
 
-export const loginn = formUser => dispatch => login(formUser)
+export const login = formUser => dispatch => login(formUser)
     .then(user => dispatch(receiveCurrentUser(user)));
 
-export const logoutt = () => dispatch => logout()
+export const logout = () => dispatch => logout()
     .then(() => dispatch(logoutCurrentUser()));
 
     
