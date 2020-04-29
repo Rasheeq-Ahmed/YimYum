@@ -5,7 +5,11 @@ import ReactPlayer from 'react-player';
 export default () => (
     <div className="home">
         <div className="hero-video-frame">
-            <ReactPlayer className="hero-video"
+            <ReactPlayer 
+            className="homepage-video"
+            playing={true}
+            muted
+            loop={true}
             url='https://youtu.be/UPsfMZ11zrU'
             />
         </div>
