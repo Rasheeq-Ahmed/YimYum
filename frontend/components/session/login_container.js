@@ -5,7 +5,7 @@ import Login from './login'
 
 
 const mapDispatchToProps = dispatch => ({
-    login: formUser => dispatch(login(formUser));
+    login: formUser => dispatch(login(formUser)),
 });
 
-export default (connect)
+export default connect(null, mapDispatchToProps)(Login)
