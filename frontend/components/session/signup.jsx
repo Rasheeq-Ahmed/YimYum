@@ -5,6 +5,7 @@ class Signup extends React.Component{
     constructor(props) {
         super(props);
         this.state ={
+            name: '',
             username: '',
             email: '',
             password: ''
@@ -18,8 +19,10 @@ class Signup extends React.Component{
         };
     }
 
+
     handleSubmit(e) {
         e.preventDefault();
+
         this.props.createNewUser(this.state)
         .then (()=> this.props.history.push('/'))
     }
@@ -29,6 +32,13 @@ class Signup extends React.Component{
             <div className="session-form">
                 <h1>Sign Up</h1>
                 <form>
+                <label>Name:
+                        <input 
+                            type="text"
+                            value={this.state.name}
+                            onChange={this.handleInput('name')}
+                        />
+                        </label>
                     <label>Username:
                         <input 
                             type="text"

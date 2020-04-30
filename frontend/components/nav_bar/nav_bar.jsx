@@ -12,6 +12,7 @@ export default ({currentUser, logout}) => {
             <Link className="btn" to='/signup'>Sign Up</Link>
             <Link className="btn" to='/login'>Log In</Link>
         </div>
+        
     );
 
     return (
