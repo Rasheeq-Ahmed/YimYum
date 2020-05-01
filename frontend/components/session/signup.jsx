@@ -23,7 +23,7 @@ class Signup extends React.Component{
         e.preventDefault();
 
         this.props.createNewUser(this.state)
-        .then (()=> this.props.history.push('/'))
+        .then (()=> this.props.history.push('/trending'))
     }
     
     render(){

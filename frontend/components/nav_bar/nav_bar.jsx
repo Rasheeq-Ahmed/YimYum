@@ -1,41 +1,62 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-    class NavBar extends React.Component {
-        constructor(props){
-            super(props)
-        }
 
+class NavBar extends React.Component {
+    constructor(props){
+        super(props);
+    }
 
+    // renderUserInfo() {
+    //     const {currentUser} = this.props;
+    //     return (
+    //         <div className="user-info">
+    //             <p> Hi {currentUser.username}</p>
+    //         </div>
+    //     )
+    // }
 
-        render() {
+    render() {
+        const leftDisplay = (
+            <div className="nav-left">
+                <button className="logo">LOGO</button>
+                <button className="yim-yum">YimYum</button>
+            </div>
+        );
 
-            const {currentUser, logout} = this.props 
-            
-            
-            const display = currentUser ? (
-                <div>
-                <p>Hello, {currentUser.username}</p>
-                <button onClick={logout}>Log Out</button>
+        const midDisplay = (
+            <div className="trending-box">
+                <h1 className="trending">Trending</h1>
+            </div>
+        );
+
+        const authDisplay = this.props.currentUser ? (
+            <div className="user-btn">
+                <button onClick={this.props.logout}>Logout</button>
+                <button className="upload-btn">Upload</button>
             </div>
         ) : (
-            <div>
-                <Link className="btn" to='/signup'>Sign Up</Link>
-                <Link className="btn" to='/login'>Log In</Link>
-            </div>
-            
-            );
-            
-            return (
-                <header className="nav-bar">
-                <h1 className="logo">YimYum</h1>
-                <div>
-                    {display}
-                </div>
-
-            </header>
+        <div className="guest-btn">
+            <Link to='/signup'><button className="signup-btn">Sign Up</button></Link>
+            <Link to='/login'><button className="login-btn" >Log In</button></Link>
+        </div>
         )
-        }   
+   
+        const rightDisplay = (
+            <div className="nav-right">
+                {authDisplay}
+            </div>
+        )
         
-    }
-    export default NavBar;
+        return (
+            <div className="nav-bar">
+            {leftDisplay}
+            {midDisplay}
+            {rightDisplay}
+            </div>
+        )
+        
+    }   
+    
+}
+export default NavBar;
