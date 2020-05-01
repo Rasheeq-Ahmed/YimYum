@@ -15,8 +15,12 @@ class Api::SessionsController < ApplicationController
 
 
     def destroy
+        if @user 
         logout!
         render json: ['Logout successful']
+        else
+        render json: ['Need to be logged in']
+        end
     end
 
 end

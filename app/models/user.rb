@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-    validates :username, :password_digest, :session_token, :email, :name,presence: true
+    validates :username, :password_digest, :session_token, :email, presence: true
     validates :username, :email, uniqueness: true
     validates :password, length: {minimum: 6}, allow_nil: true
 
@@ -10,8 +10,8 @@ class User < ApplicationRecord
 
     def self.find_by_credentials(username, pw)
         @user = User.find_by(username: username)
-        return nil if user.nil?
-        @user.is_password?(pw) ? user : nil
+        return nil if @user.nil?
+        @user.is_password?(pw) ? @user : nil
     end
 
     def password=(pw)

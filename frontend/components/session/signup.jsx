@@ -32,13 +32,6 @@ class Signup extends React.Component{
             <div className="session-form">
                 <h1>Sign Up</h1>
                 <form>
-                <label>Name:
-                        <input 
-                            type="text"
-                            value={this.state.name}
-                            onChange={this.handleInput('name')}
-                        />
-                        </label>
                     <label>Username:
                         <input 
                             type="text"
