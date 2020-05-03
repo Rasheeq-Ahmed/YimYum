@@ -1,0 +1,76 @@
+.watch-btn {
+    display: flex;
+    justify-content: right;
+    color: #fe2c55;
+
+    
+}
+
+.splash-all {
+    display: grid;
+    flex-direction: column;
+    
+}
+.splash-body {
+    display: flex;
+    /* padding-top: 25px; */
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* position: relative; */
+    
+}
+
+#splash-video {
+    /* margin: 20px; */
+    border: 2px solid blue;
+
+}
+
+.splash-slogan {
+    font-size: 4vw;
+    font-family: sans-serif;
+    font-weight: bold;
+    /* margin-top: 50px; */
+    border: 2px solid green;
+}
+.splash-subslogan {
+    font-size: 2vw;
+    font-family: sans-serif;
+    border: 2px solid plum;
+
+}
+
+
+
+
+
+footer {
+    display: flex;
+    border: 2px solid fuchsia;
+    bottom: 0;
+    clear: both;
+    position: fixed;
+    width: 100%;
+    height: 80px;
+
+}
+
+/* 
+
+
+} */
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+} 
+
+a {
+    margin-left: 50px;
+}
+
+

@@ -19,8 +19,8 @@ class NavBar extends React.Component {
     render() {
         const leftDisplay = (
             <div className="nav-left">
-                <button className="logo">LOGO</button>
-                <button className="yim-yum">YimYum</button>
+                <img src={window.logo} className="logo"/>
+                <p className="yim-yum">YimYum</p>
             </div>
         );
 
@@ -32,6 +32,7 @@ class NavBar extends React.Component {
 
         const authDisplay = this.props.currentUser ? (
             <div className="user-btn">
+                <p>Hi {this.props.currentUser.username}</p>
                 <button onClick={this.props.logout}>Logout</button>
                 <button className="upload-btn">Upload</button>
             </div>
@@ -50,9 +51,15 @@ class NavBar extends React.Component {
         
         return (
             <div className="nav-bar">
-            {leftDisplay}
-            {midDisplay}
-            {rightDisplay}
+                <div className="left-nav">
+                {leftDisplay}
+                </div>
+                <div className="mid-nav">
+                {midDisplay}
+                </div>
+                <div className="right-nav">
+                {rightDisplay}
+                </div>
             </div>
         )
         
