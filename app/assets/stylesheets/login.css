@@ -1,0 +1,111 @@
+
+.login-all{
+    background-color: white;
+
+}
+
+
+
+.login-header{
+        width: 100%;
+        height: 42px;
+        margin-top: 19px;
+        padding: 0px 32px 0px 8px;
+        display: flex;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        align-items: center;
+
+}
+.login-body {
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    margin-bottom: 200px;
+ 
+}
+
+
+.form-title {
+    font-family: 'proxima-nova', sans-serif;
+    font-size: 30px;
+    height: 33px;
+    line-height: 33px;
+    text-align: center;
+    font-weight: bolder;
+    margin: 0 auto 60px;
+    margin-bottom: 30px;
+ }
+
+.login-form {
+ display: flex;
+   justify-content: center;
+   flex-direction: column;
+   width: 310px;
+   margin: 0 auto;
+}
+
+.login-body button {
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    background-color: #fe2c55;
+    display: flex;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    border-radius: 28px;
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 3px;
+    cursor: pointer;
+    border: none;
+    
+
+}
+
+.login-input {
+
+    height: 48px;
+    width: 100%;
+    padding: 0;
+    border: none;
+    caret-color: #FE2C55;
+    line-height: 100%;
+    outline: none;
+    pointer-events: initial !important;
+    -webkit-appearance: none;
+    margin: 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(22, 24, 35, 0.2);
+    font-size: 18px;
+    font-family: sofia-pro, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 30px;
+    
+
+    }
+
+.login-input::placeholder {
+    color: gainsboro;
+  }
+ 
+  .error-messages {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
+    list-style: none;
+    color: red;
+    font-family: sofiapro, PingFangSC, sans-serif;
+    font-size: 12px;
+  }
+
+  a {
+      max-height: min-content;
+      margin-top: 0px;
+  }

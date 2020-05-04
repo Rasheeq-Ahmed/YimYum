@@ -1,27 +1,75 @@
 .nav-bar {
     /* padding: 0px 32px 0px 8px; */
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
+    /* align-items: center; */
+    top: 0;
+    left: 0;
     width: 100%;
     position: fixed;
     border-color: red;
     border-style: solid;
     /* margin: 40px; */
     flex-direction: row;
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border-bottom: gray;
+    border-style: solid;
+    border-bottom-width: thin;
     
   
  }
 
- .nav-right button {
-    background-color: #fe2c55;
-    color: white;
-    border-radius: 42px;
-    cursor: pointer;
-    border-style: solid;
+
+ .right-nav{
+    display:flex;
     justify-content: flex-end;
+    align-items: center;
+
 
  }
+ .nav-right button {
+     justify-content: flex-end;
+     align-items: center;
+     display: inline-block;
+    background-color: #fe2c55;
+    border-radius:28px;
+	border:1px solid #f31a45;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:18px;
+	font-weight:bold;
+	padding:10px 25px;
+    text-decoration:none;
+ }
+ .nav-right{
+     padding-top: 10px;
+ }
+
+ .login-btn:hover {
+    background-color: #e00c37;
+ }
+
+ .login-btn:active {
+    position:relative;
+    top: 1px;
+ }
+
+
+ .nav-right{
+    padding-right: 70px;
+ }
+
+
+.mid-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
  .trending {
      font-size: 2vw;
@@ -29,16 +77,19 @@
 
 .nav-left  {
     width: 50px;
+    height: 50px;
     display: flex;
     flex-direction: row;
-    
+    align-items: center;
+    justify-content: flex-start; 
+    padding-left: 50px;   
 }
 .nav-left img{
-    max-width:100%;
-    height:auto;
+    max-width:85%;
+    max-height: 85%;
 }
 
-header {
+/* header {
     position: absolute;
-}
+} */
  

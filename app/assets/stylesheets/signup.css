@@ -1,0 +1,80 @@
+
+
+.signup-header{
+    margin-top: 10px;
+
+
+}
+.signup-body {
+    display: flex;
+    justify-content: center;
+    margin-top: 300px;
+    margin-bottom: 280px;
+
+    
+}
+
+
+.form-title {
+    font-family: 'proxima-nova', sans-serif;
+    font-size: 30px;
+    height: 33px;
+    line-height: 33px;
+    text-align: center;
+    font-weight: bolder;
+    margin: 0 auto 60px;
+ }
+
+.signup-form {
+ display: flex;
+   justify-content: center;
+   flex-direction: column;
+   width: 310px;
+   margin: 0 auto;
+}
+
+.signup-body button {
+    color: white;
+    font-weight: 500;
+    font-size: 12px;
+    background-color: #fe2c55;
+    display: flex;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    border-radius: 2px;
+    position: relative;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+
+}
+
+.signup-input {
+
+    height: 48px;
+    width: 100%;
+    padding: 0;
+    border: none;
+    caret-color: #FE2C55;
+    line-height: 100%;
+    outline: none;
+    pointer-events: initial !important;
+    -webkit-appearance: none;
+    margin: 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(22, 24, 35, 0.2);
+    font-size: 11px;
+    font-family: sofia-pro, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    
+
+}
+.signup-input::placeholder {
+    color: gainsboro;
+  }
+ 

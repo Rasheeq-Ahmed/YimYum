@@ -1,15 +1,15 @@
-.watch-btn {
-    display: flex;
-    justify-content: right;
-    color: #fe2c55;
 
+.splash-all {
+    /* display: grid; */
+    flex-direction: column;
+    display: flex;
     
 }
 
-.splash-all {
-    display: grid;
-    flex-direction: column;
+.splash-header{
+    margin-top: 10px;
     
+
 }
 .splash-body {
     display: flex;
@@ -18,41 +18,62 @@
     flex-direction: column;
     align-items: center;
     /* position: relative; */
+    background-color: white;
     
 }
 
-#splash-video {
+.splash-videos {
     /* margin: 20px; */
-    border: 2px solid blue;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 675px;
+    width: 100%;
+    background-color: black;
+    /* background-size: 100%; */
+    
+}
 
+.splash-videos video {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    max-height: 100%;
+    overflow: auto;
+    /* margin: 0;
+    padding: 0; */
+}
+
+
+.yim-yum {
+    font-size: 40px;
+    font-weight: bold;
 }
 
 .splash-slogan {
-    font-size: 4vw;
+    font-size: 3.5vw;
     font-family: sans-serif;
     font-weight: bold;
-    /* margin-top: 50px; */
-    border: 2px solid green;
+    margin-top: 70px;
+    margin-bottom: 5px;
 }
 .splash-subslogan {
-    font-size: 2vw;
+    margin-top: 0px;
+    font-size: 1;
+    font-weight: bold;
     font-family: sans-serif;
-    border: 2px solid plum;
 
 }
-
-
 
 
 
 footer {
-    display: flex;
-    border: 2px solid fuchsia;
-    bottom: 0;
-    clear: both;
-    position: fixed;
-    width: 100%;
+    /* display: flex;
+    bottom: 0px;
+    width: 100%; */
     height: 80px;
+    background-color: black;
+    justify-content: space-evenly;
 
 }
 
@@ -62,15 +83,18 @@ footer {
 } */
 
 .footer-container {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    align-content: space-around;
+    align-content: center; */
+    /* bottom: 0; */
 } 
 
-a {
-    margin-left: 50px;
+.prof-links {
+    display: flex;
+    height: inherit;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    
 }
-
-

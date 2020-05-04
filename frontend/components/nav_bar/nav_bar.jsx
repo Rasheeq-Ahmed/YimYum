@@ -18,15 +18,16 @@ class NavBar extends React.Component {
 
     render() {
         const leftDisplay = (
+                <Link to='/'>
             <div className="nav-left">
                 <img src={window.logo} className="logo"/>
-                <p className="yim-yum">YimYum</p>
+                <h1 className="yim-yum">YimYum</h1>
             </div>
+                </Link>
         );
 
         const midDisplay = (
-            <div className="trending-box">
-                <h1 className="trending">Trending</h1>
+            <div className="nav-mid">
             </div>
         );
 
@@ -38,7 +39,7 @@ class NavBar extends React.Component {
             </div>
         ) : (
         <div className="guest-btn">
-            <Link to='/signup'><button className="signup-btn">Sign Up</button></Link>
+            {/* <Link to='/signup'><button className="signup-btn">Sign Up</button></Link> */}
             <Link to='/login'><button className="login-btn" >Log In</button></Link>
         </div>
         )
