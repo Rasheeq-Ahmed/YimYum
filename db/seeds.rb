@@ -17,4 +17,4 @@ user2 = User.create(username: 'darealguyfieri', password: 'flavortown', email: '
 user3 = User.create(username: 'bobbyflay', password: 'throwdown', email: 'bobby.flay@yimyum.com', name: 'Bobby Flay', bio: "Always willing to throwdown" )
 user4 = User.create(username: 'bizarrezimmerman', password: 'bizarrefoods', email: 'andrew.zimmermany@yimyum.com', name: 'Andrew Zimmerman', bio: "Nothing is too bizarre" )
 user5 = User.create(username: 'marthastewart', password: 'nolongerlockedup', email: 'martha.stewart@yimyum.com', name: 'Martha Stewart', bio: "Nothing is too bizarre" )
-user5 = User.create(username: 'snoopdoggydog', password: 'ginandjuice', email: 'snoop.dogg@yimyum.com', name: 'Snoop Dogg', bio: "I want to open up an ice cream parlor and call myself Scoop Dogg" )
+user6 = User.create(username: 'snoopdoggydog', password: 'ginandjuice', email: 'snoop.dogg@yimyum.com', name: 'Snoop Dogg', bio: "I want to open up an ice cream parlor and call myself Scoop Dogg" )

@@ -1,0 +1,22 @@
+.upload-all {
+    width: 100%;
+    height: 100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.upload-body {
+    display: flex;
+    /* justify-content: center;
+    vertical-align: middle; */
+    /* align-self: center; */
+    border: 2px black solid;
+    width: 800px;
+    height: 90%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 200px;
+
+}

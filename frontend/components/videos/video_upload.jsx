@@ -8,22 +8,16 @@ class VideoUpload extends React.Component {
     render () {
         
         return (
-            <div className='video-all'>
-                <div className='video-header'>
+            <div className='upload-all'>
+                <div className='upload-header'>
                 <NavBarContainer/>
                 </div>
                 <div 
-                className='video-body'> 
-                    <ul className='videos'>
-                        <li className='video'>Video1</li>
-                        <li className='video'>Video2</li>
-                        <li className='video'>Video3</li>
-                        <li className='video'>Video4</li>
-                        <li className='video'>Video5</li>
-                    </ul>
+                className='upload-body'> 
+                  
                 </div>
 
-                <div className='video-footer'>
+                <div className='upload-footer'>
                     <FooterNav/>
                 </div>
 
