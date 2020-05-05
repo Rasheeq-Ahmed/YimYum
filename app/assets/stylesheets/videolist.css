@@ -1,0 +1,41 @@
+.video-all {
+    width: 100%;
+    height: 100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.video-body {
+    display: flex;
+    /* justify-content: center;
+    vertical-align: middle; */
+    /* align-self: center; */
+    border: 2px black solid;
+    width: 800px;
+    height: 90%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 200px;
+
+}
+
+.videos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+.video {
+    display: flex;
+    width: 200px;
+    height: 300px;
+    margin: 20px;
+    border: 2px red solid;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+
+}

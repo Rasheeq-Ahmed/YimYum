@@ -14,7 +14,13 @@ class VideoList extends React.Component {
                 </div>
                 <div 
                 className='video-body'> 
-                VIDEOS GO HERE
+                    <ul className='videos'>
+                        <li className='video'>Video1</li>
+                        <li className='video'>Video2</li>
+                        <li className='video'>Video3</li>
+                        <li className='video'>Video4</li>
+                        <li className='video'>Video5</li>
+                    </ul>
                 </div>
 
                 <div className='video-footer'>
