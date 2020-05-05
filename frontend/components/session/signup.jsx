@@ -47,7 +47,7 @@ class Signup extends React.Component{
         this.props.createNewUser(this.state)
         .then (()=> this.props.history.push('/trending'))
     }
-    
+
     render(){
         return (
             <div className="signup-all">
@@ -60,7 +60,16 @@ class Signup extends React.Component{
                 <div className="form-title">Sign up</div>
                 <div className="signup-form">
 
-                    <label>
+                        <label>
+                            <input 
+                                className='signup-input'
+                                type="text"
+                                value={this.state.email}
+                                onChange={this.handleInput('email')}
+                                placeholder="Email"
+                                />
+                        </label>
+                        <label>
                             <input 
                                 className='signup-input'
                                 type="text"
@@ -68,7 +77,7 @@ class Signup extends React.Component{
                                 onChange={this.handleInput('username')}
                                 placeholder="Username"
                                 />
-                            </label>
+                        </label>
                         <label>
                             <input
                                 className='signup-input'
@@ -78,11 +87,11 @@ class Signup extends React.Component{
                                 placeholder="Password"
                                 />
                         </label>
-                            <button className="form-btn" onClick={this.handleSubmit}>Signup</button>
-                            <button className="form-btn" onClick={this.handleDemoUser}>Demo Login</button>
+                            {this.renderErrors()}
+                            <button className="form-btn" onClick={this.handleSubmit}>Create an account</button>
+                            <Link to='/login'><button className="form-btn"> Login</button></Link>
                 </div>
-                {this.renderErrors()}
-
+                    {/* <form className="login-redirect">Have an account or want to use the demo ?<Link className="link" to="/login"> Click here to log in.</Link></form> */}
                 </form>
             </div>
             <footer className="footer-container">

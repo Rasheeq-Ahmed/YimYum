@@ -2,6 +2,7 @@ import React from 'react';
 import LoginNavBar from '../nav_bar/login_nav'
 import { login } from '../../util/session_api_util';
 import FooterNav from '../nav_bar/footer_nav';
+import { NavLink } from "react-router-dom";
 
 class Login extends React.Component{
     constructor(props) {
@@ -11,6 +12,7 @@ class Login extends React.Component{
             password: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.demoLogin = this.demoLogin.bind(this)
     };
     
     componentDidMount() {
@@ -23,6 +25,54 @@ class Login extends React.Component{
         };
     }
 
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.login(this.state)
+        .then (()=> this.props.history.push('/'))
+    }
+    
+
+    demoLogin() {
+        const userInput= document.getElementById("userInput");
+        const passInput= document.getElementById("passInput");
+        const demoUser='YimYumDemoUser';
+        const demoPass='yummypass';
+        let userIn = 0;
+        let passIn = 0;
+
+
+        const user = {username: "YimYumDemoUser", password: "yummypass"}
+
+        const passFill = () => {
+            if (passIn <= demoPass.length) {
+                passInput.value = demoPass.substr(0, passIn++);
+                setTimeout(() => passFill(), 50);
+            }   else { setTimeout(
+                () => this.props.login(user),
+                    500
+                );
+            }
+        }
+    
+        const userFill = () => {
+            if (userIn <= demoUser.length) {
+                userInput.value = demoUser.substr(0, userIn++);
+                setTimeout(() => userFill(), 75);
+            }else {
+                passFill()
+            }
+    
+            
+        };
+        userFill();
+    }
+
+
+
+
+
+    
+
     // handleDemoUser(e) {
     //     e.preventDefault();
     //     const user = {username: 'demo', password: 'demopass'}
@@ -32,12 +82,6 @@ class Login extends React.Component{
     // }
 
 
-    handleSubmit(e) {
-        e.preventDefault();
-        this.props.login(this.state)
-        .then (()=> this.props.history.push('/'))
-    }
-    
     renderErrors() {
         return(
             <div className="error-messages">
@@ -49,6 +93,12 @@ class Login extends React.Component{
             </div>
         );
     }
+
+
+
+
+
+
 
 
 
@@ -69,6 +119,7 @@ class Login extends React.Component{
                                 <input 
                                     className='login-input'
                                     type="text"
+                                    id="userInput"
                                     value={this.state.username}
                                     onChange={this.handleInput('username')}
                                     placeholder="Username"
@@ -77,6 +128,7 @@ class Login extends React.Component{
                             <label>
                                 <input
                                     className='login-input'
+                                    id='passInput'
                                     type="password"
                                     value={this.state.password}
                                     onChange={this.handleInput('password')}
@@ -85,9 +137,11 @@ class Login extends React.Component{
                             </label>
                                 {this.renderErrors()}
                                 <button className="form-btn" onClick={this.handleSubmit}>Login</button>
-                                <button className="form-btn" onClick={this.handleDemoUser}>Demo Login</button>
+                                <button className="form-btn" onClick={this.demoLogin}>Demo Login</button>
                     </div>
+                    <div className="signup-redirect">Need an account<NavLink className="link" to="/signup">? Click here to sign up.</NavLink></div>
                     </form>
+
                 </div>
                 <footer className="footer-container">
                     <FooterNav/>

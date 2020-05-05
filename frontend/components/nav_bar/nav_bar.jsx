@@ -33,14 +33,13 @@ class NavBar extends React.Component {
 
         const authDisplay = this.props.currentUser ? (
             <div className="user-btn">
-                <p>Hi {this.props.currentUser.username}</p>
                 <button onClick={this.props.logout}>Logout</button>
                 <button className="upload-btn">Upload</button>
             </div>
         ) : (
         <div className="guest-btn">
             {/* <Link to='/signup'><button className="signup-btn">Sign Up</button></Link> */}
-            <Link to='/login'><button className="login-btn" >Log In</button></Link>
+            <Link to='/signup'><button className="login-btn" >Log In</button></Link>
         </div>
         )
    

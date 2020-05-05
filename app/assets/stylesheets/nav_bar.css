@@ -2,21 +2,22 @@
     /* padding: 0px 32px 0px 8px; */
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
+    align-items: center;
     top: 0;
     left: 0;
     width: 100%;
     position: fixed;
-    border-color: red;
     border-style: solid;
     /* margin: 40px; */
     flex-direction: row;
     background-color: white;
     padding-top: 10px;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
     border-bottom: gray;
     border-style: solid;
-    border-bottom-width: thin;
+    border-width: 1px;
+    /* border-bottom-width: thin; */
     
   
  }
@@ -82,9 +83,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start; 
-    padding-left: 50px;   
+    /* padding-left: 50px;    */
 }
 .nav-left img{
+    margin-left: 50px;
     max-width:85%;
     max-height: 85%;
 }
