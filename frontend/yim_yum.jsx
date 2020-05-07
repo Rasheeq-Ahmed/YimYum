@@ -4,7 +4,11 @@ import configureStore from '../frontend/store/store';
 import Root from './components/root';
 // import * as ACTIONS from './actions/session_actions';
 
+//Test IMPORTS
 
+import {fetchVideos} from './actions/video_actions'
+
+//
 
 document.addEventListener('DOMContentLoaded', () => {
 let store;
@@ -20,8 +24,14 @@ let store;
   } else {
     store = configureStore();
   }
+  //test
+    window.dispatch = store.dispatch
+    window.fetchVideos = fetchVideos
+    window.store = store
+  //
     // const store = configureStore();
     const root = document.getElementById('root');
 //    window.logout = ACTIONS.logout
     ReactDOM.render(<Root store={store}/>, root)
-})
+
+  })

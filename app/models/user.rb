@@ -5,8 +5,11 @@ class User < ApplicationRecord
     validates :password, length: {minimum: 6}, allow_nil: true
 
 
-    has_one_attached :photo
+    # has_one_attached :photo
 
+    has_many :videos,
+        foreign_key: :creator_id,
+        class_name: "Video"
 
 
     after_initialize :ensure_session_token

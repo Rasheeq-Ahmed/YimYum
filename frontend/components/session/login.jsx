@@ -46,10 +46,10 @@ class Login extends React.Component{
         const passFill = () => {
             if (passIn <= demoPass.length) {
                 passInput.value = demoPass.substr(0, passIn++);
-                setTimeout(() => passFill(), 50);
+                setTimeout(() => passFill(), 100);
             }   else { setTimeout(
                 () => this.props.login(user),
-                    500
+                    300
                 );
             }
         }
@@ -57,7 +57,7 @@ class Login extends React.Component{
         const userFill = () => {
             if (userIn <= demoUser.length) {
                 userInput.value = demoUser.substr(0, userIn++);
-                setTimeout(() => userFill(), 75);
+                setTimeout(() => userFill(), 100);
             }else {
                 passFill()
             }

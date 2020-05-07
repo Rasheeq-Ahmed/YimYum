@@ -6,8 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+require 'open-uri'
 User.destroy_all
+Video.destroy_all
 
 
 
@@ -18,3 +19,27 @@ user3 = User.create(username: 'bobbyflay', password: 'throwdown', email: 'bobby.
 user4 = User.create(username: 'bizarrezimmerman', password: 'bizarrefoods', email: 'andrew.zimmermany@yimyum.com', name: 'Andrew Zimmerman', bio: "Nothing is too bizarre" )
 user5 = User.create(username: 'marthastewart', password: 'nolongerlockedup', email: 'martha.stewart@yimyum.com', name: 'Martha Stewart', bio: "Nothing is too bizarre" )
 user6 = User.create(username: 'snoopdoggydog', password: 'ginandjuice', email: 'snoop.dogg@yimyum.com', name: 'Snoop Dogg', bio: "I want to open up an ice cream parlor and call myself Scoop Dogg" )
+
+
+
+video1 = Video.create!({caption:"Food is love. Food is life.", creator_id: user1.id})
+video2 = Video.create!({caption:"Fish are food not friends", creator_id: user1.id})
+video3 = Video.create!({caption:"rainbow drip", creator_id: user1.id})
+video4 = Video.create!({caption:"Everything is better fried", creator_id: user1.id})
+video5 = Video.create!({caption:"dessert explosion", creator_id: user1.id})
+
+
+video1_media = open("https://yimyum-seeds.s3-us-west-1.amazonaws.com/cheesy.mp4")
+video1.media.attach(io: video1_media, filename: 'cheesy.mp4')
+
+video2_media = open("https://yimyum-seeds.s3-us-west-1.amazonaws.com/sushi.mp4")
+video2.media.attach(io: video2_media, filename: 'sushi.mp4')
+
+video3_media = open("https://yimyum-seeds.s3-us-west-1.amazonaws.com/colorfuldrip.mp4")
+video3.media.attach(io: video3_media, filename: 'colorfuldrip.mp4')
+
+video4_media = open("https://yimyum-seeds.s3-us-west-1.amazonaws.com/friedchicken.mp4")
+video4.media.attach(io: video4_media, filename: 'friedchicken.mp4')
+
+video5_media = open("https://yimyum-seeds.s3-us-west-1.amazonaws.com/dessert.mp4")
+video5.media.attach(io: video5_media, filename: 'dessert.mp4')

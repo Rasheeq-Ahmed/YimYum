@@ -16,26 +16,36 @@
     width: 800px;
     height: 90%;
     flex-direction: row;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     margin-top: 200px;
-
+    flex-wrap: wrap;
 }
 
 .videos {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
 
 .video {
-    display: flex;
     width: 200px;
     height: 300px;
+    display: flex;
     margin: 20px;
     border: 2px red solid;
     justify-content: center;
     align-items: center;
     align-self: center;
+    /* overflow: auto; */
+    flex-wrap: wrap;
 
+}
+
+.video video{
+    /* overflow: auto; */
+    max-height: 100%;
+    resize: both;
+    display: flex;
+    flex-wrap: wrap;
 }
