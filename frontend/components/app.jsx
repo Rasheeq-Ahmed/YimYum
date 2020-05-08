@@ -16,13 +16,13 @@ import VideoShow from './videos/video_show/video_show';
 const App = () => (
     <div>
         <Modal/>
-        <Switch>
-        <Route exact path="/trending" component={VideoIndexContainer} />
+        {/* <Switch> */}
+        <Route exact path="/" component={Splash} />
+        <Route path="/trending" component={VideoIndexContainer} />
         <ProtectedRoute path="/upload" component={VideoUploadContainer} />
         <AuthRoute path="/signup" component={SignupContainer} />
         <AuthRoute path="/login" component={LoginContainer} />
-        <Route exact path="/" component={Splash} />
-        </Switch>
+        {/* </Switch> */}
         {/* <Route path="/videos/1" component={VideoShow}/> */}
     </div>
 );

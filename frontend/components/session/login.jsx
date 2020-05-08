@@ -32,7 +32,8 @@ class Login extends React.Component{
     }
     
 
-    demoLogin() {
+    demoLogin(e) {
+        e.preventDefault();
         const userInput= document.getElementById("userInput");
         const passInput= document.getElementById("passInput");
         const demoUser='YimYumDemoUser';
@@ -72,7 +73,7 @@ class Login extends React.Component{
 
 
     // handleDemoUser(e) {
-    //     e.preventDefault();
+        // e.preventDefault();
     //     const user = {username: 'demo', password: 'demopass'}
     //     this.props.demoLogin(user)
     //     .then (()=> this.props.history.push('/trending'))
