@@ -41,23 +41,26 @@ class Login extends React.Component{
         let passIn = 0;
 
 
-        const user = {username: "YimYumDemoUser", password: "yummypass"}
+        // const user = {username: "Y", password: "yummypass"}
 
         const passFill = () => {
             if (passIn <= demoPass.length) {
                 passInput.value = demoPass.substr(0, passIn++);
-                setTimeout(() => passFill(), 100);
+                setTimeout(() => passFill(), 150);
             }   else { setTimeout(
-                () => this.props.login(user),
+                () => this.props.login({
+                    username: 'YimYumDemoUser',
+                    password: "yummypass"
+                }),
                     500
                 );
             }
-        }
+        };
     
         const userFill = () => {
             if (userIn <= demoUser.length) {
                 userInput.value = demoUser.substr(0, userIn++);
-                setTimeout(() => userFill(), 100);
+                setTimeout(() => userFill(), 150);
             }else {
                 passFill()
             }
@@ -88,13 +91,6 @@ class Login extends React.Component{
             </div>
         );
     }
-
-
-
-
-
-
-
 
 
     

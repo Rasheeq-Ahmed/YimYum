@@ -23,11 +23,11 @@
     justify-content: center;
     align-items: center;
     width: 100%; */
-   background-color: rgb(177, 174, 174);
+   background-color:white;
   }
 
 .video-modal-all {
-  border: 2px purple solid;
+  /* border: 2px purple solid; */
   width: 1000px;
   display: flex;
   flex-direction: row;
