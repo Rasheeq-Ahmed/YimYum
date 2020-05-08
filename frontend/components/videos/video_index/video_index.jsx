@@ -34,7 +34,7 @@ class VideoIndex extends React.Component {
                         </div>
                     </div>
                     <div className='trending-right'>
-                        <div className='suggested-accts'>
+                        {/* <div className='suggested-accts'>
                             <div className='sugg-header'>Suggested Accounts</div>
                             <div className='sugg-acc'>
 
@@ -42,7 +42,7 @@ class VideoIndex extends React.Component {
                         </div>
                         <div className='discover'>
 
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 

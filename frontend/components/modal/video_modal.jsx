@@ -29,7 +29,7 @@ render () {
         <div className="video-modal-all">
             <div className="modal-left">
                 <div className="modal-video">
-            <video controls loop src={this.props.currentVideo.videoUrl}></video>
+            <video controls autoPlay loop src={this.props.currentVideo.videoUrl}></video>
                 </div>
             </div>
             <div className="modal-right">

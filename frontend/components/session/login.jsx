@@ -49,7 +49,7 @@ class Login extends React.Component{
                 setTimeout(() => passFill(), 100);
             }   else { setTimeout(
                 () => this.props.login(user),
-                    300
+                    500
                 );
             }
         }

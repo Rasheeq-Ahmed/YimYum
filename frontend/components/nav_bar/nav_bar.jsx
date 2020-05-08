@@ -29,7 +29,7 @@ class NavBar extends React.Component {
         const midDisplay = (
             <div className="nav-mid">
                 <Link to='/trending'>
-                    <h1 className='watchvids'>Trending</h1>
+                    <h1 className='watchvids'>Watch Trending Videos</h1>
                     </Link>
             </div>
         );
