@@ -23,9 +23,9 @@ user6 = User.create(username: 'snoopdoggydog', password: 'ginandjuice', email: '
 
 
 video1 = Video.create!({caption:"Food is love. Food is life.", creator_id: user1.id})
-video2 = Video.create!({caption:"Fish are food not friends", creator_id: user1.id})
-video3 = Video.create!({caption:"rainbow drip", creator_id: user1.id})
-video4 = Video.create!({caption:"Everything is better fried", creator_id: user1.id})
+video2 = Video.create!({caption:"Fish are food not friends", creator_id: user6.id})
+video3 = Video.create!({caption:"rainbow drip", creator_id: user5.id})
+video4 = Video.create!({caption:"Welcome to Flavor Town", creator_id: user2.id})
 video5 = Video.create!({caption:"dessert explosion", creator_id: user1.id})
 
 

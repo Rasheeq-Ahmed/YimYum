@@ -36,9 +36,8 @@ render () {
                 <div className="modal-vidinfo">
 
                     <div className='modal-user'>
-                        <p>@DemoUser</p>
-                        
-                        
+                        <p>{this.props.currentVideo.creator}</p>
+                        <p>{this.props.currentVideo.caption}</p>    
                     </div>
                     <div className="modal-details">
                     </div>
