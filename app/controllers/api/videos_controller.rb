@@ -7,7 +7,9 @@ class Api::VideosController < ApplicationController
         end
         
         def create
-            @video = Video.new(video_params)    
+            # debugger
+            @video = Video.new(video_params) 
+            @video.creator_id = current_user.id   
             if @video.save
                 render :show
             else
@@ -22,15 +24,7 @@ class Api::VideosController < ApplicationController
         end
 
 
-        def update
-            @video = Video.find(params[:id])
-            if @video.update(video_params)
-                render :show
-            else
-                render json: @video.errors.full_messages
-            end
-        end
-
+        
         def destroy
             @video = current_user.videos.find(params[:id])
             if @video.destroy
@@ -39,16 +33,48 @@ class Api::VideosController < ApplicationController
                 render json: @video.errors.full_messages, status: 404
             end
         end
-
-
-
+        
+        
+        
         private
-    
+        
         def video_params
-            params.require(:video).permit(:capton, :creator_id, :video)
+            params.require(:video).permit(:caption, :creator_id, :media)
         end
-    
+      
+        
+    end
     
 
 
-end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # def update
+    #     @video = Video.find(params[:id])
+    #     if @video.update(video_params)
+    #         render :show
+    #     else
+    #         render json: @video.errors.full_messages
+    #     end
+    # end

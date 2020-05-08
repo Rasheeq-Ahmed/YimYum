@@ -8,15 +8,22 @@ import LoginContainer from './session/login_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import VideoIndexContainer from './videos/video_index/video_index_container';
 import VideoUploadContainer from './videos/video_upload_container';
+import Modal from './modal/modal'
+import VideoShow from './videos/video_show/video_show';
+// import VideoShowContainer from './videos/video_show/video_show_container'
+
 
 const App = () => (
     <div>
-        <Route exact path="/" component={Splash} />
-        <Route path="/trending" component={VideoIndexContainer} />
-        <Route path="/upload" component={VideoUploadContainer} />
-
+        <Modal/>
+        <Switch>
+        <Route exact path="/trending" component={VideoIndexContainer} />
+        <ProtectedRoute path="/upload" component={VideoUploadContainer} />
         <AuthRoute path="/signup" component={SignupContainer} />
         <AuthRoute path="/login" component={LoginContainer} />
+        <Route exact path="/" component={Splash} />
+        </Switch>
+        {/* <Route path="/videos/1" component={VideoShow}/> */}
     </div>
 );
 

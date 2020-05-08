@@ -95,3 +95,20 @@
     position: absolute;
 } */
  
+.user-btn button {
+    margin-right: 10px;
+}
+
+.watchvids {
+    font-size: 26px;
+    font: bold;
+}
+
+.nav-mid {
+    margin-left: 135px;
+}
+.nav-mid h1:hover {
+    transform: scale(1.24);
+    font-weight: bolder;
+    border-bottom: 3px solid #fe2c55;
+}

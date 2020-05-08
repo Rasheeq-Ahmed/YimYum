@@ -94,9 +94,9 @@ footer {
 
 .prof-links {
     display: flex;
-    height: inherit;
+    /* height: inherit; */
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: center;
+    /* align-items: center; */
     
 }

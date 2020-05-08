@@ -1,0 +1,120 @@
+.modal-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.932);
+    z-index: 1000;
+    width: 100%;
+    /* border: greenyellow 2px solid; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-child {
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    /* border: 2px rgb(148, 138, 138) solid; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; */
+   background-color: rgb(177, 174, 174);
+  }
+
+.video-modal-all {
+  border: 2px purple solid;
+  width: 1000px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
+
+.modal-left {
+  /* border: 2px red solid; */
+  display: flex;
+  max-width: 500px;
+  max-height: 700px;
+justify-content: flex-start;
+}
+
+.modal-video {
+  display: flex;
+max-height: 650;
+background-color: white;
+/* position: absolute; */
+}
+.modal-right {
+  border: 2px solid white;
+  width: 400px;
+  display:flex;
+  flex-direction: column;
+}
+
+
+.modal-user {
+  padding-top: 30px;
+  /* padding-left: 30px; */
+  font-size: 28px;
+}
+
+
+.modal-vidinfo {
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid yellow; */
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+
+
+
+
+  
+  
+  /* .video-box {
+      width: 822px;
+      height: 692px;
+      display: flex;
+      flex-direction: row;
+      color: rgb(69, 92, 221);
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      background: rgb(170, 21, 21);
+
+  }
+  
+  
+  
+  .video-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .show-video {
+    display: block;
+    /* width: 100%; */
+    /* height: 100%;
+    object-fit: cover;
+  } */
+  
+  /* .video-side {
+    position: relative;
+    width: 445px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 32px;
+    flex: 0 0 445px;
+    border-radius: 0px 8px 8px 0px;
+  }
+   */

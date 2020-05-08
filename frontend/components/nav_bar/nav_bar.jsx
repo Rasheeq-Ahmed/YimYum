@@ -28,12 +28,15 @@ class NavBar extends React.Component {
 
         const midDisplay = (
             <div className="nav-mid">
+                <Link to='/trending'>
+                    <h1 className='watchvids'>Trending</h1>
+                    </Link>
             </div>
         );
 
         const authDisplay = this.props.currentUser ? (
             <div className="user-btn">
-                <button onClick={this.props.logout}>Logout</button>
+                <button className="log-btn" onClick={this.props.logout}>Logout</button>
                 <Link to='/upload'><button className="upload-btn">Upload</button></Link>
             </div>
         ) : (

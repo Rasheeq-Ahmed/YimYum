@@ -16,21 +16,36 @@ class VideoIndex extends React.Component {
     render () {
         
         
-        debugger
         return (
             <div className='video-all'>
                 <div className='video-header'>
                 <NavBarContainer/>
                 </div>
-                <div className='video-body'> 
-                
-                        {this.props.videos.map((video, idx) => (
-
-                            <VideoIndexItem video={video}/>
+                <div className='trending-container'> 
+                    <div className="trending-left">
+                        <div className='trending-title'>
+                        <h1>Trending</h1>
+                        <p>Watch the latest videos from our community</p>
+                        </div>
+                        <div className='video-body'> 
+                            {this.props.videos.map((video, idx) => (
+                                <VideoIndexItem  key={idx} video={video}/>
                             ))}
-                   
-                </div>
+                        </div>
+                    </div>
+                    <div className='trending-right'>
+                        <div className='suggested-accts'>
+                            <div className='sugg-header'>Suggested Accounts</div>
+                            <div className='sugg-acc'>
 
+                           </div>
+                        </div>
+                        <div className='discover'>
+
+                        </div>
+                    </div>
+                </div>
+                
                 <div className='video-footer'>
                     <FooterNav/>
                 </div>

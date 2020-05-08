@@ -3,8 +3,8 @@ import {createVideo} from '../../actions/video_actions'
 import VideoUpload from './video_upload'
 
 
-const mapStateToProps = state => ({
-    currentUser: state.entities.users[state.session.id]
+const mapStateToProps = (state, ownProps) => ({
+    currentUser: state.entities.users[state.session.id],
   });
 
 
