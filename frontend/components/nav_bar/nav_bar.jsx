@@ -42,7 +42,7 @@ class NavBar extends React.Component {
         ) : (
         <div className="guest-btn">
             {/* <Link to='/signup'><button className="signup-btn">Sign Up</button></Link> */}
-            <Link to='/signup'><button className="login-btn" >Log In</button></Link>
+            <Link to='/login'><button className="login-btn" >Log In</button></Link>
         </div>
         )
    

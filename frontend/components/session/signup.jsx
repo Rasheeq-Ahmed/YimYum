@@ -91,7 +91,7 @@ class Signup extends React.Component{
                             <button className="form-btn" onClick={this.handleSubmit}>Create an account</button>
                             <Link to='/login'><button className="form-btn"> Login</button></Link>
                 </div>
-                    {/* <form className="login-redirect">Have an account or want to use the demo ?<Link className="link" to="/login"> Click here to log in.</Link></form> */}
+                        {/* <div className="signup-redirect">Have an account<NavLink className="link" to="/signup">? Click here to log in.</NavLink></div> */}
                 </form>
             </div>
             <footer className="footer-container">
