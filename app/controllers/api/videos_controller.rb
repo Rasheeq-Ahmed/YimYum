@@ -9,7 +9,8 @@ class Api::VideosController < ApplicationController
         def create
             # debugger
             @video = Video.new(video_params) 
-            @video.creator_id = current_user.id   
+            @video.creator_id = current_user.id
+            @video.view_count = 0   
             if @video.save
                 render :show
             else
@@ -20,12 +21,24 @@ class Api::VideosController < ApplicationController
             
         def show
           @video = Video.find(params[:id])
-            render :show
+
+            if @video
+                @video.view_count += 1
+                @video.save
+                render :show
+            else
+                render json:["Video Not Found"], status: 401
+            end
         end
 
         def update
           @video = Video.find(params[:id])
-            
+          if @video.update(video_params)
+            render :show
+          else
+             render json: @video.errors.full_messages, status: 422
+          end
+                        
 
         end
 
