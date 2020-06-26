@@ -2,8 +2,8 @@ class Api::VideosController < ApplicationController
 
     
         def index
-        @videos = Video.all
-        render :index
+            @videos = Video.all
+            render :index
         end
         
         def create
@@ -23,6 +23,12 @@ class Api::VideosController < ApplicationController
             render :show
         end
 
+        def update
+          @video = Video.find(params[:id])
+            
+
+        end
+
 
         
         def destroy
@@ -30,7 +36,7 @@ class Api::VideosController < ApplicationController
             if @video.destroy
                 render :show
             else
-                render json: @video.errors.full_messages, status: 404
+                render json: ['Something Went Wrong'], status: 404
             end
         end
         
