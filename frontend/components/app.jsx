@@ -10,21 +10,24 @@ import VideoIndexContainer from './videos/video_index/video_index_container';
 import VideoUploadContainer from './videos/video_upload_container';
 import Modal from './modal/modal'
 import VideoShow from './videos/video_show/video_show';
+import Profile from './user/profile';
 // import VideoShowContainer from './videos/video_show/video_show_container'
 
 
 const App = () => (
-    <div>
-        <Modal/>
-        {/* <Switch> */}
-        <Route exact path="/" component={Splash} />
-        <Route path="/trending" component={VideoIndexContainer} />
-        <ProtectedRoute path="/upload" component={VideoUploadContainer} />
-        <AuthRoute path="/signup" component={SignupContainer} />
-        <AuthRoute path="/login" component={LoginContainer} />
-        {/* </Switch> */}
-        {/* <Route path="/videos/1" component={VideoShow}/> */}
-    </div>
+  <div>
+    <Modal />
+    {/* <Switch> */}
+    <Route exact path="/" component={Splash} />
+    <Route path="/profile" component={Profile} />
+
+    <Route path="/trending" component={VideoIndexContainer} />
+    <ProtectedRoute path="/upload" component={VideoUploadContainer} />
+    <AuthRoute path="/signup" component={SignupContainer} />
+    <AuthRoute path="/login" component={LoginContainer} />
+    {/* </Switch> */}
+    {/* <Route path="/videos/1" component={VideoShow}/> */}
+  </div>
 );
 
 export default App;
