@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
-import { fetchVideos } from "../../../actions/video_actions";
+import { fetchVideos } from "../../actions/video_actions";
 import { fetchUser ,fetchUsers} from '../../actions/user_actions'
+import Profile from './profile'
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -10,14 +11,22 @@ const mapStateToProps = (state, ownProps) => {
     let videos = [];
 
     if (user) {
-        // posts = user.post_
+        videos = user.vid_ids.map(id => state.entities.videos[id])
+    } else {
+        videos = [null];
     }
+
+    return ({
+       user, posts,
+       currentUser: state.entities.users[state.session.id],
+    })
 
 };
 
 const mapDispatchToProps = (dispatch) => ({
   fetchVideos: () => dispatch(fetchVideos()),
-  // fetchUsers: () => dispatch (fetchUsers())
+  fetchUsers: () => dispatch (fetchUsers()),
+  fetchUser: id => dispatch(fetchUser(id))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(VideoIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
