@@ -17,7 +17,8 @@ const mapStateToProps = (state, ownProps) => {
     }
 
     return ({
-       user, posts,
+       user, 
+       videos,
        currentUser: state.entities.users[state.session.id],
     })
 
