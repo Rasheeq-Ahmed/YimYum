@@ -2,9 +2,24 @@ import React from 'react'
 import {openModal} from '../../../actions/modal_actions';
 
 
-const VideoIndexItem = ({video}) => (
-   
+class VideoIndexItem extends React.Component {
+    //  = ({video}) => (
+        constructor(props) {
+            super(props)
         
+            this.state = {
+                 
+            }
+        }
+        
+        
+
+    render () {
+        let video = this.props.video
+        if (!video){
+            return null;
+        }
+        return (
             
             <video className='video' value={video.id} src={video.videoUrl}
             muted
@@ -13,12 +28,11 @@ const VideoIndexItem = ({video}) => (
             onClick={()=>dispatch(openModal('show',video.id))}
             
             ></video>
+        )
 
+    }
 
+}
 
-
-
-
-)
 
 export default VideoIndexItem;

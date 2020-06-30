@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
     let videos = [];
 
     if (user) {
-        videos = user.video_ids.map(id => state.entities.videos[id])
+        videos = user.video_ids.map(id => state.entities.videos[id]) 
     } else {
         videos = [null];
     }

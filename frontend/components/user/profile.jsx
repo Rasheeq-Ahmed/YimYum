@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import ProfileItem from './profile_item'
+import VideoIndexItem from "../videos/video_index/video_index_item";
 
 class Profile extends Component {
   constructor(props) {
@@ -6,7 +8,8 @@ class Profile extends Component {
 
     this.state = {};
 
-    // this.renderEdit = this.renderEdit.bind(this)
+    this.renderEdit = this.renderEdit.bind(this)
+    this.renderVideos = this.renderVideos.bind(this)
   }
 
   componentDidMount() {
@@ -45,7 +48,7 @@ class Profile extends Component {
         <div className="profile-grid">
           <div className="profile-items">
             {this.props.videos.reverse().map((video, idx) => (
-              <ProfileItem key={idx} video={video} />
+              <VideoIndexItem key={idx} video={video} />
             ))}
           </div>
         </div>
@@ -57,9 +60,12 @@ class Profile extends Component {
     if (!this.props.user) {
         return null;
     }
+    if (!this.props.videos) {
+      return null;
+    }
     return (
       <div className="prof-all">
-          {console.log(this.props.user.id)}
+          {console.log(this.props)}
         <div className="prof-header"></div>
         <div className="prof-body">
           <div className="prof-content">
@@ -90,7 +96,9 @@ class Profile extends Component {
                 <span>Videos</span>
                 <span>Likes</span>
               </div>
-              <div className="prof-vid-body"></div>
+              <div className="prof-vid-body">
+                  {this.renderVideos()}
+              </div>
             </div>
           </div>
         </div>
