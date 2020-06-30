@@ -5,6 +5,8 @@ class Profile extends Component {
     super(props);
 
     this.state = {};
+
+    // this.renderEdit = this.renderEdit.bind(this)
   }
 
   componentDidMount() {
@@ -33,7 +35,7 @@ class Profile extends Component {
     if (this.props.videos.length === 0) {
       return (
         <div className="zero-video">
-          <img src={window.camera} />
+          {/* <img src={window.camera} /> */}
           <p>Upload a Video</p>
           <p> Share with your friends </p>
         </div>
@@ -52,8 +54,12 @@ class Profile extends Component {
   }
 
   render() {
+    if (!this.props.user) {
+        return null;
+    }
     return (
       <div className="prof-all">
+          {console.log(this.props.user.id)}
         <div className="prof-header"></div>
         <div className="prof-body">
           <div className="prof-content">
@@ -75,7 +81,9 @@ class Profile extends Component {
                 <li>0 Followers</li>
                 <li>0 Likes</li>
               </div>
-              <div className="prof-bio">Placeholder Bio</div>
+              <div className="prof-bio">Placeholder Bio
+              {this.renderEdit()}
+              </div>
             </div>
             <div className="prof-vid-all">
               <div className="prof-vid-header">

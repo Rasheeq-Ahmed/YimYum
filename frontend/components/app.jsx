@@ -20,7 +20,7 @@ const App = () => (
     <Modal />
     {/* <Switch> */}
     <Route exact path="/" component={Splash} />
-    <Route path="/profile" component={ProfileContainer} />
+    <Route path="/users/:id" component={ProfileContainer} />
 
     <Route path="/trending" component={VideoIndexContainer} />
     <ProtectedRoute path="/upload" component={VideoUploadContainer} />

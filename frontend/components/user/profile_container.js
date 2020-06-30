@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
     let videos = [];
 
     if (user) {
-        videos = user.vid_ids.map(id => state.entities.videos[id])
+        videos = user.video_ids.map(id => state.entities.videos[id])
     } else {
         videos = [null];
     }
@@ -25,9 +25,9 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchVideos: () => dispatch(fetchVideos()),
-  fetchUsers: () => dispatch (fetchUsers()),
-  fetchUser: id => dispatch(fetchUser(id))
+    fetchUsers: () => dispatch (fetchUsers()),
+    fetchUser: id => dispatch(fetchUser(id)),
+    fetchVideos: () => dispatch(fetchVideos()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

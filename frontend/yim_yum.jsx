@@ -7,6 +7,8 @@ import Root from './components/root';
 //Test IMPORTS
 
 import {fetchVideos} from './actions/video_actions'
+import { removeVideo } from "./actions/video_actions";
+
 
 //
 
@@ -26,8 +28,12 @@ let store;
   }
   //test
     window.dispatch = store.dispatch
+    window.getState = store.getState
     window.fetchVideos = fetchVideos
+    window.removeVideo = removeVideo
     window.store = store
+
+
   //
     // const store = configureStore();
     const root = document.getElementById('root');

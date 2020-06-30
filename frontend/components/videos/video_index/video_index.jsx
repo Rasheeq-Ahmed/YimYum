@@ -11,11 +11,12 @@ class VideoIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchVideos();
+        this.props.fetchUsers();
     }
 
     render () {
         
-        
+        // console.log(this.props)
         return (
             <div className='video-all'>
                 <div className='video-header'>

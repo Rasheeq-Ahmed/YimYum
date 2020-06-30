@@ -18,7 +18,6 @@ const usersReducer = ( state = {}, action) => {
         return action.users;
       case RECEIVE_VIDEO:
         return merge({}, state, { [action.user.id]: action.user });
-
       default:
         return state;
     }
