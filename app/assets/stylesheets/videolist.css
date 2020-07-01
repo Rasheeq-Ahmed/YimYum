@@ -115,14 +115,21 @@
     align-self: center;
     /* overflow: auto; */
     flex-wrap: wrap;
+    
 
 }
 
 .video video{
     /* overflow: auto; */
     max-height: 100%;
-    resize: both;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     border-radius: 40px;
+    
+}
+.video:hover{
+    /* overflow: auto; */
+  cursor: pointer;
+    
 }

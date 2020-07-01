@@ -4,6 +4,42 @@ import {Link} from 'react-router-dom'
 class VideoModal extends React.Component {
     constructor(props) {
         super(props)
+
+        this.state = {
+            caption: '',
+            creator: ''
+        }
+
+
+        this.handleDelete = this.handleDelete.bind(this)
+
+    }
+
+
+
+
+    componentDidMount() {
+        this.setState({
+            caption: this.props.currentVideo.caption,
+            creator: this.props.currentVideo.creator
+        })
+    }
+
+
+
+    handleDelete(e) {
+        e.preventDefault();
+        this.props.removeVideo(this.props.currentVideo.id)
+        .then (() => {
+        this.props.closeModal();
+
+        })
+    }
+
+
+    confirmDelete(e) {
+        e.preventDefault();
+
     }
 
 
@@ -25,11 +61,19 @@ render () {
     //     </div>
     //     )
 
+    // console.log(this.state)
+
+
+    if (!this.props.currentVideo) {
+        return null;
+    }
+    // console.log(this.props.currentVideo.id)
     return (
         <div className="video-modal-all">
             <div className="modal-left">
+                <button className="closeVidModal" onClick={() => this.props.closeModal()}>&times;</button>
                 <div className="modal-video">
-            <video controls autoPlay loop src={this.props.currentVideo.videoUrl}></video>
+                    <video className='vid' controls autoPlay loop src={this.props.currentVideo.videoUrl}></video>
                 </div>
             </div>
             <div className="modal-right">
@@ -37,7 +81,9 @@ render () {
 
                     <div className='modal-user'>
                         <p>{this.props.currentVideo.creator}</p>
-                        <p>{this.props.currentVideo.caption}</p>    
+                        <p>{this.props.currentVideo.caption}</p>
+                        <Link to
+                        ></Link><button onClick={this.handleDelete}>Delete</button>    
                     </div>
                     <div className="modal-details">
                     </div>

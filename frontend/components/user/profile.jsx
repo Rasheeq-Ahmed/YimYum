@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import ProfileItem from './profile_item'
 import VideoIndexItem from "../videos/video_index/video_index_item";
+import NavBar from '../nav_bar/nav_bar_container'
 
 class Profile extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+        confirmDelete: false
+    };
 
     this.renderEdit = this.renderEdit.bind(this)
     this.renderVideos = this.renderVideos.bind(this)
@@ -65,8 +68,8 @@ class Profile extends Component {
     }
     return (
       <div className="prof-all">
-          {console.log(this.props)}
-        <div className="prof-header"></div>
+          {/* {console.log(this.props)} */}
+        <div className="prof-header"><NavBar/></div>
         <div className="prof-body">
           <div className="prof-content">
             <div className="prof-info-all">

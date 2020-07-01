@@ -54,7 +54,7 @@ class VideoUpload extends React.Component {
                     caption: '',
                     videoFile: null,
                 })
-            }).then(()=> this.props.history.push('/trending'))
+            }).then(()=> this.props.history.push(`/users/${this.state.creator_id}`))
 
     }
 
