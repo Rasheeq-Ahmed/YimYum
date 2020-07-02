@@ -18,36 +18,38 @@ class VideoIndex extends React.Component {
         
         // console.log(this.props)
         return (
-            <div className='video-all'>
-                <div className='video-header'>
+            <div className='vIndex-all'>
+                <div className='vIndex-header'>
                 <NavBarContainer/>
                 </div>
-                <div className='trending-container'> 
-                    <div className="trending-left">
-                        <div className='trending-title'>
-                        <h1>Trending</h1>
-                        <p>Watch the latest videos from our community</p>
+                <div className='vIndex-body'> 
+                    <div className='vIndex-left'>
+                        <div className="vIndex-nav">
+                            <h1 className="foryou">For You</h1>
                         </div>
+                        <div className="vIndex-follow">
+
+                        </div>
+
+                        <div className="vIndex-prof">
+
+                        </div>
+
+                    {/* <h1>Trending</h1>
+                    <p>Watch the latest videos from our community</p> */}
+                    </div>
+
+                    <div className="vIndex-mid">
                         <div className='video-body'> 
-                            {this.props.videos.map((video, idx) => (
+                            {/* {this.props.videos.map((video, idx) => (
                                 <VideoIndexItem  key={idx} video={video}/>
-                            ))}
+                            ))} */}
                         </div>
                     </div>
-                    <div className='trending-right'>
-                        {/* <div className='suggested-accts'>
-                            <div className='sugg-header'>Suggested Accounts</div>
-                            <div className='sugg-acc'>
-
-                           </div>
-                        </div>
-                        <div className='discover'>
-
-                        </div> */}
-                    </div>
+                   
                 </div>
                 
-                <div className='video-footer'>
+                <div className='vIndex-footer'>
                     <FooterNav/>
                 </div>
 
@@ -58,3 +60,19 @@ class VideoIndex extends React.Component {
 
 
 export default VideoIndex;
+
+
+
+
+
+//  <div className="trending-right">
+   {/* <div className='suggested-accts'>
+                            <div className='sugg-header'>Suggested Accounts</div>
+                            <div className='sugg-acc'>
+
+                           </div>
+                        </div>
+                        <div className='discover'>
+
+                        </div> */}
+ {/* </div>; */}
