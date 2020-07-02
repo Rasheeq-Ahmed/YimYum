@@ -12,6 +12,7 @@ import Modal from './modal/modal'
 import VideoShow from './videos/video_show/video_show';
 import Profile from './user/profile';
 import ProfileContainer from './user/profile_container';
+import Test from './test/test';
 // import VideoShowContainer from './videos/video_show/video_show_container'
 
 
@@ -21,7 +22,8 @@ const App = () => (
     {/* <Switch> */}
     <Route exact path="/" component={Splash} />
     <Route path="/users/:id" component={ProfileContainer} />
-
+    <Route path="/test" component={Test} />
+    
     <Route path="/trending" component={VideoIndexContainer} />
     <ProtectedRoute path="/upload" component={VideoUploadContainer} />
     <AuthRoute path="/signup" component={SignupContainer} />

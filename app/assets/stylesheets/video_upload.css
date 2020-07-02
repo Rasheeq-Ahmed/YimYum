@@ -78,7 +78,7 @@
     padding-bottom: 100px;
 }
 
-.upload-btn {
+/* .upload-btn {
     justify-content: flex-end;
     align-items: center;
     display: inline-block;
@@ -93,7 +93,7 @@
    font-weight:bold;
    padding:10px 25px;
    text-decoration:none;
-}
+} */
 
 .upload-btn1 {
     justify-content: flex-end;

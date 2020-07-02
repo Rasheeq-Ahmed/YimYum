@@ -32,7 +32,7 @@ class NavBar extends React.Component {
 
     if (this.props.currentUser) {
       return (
-        <div className="user-btn">
+        <div className="user-nav">
           <button className="log-btn" onClick={this.logoutUser}>
             Logout
           </button>
@@ -57,22 +57,17 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const leftDisplay = (
-      <Link to="/">
-        <div className="nav-left">
-          <img src={window.logo} className="logo" />
-          <h1 className="yim-yum">YimYum</h1>
-        </div>
-      </Link>
-    );
+    // const leftDisplay = (
+    //   <Link to="/">
+        
+    //   </Link>
+    // );
 
-    const midDisplay = (
-      <div className="nav-mid">
-        <Link to="/trending">
-          <h1 className="watchvids">Watch Trending Videos</h1>
-        </Link>
-      </div>
-    );
+    // const midDisplay = (
+    //   <div className="nav-mid">
+        
+    //   </div>
+    // );
 
     // if (!this.props.currentUser) {
     //   return (
@@ -86,14 +81,25 @@ class NavBar extends React.Component {
     // } else {
     // }
 
-    const rightDisplay = <div className="nav-right">{this.authNav()}</div>;
+    // const rightDisplay = <div className="nav-right">{this.authNav()}</div>;
 
     return (
-        <div className="nav-bar">
-        {console.log(this.props)}
-        <div className="left-nav">{leftDisplay}</div>
-        <div className="mid-nav">{midDisplay}</div>
-        <div className="right-nav">{rightDisplay}</div>
+      <div className="nav-all">
+          <div className="nav-left">
+            <img src={window.logo} className="logo" />
+            <h1 className="yim-yum">YimYum</h1>
+          </div>
+
+        <div className="nav-mid">
+          <Link to="/trending">
+            <h1 className="watchvids">Watch Trending Videos</h1>
+          </Link>
+        </div>
+
+        <div className="nav-right">
+          {this.authNav()}
+        </div>
+
       </div>
     );
   }

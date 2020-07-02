@@ -3,23 +3,24 @@
     /* display: grid; */
     flex-direction: column;
     display: flex;
+    background-color: lightgoldenrodyellow;
+    height: 100vh;
+    width: 100%;
     
 }
 
 .splash-header{
-    margin-top: 30px;
+    height:10%;
     
 
 }
 .splash-body {
+    height: 80%;
     display: flex;
-    /* padding-top: 25px; */
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    /* position: relative; */
-    background-color: white;
-    /* margin-top: 20px; */
+    background-color: rgb(255, 117, 117);
     
 }
 
@@ -30,7 +31,7 @@
     align-content: center;
     height: 675px;
     width: 100%;
-    background-color: black;
+    background-color: rgb(84, 196, 149);
     /* background-size: 100%; */
     
 }
@@ -41,6 +42,7 @@
     flex-direction: row;
     max-height: 100%;
     overflow: auto;
+    background-color: lightseagreen;
     /* margin: 0;
     padding: 0; */
 }
@@ -49,6 +51,7 @@
 .yim-yum {
     font-size: 40px;
     font-weight: bold;
+    background-color: lime;
 }
 
 .splash-slogan {
@@ -68,12 +71,12 @@
 
 
 
-footer {
+.splash-footer {
     /* display: flex;
     bottom: 0px;
     width: 100%; */
     height: 60px;
-    background-color: black;
+    background-color: rgb(111, 212, 199);
     justify-content: space-evenly;
     width: 100%;
 
@@ -97,6 +100,7 @@ footer {
     /* height: inherit; */
     flex-direction: row;
     justify-content: space-evenly;
+    background-color: mediumpurple;
     /* align-items: center; */
     
 }

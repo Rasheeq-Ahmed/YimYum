@@ -1,0 +1,17 @@
+.testAll {
+    width: 100%;
+    height: 100vh;
+    /* background-color: mediumseagreen; */
+}
+
+.testHeader {
+    width: 100%;
+    height: 10%;
+    background-color: orange;
+}
+
+.testBody {
+    width: 100%;
+    height: 90%;
+    /* background-color: moccasin; */
+}
