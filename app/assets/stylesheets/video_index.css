@@ -17,36 +17,93 @@
     display: flex;
     min-height: 40em;
     flex-direction: row;
-    justify-content: center;
-    vertical-align: middle;
+    /* justify-content: center;
+    vertical-align: middle; */
     background-color: rgb(114, 213, 251);
 
 }
 
-    .trending-left {
+    .vIndex-left {
+        min-width: 12em;
         display: flex;
         flex-direction: column;
-        /* background-color: teal; */
-        overflow: auto;
+        background-color: teal;
+        /* overflow: auto; */
     }
+        .vIndex-nav {
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            background-color: thistle;
+            padding-top: 2em;
+          
+        }
 
-    .trending-title {
-        /* max-height: 100%; */
-        height: fit-content;
-        width: 100%;
-        background-color: thistle;
-        display: flex;
-        flex-direction: column;
-    }
-    .trending-title h1 {
-        font-size: 57px;
-        font-weight: bold;
-    }
-    .trending-title p {
-        font-size: 18px;
-        color: #8a8b91;
-        
-    }
+
+
+             .nav-foryou {
+            display: flex;
+            align-items: center;
+            /* justify-content: center; */
+            background-color: rgb(83, 141, 228);
+            font-size: 1.5em;
+            padding-left: .5em;
+            }
+             .nav-follow {
+            display: flex;
+            align-items: center;
+            /* justify-content: center; */
+            background-color: rgb(147, 218, 115);
+            font-size: 1.5em;
+            padding-left: .5em;
+            }
+
+
+        .vIndex-follow {
+            display: flex;
+            height: 10em;
+            flex-direction: column;
+            justify-content: space-evenly;
+            background-color: lightblue;
+            padding-left: 1em;
+
+        }
+
+            .top-accounts {
+               font-size: 16px;
+               color: #161823; 
+               opacity: 50%;
+               /* padding-left: 1em; */
+               
+            }
+
+            .follow-accts {
+                /* height: 2em; */
+                /* padding-left: 1em; */
+                display: flex;
+
+            }
+                .follow-pic {
+                    width: 2.5em;
+                    border-radius: 50%;
+                    background-color: mediumorchid;
+                }
+                .follow-info {
+                    /* padding-left: .5em; */
+                }
+            
+            .see-all {
+                display:  flex;
+                font-size: 1em;
+                font-weight: bold;
+                color:#fe2c55;
+                /* padding-left: 1em; */
+
+
+            }
+
+
+
 
 /* .trending-right {
     background-color: gray;
