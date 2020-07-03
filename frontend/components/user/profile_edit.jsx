@@ -2,7 +2,7 @@ import React from "react";
 import HeaderContainer from "../header/header_container";
 import { Redirect } from "react-router-dom";
 import UpdateProfilePhotoContainer from "./update_profile_photo_container";
-import NavBar from "../nav_bar/nav_bar";
+import NavBar from "../nav_bar/nav_bar_container";
 
 class ProfileEdit extends React.Component {
   constructor(props) {

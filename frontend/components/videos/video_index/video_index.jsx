@@ -1,22 +1,30 @@
 import React from 'react';
 import NavBarContainer from '../../nav_bar/nav_bar_container'
 import FooterNav from '../../nav_bar/footer_nav'
-import VideoIndexItem from './video_index_item'
+import VideoIndexItem from './video_index_item_container'
 
 
 class VideoIndex extends React.Component {
     constructor(props) {
         super(props)
+        
+        this.state = {
+            testvideo: {}
+        }
+
     }
 
     componentDidMount() {
         this.props.fetchVideos();
         this.props.fetchUsers();
+        // this.props.fetchVideo(110);
+        // this.setState({testvideo: this.state.entities.videos[0]})
+
     }
 
     render () {
         
-        // console.log(this.props)
+        console.log(this.props.videos[0])
         return (
           <div className="vIndex-all">
             <div className="vIndex-header">

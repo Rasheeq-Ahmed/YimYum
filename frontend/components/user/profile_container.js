@@ -19,7 +19,7 @@ const mapStateToProps = (state, ownProps) => {
     return ({
        user, 
        videos,
-       currentUser: state.entities.users[state.session.id],
+       currentUser: state.entities.users[state.session.id] || {},
     })
 
 };

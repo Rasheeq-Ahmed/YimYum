@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ProfileItem from './profile_item'
-import VideoIndexItem from "../videos/video_index/video_index_item";
+import VideoIndexItem from "../videos/video_index/video_index_item_container";
 import NavBar from '../nav_bar/nav_bar_container'
 
 class Profile extends Component {
@@ -24,6 +24,7 @@ class Profile extends Component {
   }
 
   renderEdit() {
+   
     if (this.props.user.id === this.props.currentUser.id) {
       return (
         <div className="edit-profile-button">
@@ -38,6 +39,7 @@ class Profile extends Component {
   }
 
   renderVideos() {
+    
     if (this.props.videos.length === 0) {
       return (
         <div className="zero-video">
