@@ -50,8 +50,8 @@ class LoginNavBar extends React.Component {
         // )
         
         return (
-            <div className="nav-bar">
-                <div className="left-nav">
+            <div className="nav-all">
+                <div className="nav-left">
                 <Link to='/'>{leftDisplay}</Link>
                 </div>
                 {/* <div className="mid-nav">

@@ -2,7 +2,7 @@ import React from 'react';
 import LoginNavBar from '../nav_bar/login_nav'
 import { login } from '../../util/session_api_util';
 import FooterNav from '../nav_bar/footer_nav';
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Login extends React.Component{
     constructor(props) {
@@ -97,48 +97,62 @@ class Login extends React.Component{
     
     render(){
         return (
-            <div className="login-all">
-                <header className="login-header">
-                    <LoginNavBar/>
-                </header>
-                <div className="login-body">
-                    {/* <img src={window.formbackground}/> */}
-                    <form className="login-form-box">
-                    <div className="form-title">Log in</div>
-                    <div className="login-form">
-
-                        <label>
-                                <input 
-                                    className='login-input'
-                                    type="text"
-                                    id="userInput"
-                                    value={this.state.username}
-                                    onChange={this.handleInput('username')}
-                                    placeholder="Username"
-                                    />
-                                </label>
-                            <label>
-                                <input
-                                    className='login-input'
-                                    id='passInput'
-                                    type="password"
-                                    value={this.state.password}
-                                    onChange={this.handleInput('password')}
-                                    placeholder="Password"
-                                    />
-                            </label>
-                                {this.renderErrors()}
-                                <button className="form-btn" onClick={this.handleSubmit}>Login</button>
-                                <button className="form-btn" onClick={this.demoLogin}>Demo Login</button>
-                    </div>
-                    <div className="signup-redirect">Need an account<NavLink className="link" to="/signup">? Click here to sign up.</NavLink></div>
-                    </form>
-
-                </div>
-                <footer className="footer-container">
-                    <FooterNav/>
-                </footer>
+          <div className="login-all">
+            <div className="login-header">
+              <div className="nav-left">
+                <Link to="/" className="logo-link">
+                  <img src={window.logo} className="logo" />
+                </Link>
+                <Link to="/" className="logo-link">
+                  <h1 className="yim-yum">YimYum</h1>
+                </Link>
+              </div>
             </div>
+            <div className="login-body">
+              {/* <img src={window.formbackground}/> */}
+              <form className="login-form-box">
+                <div className="form-title">Log in</div>
+                <div className="login-form">
+                  <label>
+                    <input
+                      className="login-input"
+                      type="text"
+                      id="userInput"
+                      value={this.state.username}
+                      onChange={this.handleInput("username")}
+                      placeholder="Username"
+                    />
+                  </label>
+                  <label>
+                    <input
+                      className="login-input"
+                      id="passInput"
+                      type="password"
+                      value={this.state.password}
+                      onChange={this.handleInput("password")}
+                      placeholder="Password"
+                    />
+                  </label>
+                  {this.renderErrors()}
+                  <button className="form-btn" onClick={this.handleSubmit}>
+                    Login
+                  </button>
+                  <button className="form-btn" onClick={this.demoLogin}>
+                    Demo Login
+                  </button>
+                </div>
+                <div className="signup-redirect">
+                  Need an account
+                  <Link className="link" to="/signup">
+                    ? Click here to sign up.
+                  </Link>
+                </div>
+              </form>
+            </div>
+            <footer className="footer-container">
+              <FooterNav />
+            </footer>
+          </div>
         );
     }
 };

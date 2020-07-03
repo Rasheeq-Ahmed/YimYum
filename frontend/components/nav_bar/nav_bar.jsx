@@ -37,7 +37,7 @@ class NavBar extends React.Component {
             Logout
           </button>
           <Link to="/upload">
-            <button className="upload-btn">Upload</button>
+            <img src={window.uploadSymbol}/>
           </Link>
           <Link to={`/users/${this.props.currentUser.id}`}>
             <button className="upload-btn">Profile</button>
@@ -85,21 +85,22 @@ class NavBar extends React.Component {
 
     return (
       <div className="nav-all">
-          <div className="nav-left">
-            <img src={window.logo} className="logo" />
-            <h1 className="yim-yum">YimYum</h1>
-          </div>
+        <div className="nav-left">
+            <Link to="/" className="logo-link">
+              <img src={window.logo} className="logo" />
+            </Link>
+             <Link to="/" className="logo-link">
+              <h1 className="yim-yum">YimYum</h1>
+             </Link>
+        </div>
 
         <div className="nav-mid">
-          <Link to="/trending">
+          {/* <Link to="/trending">
             <h1 className="watchvids">Watch Trending Videos</h1>
-          </Link>
+          </Link> */}
         </div>
 
-        <div className="nav-right">
-          {this.authNav()}
-        </div>
-
+        <div className="nav-right">{this.authNav()}</div>
       </div>
     );
   }

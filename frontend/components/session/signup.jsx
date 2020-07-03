@@ -50,56 +50,63 @@ class Signup extends React.Component{
 
     render(){
         return (
-            <div className="signup-all">
-            <header className="signup-header">
-                <LoginNavBar/>
-            </header>
+          <div className="signup-all">
+            <div className="signup-header">
+              <div className="nav-left">
+                <Link to="/" className="logo-link">
+                  <img src={window.logo} className="logo" />
+                </Link>
+                <Link to="/" className="logo-link">
+                  <h1 className="yim-yum">YimYum</h1>
+                </Link>
+              </div>
+            </div>
             <div className="signup-body">
-                
-                <form className="signup-form-box">
+              <form className="signup-form-box">
                 <div className="form-title">Sign up</div>
                 <div className="signup-form">
-
-                        <label>
-                            <input 
-                                className='signup-input'
-                                type="text"
-                                value={this.state.email}
-                                onChange={this.handleInput('email')}
-                                placeholder="Email"
-                                />
-                        </label>
-                        <label>
-                            <input 
-                                className='signup-input'
-                                type="text"
-                                value={this.state.username}
-                                onChange={this.handleInput('username')}
-                                placeholder="Username"
-                                />
-                        </label>
-                        <label>
-                            <input
-                                className='signup-input'
-                                type="password"
-                                value={this.state.password}
-                                onChange={this.handleInput('password')}
-                                placeholder="Password"
-                                />
-                        </label>
-                            {this.renderErrors()}
-                            <button className="form-btn" onClick={this.handleSubmit}>Create an account</button>
-                            <Link to='/login'><button className="form-btn"> Login</button></Link>
+                  <label>
+                    <input
+                      className="signup-input"
+                      type="text"
+                      value={this.state.email}
+                      onChange={this.handleInput("email")}
+                      placeholder="Email"
+                    />
+                  </label>
+                  <label>
+                    <input
+                      className="signup-input"
+                      type="text"
+                      value={this.state.username}
+                      onChange={this.handleInput("username")}
+                      placeholder="Username"
+                    />
+                  </label>
+                  <label>
+                    <input
+                      className="signup-input"
+                      type="password"
+                      value={this.state.password}
+                      onChange={this.handleInput("password")}
+                      placeholder="Password"
+                    />
+                  </label>
+                  {this.renderErrors()}
+                  <button className="form-btn" onClick={this.handleSubmit}>
+                    Create an account
+                  </button>
+                  <Link to="/login">
+                    <button className="form-btn"> Login</button>
+                  </Link>
                 </div>
-                        {/* <div className="signup-redirect">Have an account<NavLink className="link" to="/signup">? Click here to log in.</NavLink></div> */}
-                </form>
+                {/* <div className="signup-redirect">Have an account<NavLink className="link" to="/signup">? Click here to log in.</NavLink></div> */}
+              </form>
             </div>
             <footer className="footer-container">
-                <FooterNav/>
+              <FooterNav />
             </footer>
-
-
-        </div>
+          </div>
         );
     }
 };

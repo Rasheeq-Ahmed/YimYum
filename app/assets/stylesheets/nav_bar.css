@@ -28,12 +28,12 @@
 
 
 
-
+/* 
 .mid-nav {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
 
 
@@ -63,12 +63,24 @@
     background-color: orchid;
     display: flex;
     align-items: center;
+    padding-left: 2em;
     /* justify-content: center; */
 }
 
-    .logo {
-    margin-left: 2em;    
-    height: 70%;
+    .nav-left-inner {
+        height: 100%;
+        width: 100%;
+        display: flex;
+    }
+
+    .logo-link{
+        height: fit-content;
+        width: fit-content;
+        display: flex;
+    }
+
+    .logo {    
+    height: 3.5em;
     }
     
     .yim-yum {
