@@ -9,7 +9,8 @@ class VideoIndex extends React.Component {
         super(props)
         
         this.state = {
-            testvideo: {}
+            testvideo: {},
+            loggedIn : false
         }
 
     }
@@ -22,9 +23,16 @@ class VideoIndex extends React.Component {
 
     }
 
+
+    // componentDidUpdate(prevProps){
+    //   if (prevProps.currentUser !== this.props.currenUser){
+    //     this.setState({loggedIn: true})
+    //   }
+    // }
+
     render () {
         
-        console.log(this.props.videos[0])
+        // console.log(this.props.currentUser)
         return (
           <div className="vIndex-all">
             <div className="vIndex-header">

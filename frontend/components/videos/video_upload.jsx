@@ -68,7 +68,7 @@ class VideoUpload extends React.Component {
             return (
                 <div className='video-form-all'>
                     <div className='video-form-header'>
-                    <NavBarContainer/>
+                        <NavBarContainer/>
                     </div>
                     <div className='video-form-body'>
                         {/* <div>

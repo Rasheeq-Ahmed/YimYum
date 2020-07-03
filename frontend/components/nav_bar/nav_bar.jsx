@@ -10,6 +10,10 @@ class NavBar extends React.Component {
     //   currentUser: this.props.currentUser,
     // };
 
+    this.state ={
+      refresh: false
+    }
+
     this.logoutUser = this.logoutUser.bind(this);
   }
 
@@ -22,39 +26,20 @@ class NavBar extends React.Component {
   //     )
   // }
 
+// componentDidUpdate(){
+//   this.setState({refresh: true})
+// }
+
+
+
+
   logoutUser(e) {
     e.preventDefault();
     this.props.logout()
-    .then(() => this.props.history.push("/trending"));
+    // .then(() => this.props.history.push("/trending"));
   }
 
-  authNav() {
 
-    if (this.props.currentUser) {
-      return (
-        <div className="user-nav">
-          <button className="log-btn" onClick={this.logoutUser}>
-            Logout
-          </button>
-          <Link to="/upload">
-            <img src={window.uploadSymbol}/>
-          </Link>
-          <Link to={`/users/${this.props.currentUser.id}`}>
-            <button className="upload-btn">Profile</button>
-          </Link>
-        </div>
-      );
-    } else {
-      return (
-        <div className="guest-btn">
-          {/* <Link to='/signup'><button className="signup-btn">Sign Up</button></Link> */}
-          <Link to="/login">
-            <button className="login-btn">Log In</button>
-          </Link>
-        </div>
-      );
-    }
-  }
 
   render() {
     // const leftDisplay = (
@@ -83,8 +68,34 @@ class NavBar extends React.Component {
 
     // const rightDisplay = <div className="nav-right">{this.authNav()}</div>;
 
+    const authNav = this.props.currentUser ? (
+      <div className="user-nav">
+        <button className="log-btn" onClick={this.logoutUser}>
+          Logout
+        </button>
+        <Link className="logo-link" to="/upload">
+          <img className="upload" src={window.uploadSymbol} />
+        </Link>
+        <Link to={`/users/${this.props.currentUser.id}`}>
+          <button className="upload-btn">Profile</button>
+        </Link>
+      </div>
+    ) : (
+      <div className="guest-btn">
+        {/* <Link to='/signup'><button className="signup-btn">Sign Up</button></Link> */}
+        <Link to="/login">
+          <button className="login-btn">Log In</button>
+        </Link>
+      </div>
+    );
+
+
+      console.log(this.props)
+
+
     return (
       <div className="nav-all">
+      {/* {console.log(this.props.currentUser)} */}
         <div className="nav-left">
             <Link to="/" className="logo-link">
               <img src={window.logo} className="logo" />
@@ -100,7 +111,9 @@ class NavBar extends React.Component {
           </Link> */}
         </div>
 
-        <div className="nav-right">{this.authNav()}</div>
+        <div className="nav-right">
+          {authNav}
+        </div>
       </div>
     );
   }

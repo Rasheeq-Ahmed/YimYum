@@ -4,11 +4,11 @@ import { fetchVideos,fetchVideo } from '../../../actions/video_actions';
 // import {fetchUsers} from '../../../actions/'
 import { fetchUser, fetchUsers } from "../../../actions/user_actions";
 
-const mapStateToProps = state => ({
-    videos: Object.values(state.entities.videos),
-    users: Object.values(state.entities.users),
-
-})
+const mapStateToProps = (state) => ({
+  videos: Object.values(state.entities.videos),
+  users: Object.values(state.entities.users),
+  currentUser: state.entities.users[state.session.id],
+});
 
 
 const mapDispatchToProps = (dispatch) => ({
