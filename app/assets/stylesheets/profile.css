@@ -96,7 +96,33 @@
     }
 
     .prof-vid-body {
-        height: 90%;
+        height: fit-content;
         background-color: lightyellow;
+         display: flex;
+         justify-content: space-evenly;
     }
 
+    .profile-grid {
+    background-color: lavender;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    
+}
+.profile-items {
+    background-color: lemonchiffon;
+    width: 42em;
+    /* display: grid;
+    grid-template-columns: auto auto auto auto;
+    row-gap: 1em;
+    column-gap: 1em; */
+    /* padding: 0 10%; */
+
+}
+    
+
+    .video {
+        height: 17em;
+        padding: 1em;
+    }

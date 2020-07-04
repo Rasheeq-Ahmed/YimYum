@@ -24,7 +24,6 @@ class VideoIndexItem extends React.Component {
             return null;
         }
         return (
-            <div className="vItem-all">
                 <video className='video' value={video.id} src={video.videoUrl}
                 muted
                 onMouseOver={e =>e.target.play()}
@@ -32,8 +31,6 @@ class VideoIndexItem extends React.Component {
                 onClick={()=>dispatch(openModal('show',video.id))}
                 
                 ></video>
-
-            </div>
         )
 
     }
