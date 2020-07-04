@@ -149,15 +149,3 @@
     /* bottom: 0; */
 } 
 
-.prof-links {
-    display: flex;
-    /* height: inherit; */
-    /* flex-direction: row; */
-    justify-content: space-evenly;
-    align-items: center;
-    height: 4.5em;
-    width: 100%;
-    background-color: black;
-    /* align-items: center; */
-    
-}

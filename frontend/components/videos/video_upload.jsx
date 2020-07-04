@@ -37,10 +37,13 @@ class VideoUpload extends React.Component {
         }
         if (file) {
             reader.readAsDataURL(file);
+        } else {
+          this.setState({ videoUrl: '', videoFile: null})
         }
     }
 
     handleSubmit(e){
+      e.preventDefault();
         const formData = new FormData();
         formData.append('video[caption]', this.state.caption)
         formData.append('video[creator_id]', this.state.creator_id)
@@ -66,99 +69,144 @@ class VideoUpload extends React.Component {
         
         if (this.state.videoFile===null) {
             return (
-                <div className='video-form-all'>
-                    <div className='video-form-header'>
-                        <NavBarContainer/>
-                    </div>
-                    <div className='video-form-body'>
-                        {/* <div>
+              <div className="upload-all">
+                <div className="upload-header">
+                  <NavBarContainer />
+                </div>
+
+                <div className="upload-body">
+                  {/* <div>
                         Upload Video
                         </div>
                         <div>
                             Post a video to your account
                         </div> */}
-                        <div className='video-form-left'>
-                            <div className="upload-field">
-                                <form>
-                                    
-                                    <img onClick={this.handleFile}src={window.upload}/>
-                                <input
-                                    type='file'
-                                    onChange={this.handleFile}
-                                    className="videofile-upload"
-                                    />
 
-                                    </form>
-                            </div>
-                        </div>
-                        <div className='video-form-right'>
-                            <form className="video-details">
-                                <div className="inner-form">
-                                <label>Caption
-                                    <input 
-                                    type='text'
-                                    id="video-caption"
-                                    value={this.state.caption}
-                                    onChange={this.handleInput('caption')} />
-                                </label>
-                                </div>
-                                <div className='upload-buttons'>
-                                    {/* <button className="upload-btn1"disabled>Cancel</button> */}
-                                    <button onClick={this.handleSubmit} disabled className="upload-btn1">Post</button>
-                                </div>
-                            </form>
-                        </div>
+                  <div className="upload-title">
+                    <h1>Upload video</h1>
+                    <div className="upload-subtitle">
+                      <p>
+                        This video will be publish to @
+                        {this.props.currentUser.username}
+                      </p>
                     </div>
-                    <div className='video-footer'>
-                        <FooterNav/>
+                  </div>
+
+                  <div className="upload-main">
+                    <div className="upload-left">
+                      <div className="upload-field">
+                        {/* <form> */}
+                                    <label htmlFor='vid-upload' className='video-label'>
+                                    <img src={window.upload}/>
+                                        
+                                    </label>
+                                    <input
+                                        id='vid-upload'
+                                        type="file"
+                                        onChange={this.handleFile}
+                                        className="upload-video-input"
+                                        accept="video/mp4,video/x-m4v,video/*"
+                                    />
+                      </div>
                     </div>
-    
+                    <div className="upload-right">
+                      <form className="upload-form">
+                        <div className="upload-caption">
+                          <label className='caption-label'>
+                            Caption
+                            <input
+                              type="text"
+                              className="caption-input"
+                              value={this.state.caption}
+                              onChange={this.handleInput("caption")}
+                            />
+                          </label>
+                        </div>
+                      </form>
+                      <div className="upload-buttons">
+                        {/* <button className="upload-btn1"disabled>Cancel</button> */}
+                        <button
+                          onClick={this.handleSubmit}
+                          disabled
+                          className="upload-btn"
+                        >
+                          Post
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-            )
+                <div className="upload-footer">
+                  <FooterNav />
+                </div>
+              </div>
+            );
         } else {
             return (
-                <div className='video-form-all'>
-                <div className='video-form-header'>
-                <NavBarContainer/>
-                </div>
-                <div className='video-form-body'>
-                    {/* <div>
-                    Upload Video
-                    </div>
-                    <div>
-                        Post a video to your account
-                    </div> */}
-                    <div className='video-form-left'>
-                        <div className="upload-field">
-                            <div className='preview'>
-                         {preview}
-                            </div>
-                        </div>
-                    </div>
-                    <div className='video-form-right'>
-                        <form  className="video-details">
-                            <div className="inner-form">
-                            <label>Caption
-                                <input 
-                                type='text'
-                                id="video-caption"
-                                value={this.state.caption}
-                                onChange={this.handleInput('caption')} />
-                            </label>
-                            </div>
-                            <div className='upload-buttons'>
-                                {/* <button className="upload-btn">Cancel</button> */}
-                                <button onClick={this.handleSubmit} className="upload-btn">Post</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div className='video-footer'>
-                    <FooterNav/>
+              <div className="upload-all">
+                <div className="upload-header">
+                  <NavBarContainer />
                 </div>
 
-            </div>
-            )
+                <div className="upload-body">
+                  {/* <div>
+                        Upload Video
+                        </div>
+                        <div>
+                            Post a video to your account
+                        </div> */}
+
+                  <div className="upload-title">
+                    <h1>Upload video</h1>
+                    <div className="upload-subtitle">
+                      <p>
+                        This video will be publish to @
+                        {this.props.currentUser.username}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="upload-main">
+                    <div className="upload-left">
+                      <div className="upload-field">
+                        {/* <form> */}
+                        <div className="video-label">
+                        {preview}
+
+                        </div>
+                      </div>
+                    </div>
+                    <div className="upload-right">
+                      <form className="upload-form">
+                        <div className="upload-caption">
+                          <label className="caption-label">
+                            Caption
+                            <input
+                              type="text"
+                              className="caption-input"
+                              value={this.state.caption}
+                              onChange={this.handleInput("caption")}
+                            />
+                          </label>
+                        </div>
+                      <div className="upload-buttons">
+                        {/* <button className="upload-btn1"disabled>Cancel</button> */}
+                        <button
+                          onClick={this.handleSubmit}
+                          className="upload-btn"
+                        >
+                          Post
+                        </button>
+                      </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div className="upload-footer">
+                  <FooterNav />
+                </div>
+              </div>
+            );
         }
         
         
