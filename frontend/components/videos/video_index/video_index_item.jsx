@@ -18,6 +18,14 @@ class VideoIndexItem extends React.Component {
         
         
 
+
+
+
+
+
+
+
+
     render () {
         let video = this.props.video
         if (!video){

@@ -2,6 +2,8 @@ import React from 'react';
 import NavBarContainer from '../../nav_bar/nav_bar_container'
 import FooterNav from '../../nav_bar/footer_nav'
 import VideoIndexItem from './video_index_item_container'
+import { Link } from "react-router-dom";
+
 
 
 class VideoIndex extends React.Component {
@@ -12,7 +14,8 @@ class VideoIndex extends React.Component {
             testvideo: {},
             loggedIn : false
         }
-
+        this.renderVideos = this.renderVideos.bind(this)
+        this.profileNav = this.profileNav.bind(this)
     }
 
     componentDidMount() {
@@ -29,6 +32,51 @@ class VideoIndex extends React.Component {
     //     this.setState({loggedIn: true})
     //   }
     // }
+
+
+    profileNav(e) {
+      e.preventDefault();
+      this.props.history.push(`/users/${video.creator_id}`);
+    }
+
+
+    renderVideos() {
+      return (
+        <div className="video-body">
+          {this.props.videos.map((video, idx) => (
+            <div className="index-all">
+              <div className="index-header">
+                <Link to={`/users/${video.creator_id}`}>
+                <div className="index-user-pic"></div>
+                </Link>
+                <div className="index-user-details">
+                  <div className="index-user-info">
+                    <Link to={`/users/${video.creator_id}`}>
+                    <h1>{video.creator}</h1>
+                    </Link>
+                    <Link to={`/users/${video.creator_id}`}>
+                    <h2>Full Name</h2>
+                    </Link>
+                  </div>
+                  <button>Follow</button>
+                </div>
+              </div>
+              <div className="index-body">
+                <div className="index-caption">{video.caption}</div>
+                <div className="index-video">
+                  <VideoIndexItem key={idx} video={video} />
+                </div>
+                <div className="index-actions">
+                  <img src={window.likeSymbol} alt="likes"/>
+                  <img src={window.commentSymbol} alt="comments"/>
+                  <img src={window.shareSymbol} alt="shares"/>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      );
+    }
 
     render () {
         
@@ -74,11 +122,7 @@ class VideoIndex extends React.Component {
               </div>
 
               <div className="vIndex-mid">
-                <div className="video-body">
-                  {/* {this.props.videos.map((video, idx) => (
-                                <VideoIndexItem  key={idx} video={video}/>
-                            ))} */}
-                </div>
+               {this.renderVideos()}
               </div>
             </div>
 

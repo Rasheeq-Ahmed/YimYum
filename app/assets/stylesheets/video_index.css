@@ -10,12 +10,14 @@
 }
 
 .vIndex-header {
+    width: 100%;
     height: 5em;
 }
 
 .vIndex-body {
     display: flex;
-    min-height: 40em;
+    /* min-height: 40em; */
+    height: fit-content;
     flex-direction: row;
     /* justify-content: center;
     vertical-align: middle; */
@@ -25,6 +27,7 @@
 
     .vIndex-left {
         min-width: 12em;
+        height: fit-content;
         display: flex;
         flex-direction: column;
         background-color: teal;
@@ -36,7 +39,7 @@
             /* justify-content: center; */
             background-color: thistle;
             padding-top: 2em;
-          
+            
         }
 
 
@@ -103,10 +106,93 @@
             }
 
     
-            
+        /* .vIndex-mid {
+
+        } */
+
+        
+    
+        .video-body {
+            background-color: lightgreen;
+            width: 42em;
+            justify-content: center;
+        }
+
+            .index-all { 
+                background-color: lightcoral;
+                height: fit-content;
+                width: 30em;
+                padding: 2em;
+                border-bottom: 1px solid whitesmoke;
+            }
+
+            .index-header {
+                background-color: lightsteelblue;
+                height: 6em;
+                display: flex;
+            }
+
+                .index-user-pic {
+                    width: 6em;
+                    height: 6em;
+                    border-radius: 50%;
+                    background-color: teal;
+                }
+                
+                .index-user-details {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between; 
+                    align-items: center;
+                    padding-left: 1em;
+                }
+
+                    .index-user-info {
+                        display: flex;
+                        flex-direction: column;
+                        
+                        
+                    }
+
+
+                     .index-user-details > button {
+                    background-color: white;
+                    color:#fe2c55;
+                    border: 1px solid #fe2c55;
+                    font-size: 1em;
+                    padding: .5em 1.5em;
+                    font-weight: bold;
+                    justify-content: space-between; 
+                    }
+
+
+            .index-body {
+                background-color: tomato;
+                height: fit-content;
+            }
+
+                .index-caption {
+                    height: 3em;
+                    background-color: turquoise;
+                }
+
+                .index-video {
+                height: 30em;
+                }
+
+                .index-actions {
+                    background-color: yellow;
+                    width: 40%;
+                    height: 3em;
+                    display: flex;
+                    justify-content: space-evenly;
+                }
 
 
 
+        .vIndex-footer {
+            height: 5em;
+        }
 /* .trending-right {
     background-color: gray;
     display: flex;

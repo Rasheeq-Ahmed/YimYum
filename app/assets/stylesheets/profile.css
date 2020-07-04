@@ -134,6 +134,8 @@
 .profile-items {
     background-color: lemonchiffon;
     width: 42em;
+    display: flex;
+    flex-wrap: wrap;
     /* display: grid;
     grid-template-columns: auto auto auto auto;
     row-gap: 1em;
@@ -143,7 +145,19 @@
 }
     
 
-    .video {
+    .profile-video {
+        /* position: relative; */
+        background-color: lawngreen;
+        width: fit-content;
         height: 17em;
+        /* width: fit-content; */
+        /* width: initial;
+        max-width: min-content; */
+        /* object-fit: cover; */
+
+    }
+
+    .video {
+        height: inherit;
         padding: 1em;
     }

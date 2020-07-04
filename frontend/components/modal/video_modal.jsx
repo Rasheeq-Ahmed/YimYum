@@ -39,7 +39,7 @@ class VideoModal extends React.Component {
 
     confirmDelete(e) {
         e.preventDefault();
-
+        
     }
 
 

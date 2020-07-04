@@ -53,7 +53,9 @@ class Profile extends Component {
         <div className="profile-grid">
           <div className="profile-items">
             {this.props.videos.reverse().map((video, idx) => (
-              <VideoIndexItem key={idx} video={video} />
+              <div className="profile-video">
+                <VideoIndexItem key={idx} video={video} />
+              </div>
             ))}
           </div>
         </div>
