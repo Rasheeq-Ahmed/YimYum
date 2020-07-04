@@ -70,8 +70,10 @@ class Profile extends Component {
     }
     return (
       <div className="prof-all">
-          {/* {console.log(this.props)} */}
-        <div className="prof-header"><NavBar/></div>
+        {/* {console.log(this.props)} */}
+        <div className="prof-header">
+          <NavBar />
+        </div>
         <div className="prof-body">
           <div className="prof-content">
             <div className="prof-info-all">
@@ -84,7 +86,8 @@ class Profile extends Component {
                   />
                 </div>
                 <div className="prof-user-names">
-                  <h2>Username</h2>
+                  <h2>{this.props.user.username}</h2>
+                  <h3></h3>
                 </div>
               </div>
               <div className="prof-stats">
@@ -92,8 +95,9 @@ class Profile extends Component {
                 <li>0 Followers</li>
                 <li>0 Likes</li>
               </div>
-              <div className="prof-bio">Placeholder Bio
-              {this.renderEdit()}
+              <div className="prof-bio">
+                {this.props.user.bio}
+                {this.renderEdit()}
               </div>
             </div>
             <div className="prof-vid-all">
@@ -101,9 +105,7 @@ class Profile extends Component {
                 <span>Videos</span>
                 <span>Likes</span>
               </div>
-              <div className="prof-vid-body">
-                  {this.renderVideos()}
-              </div>
+              <div className="prof-vid-body">{this.renderVideos()}</div>
             </div>
           </div>
         </div>
