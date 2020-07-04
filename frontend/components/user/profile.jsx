@@ -103,7 +103,7 @@ class Profile extends Component {
             <div className="prof-vid-all">
               <div className="prof-vid-header">
                 <span>Videos</span>
-                <span>Likes</span>
+                {/* <span>Likes</span> */}
               </div>
               <div className="prof-vid-body">{this.renderVideos()}</div>
             </div>

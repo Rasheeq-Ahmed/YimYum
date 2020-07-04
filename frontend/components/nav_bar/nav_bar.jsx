@@ -106,9 +106,9 @@ class NavBar extends React.Component {
         </div>
 
         <div className="nav-mid">
-          {/* <Link to="/trending">
+          <Link to="/trending">
             <h1 className="watchvids">Watch Trending Videos</h1>
-          </Link> */}
+          </Link>
         </div>
 
         <div className="nav-right">
