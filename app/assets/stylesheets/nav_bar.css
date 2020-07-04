@@ -1,27 +1,30 @@
 
- .nav-right button {
-     /* justify-content: flex-end;
-     align-items: center; */
-     /* display: inline-block; */
-    background-color: #fe2c55;
-    border-radius:28px;
-	border:1px solid #f31a45;
-	/* display:inline-block; */
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:1em;
-	font-weight:bold;
-	padding: .5em 1em;
-    text-decoration:none;
+ .nav-btn {
+        justify-content: flex-end;
+            align-items: center;
+            display: inline-block;
+            background-color: #fe2c55;
+            /* border-radius: 50%; */
+            border:1px solid #f31a45;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-family:Arial;
+            font-size:1em;
+            font-weight:bold;
+            padding: .5em 1em;
+            text-decoration:none;
+            transition-duration: 1s;
  }
 
 
- .login-btn:hover {
-    background-color: #e00c37;
+ .nav-btn:hover {
+    background-color: #b60a2c;
+    transition-duration: 1s;
+
  }
 
- .login-btn:active {
+ .nav-btn:active {
     position:relative;
     top: 1px;
  }
@@ -38,15 +41,27 @@
 
 
 .watchvids {
-    font-size: 26px;
+    font-size: 1.5em;
     font: bold;
+    transition: 1s;
+
+}
+.watchvids:hover {
+    color: #fe2c55;
+    /* font-size: 1.6em; */
+    transition: 2s;
+}
+
+/* .nav-mid h1 {
+    transition: 2s;
 }
 
 .nav-mid h1:hover {
-    transform: scale(1.24);
+    transform: scale(1.1);
     font-weight: bolder;
-    border-bottom: 3px solid #fe2c55;
-}
+    border-bottom: .1em solid #fe2c55;
+    transition: 2s;
+} */
 
 .nav-all {
     height: 100%;

@@ -70,21 +70,21 @@ class NavBar extends React.Component {
 
     const authNav = this.props.currentUser ? (
       <div className="user-nav">
-        <button className="log-btn" onClick={this.logoutUser}>
+        <button className="nav-btn" onClick={this.logoutUser}>
           Logout
         </button>
         <Link className="logo-link" to="/upload">
           <img className="upload" src={window.uploadSymbol} />
         </Link>
         <Link to={`/users/${this.props.currentUser.id}`}>
-          <button className="upload-btn">Profile</button>
+          <button className="nav-btn">Profile</button>
         </Link>
       </div>
     ) : (
       <div className="guest-btn">
         {/* <Link to='/signup'><button className="signup-btn">Sign Up</button></Link> */}
         <Link to="/login">
-          <button className="login-btn">Log In</button>
+          <button className="nav-btn">Log In</button>
         </Link>
       </div>
     );
@@ -106,7 +106,7 @@ class NavBar extends React.Component {
         </div>
 
         <div className="nav-mid">
-          <Link to="/trending">
+          <Link className='logo-link' to="/trending">
             <h1 className="watchvids">Watch Trending Videos</h1>
           </Link>
         </div>
