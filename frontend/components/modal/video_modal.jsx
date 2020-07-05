@@ -72,8 +72,11 @@ render () {
         <div className="video-modal-all">
             <div className="video-modal-left">
                 <button className="closeVidModal" onClick={() => this.props.closeModal()}>&times;</button>
+                <div className="video-modal-left-head">
+
+                </div>
                 <div className="video-modal-video">
-                    <video className='vid' controls autoPlay loop src={this.props.currentVideo.videoUrl}></video>
+                    <video className='vid' controls loop src={this.props.currentVideo.videoUrl}></video>
                 </div>
             </div>
             <div className="video-modal-right">
