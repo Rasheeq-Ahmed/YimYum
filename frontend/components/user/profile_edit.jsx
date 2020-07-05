@@ -1,15 +1,17 @@
 import React from "react";
-import HeaderContainer from "../header/header_container";
 import { Redirect } from "react-router-dom";
-import UpdateProfilePhotoContainer from "./update_profile_photo_container";
+// import UpdateProfilePhotoContainer from "./update_profile_photo_container";
 import NavBar from "../nav_bar/nav_bar_container";
+import { Link } from "react-router-dom";
+
 
 class ProfileEdit extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      name: this.props.user.name,
+      name: this.props.user.name || '',
+      username: this.props.user.username,
       bio: this.props.user.bio,
       profilePhoto: this.props.user.profilePhoto,
     };
@@ -25,6 +27,7 @@ class ProfileEdit extends React.Component {
   handleSubmit(e) {
     let currentUser = { id: this.props.user.id };
     currentUser.name = this.state.name;
+    currentUser.username = this.state.username;
     currentUser.bio = this.state.bio;
     currentUser.profilePhoto = this.state.profilePhoto;
     e.preventDefault();

@@ -1,6 +1,8 @@
 import { connect } from "react-redux";
 import ProfileEdit from "./profile_edit";
-import { updateUser, fetchUser } from "../../actions/user_action";
+import { updateUser, fetchUser } from "../../actions/user_actions";
+// import { fetchUser, fetchUsers } from "../../actions/user_actions";
+
 import { closeModal, openModal } from "../../actions/modal_actions";
 
 const msp = (state, ownProps) => {

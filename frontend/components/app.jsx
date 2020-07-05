@@ -9,9 +9,8 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import VideoIndexContainer from './videos/video_index/video_index_container';
 import VideoUploadContainer from './videos/video_upload_container';
 import Modal from './modal/modal'
-import VideoShow from './videos/video_show/video_show';
-import Profile from './user/profile';
 import ProfileContainer from './user/profile_container';
+import ProfileEditContainer from './user/profile_edit_container';
 import Test from './test/test';
 // import VideoShowContainer from './videos/video_show/video_show_container'
 
@@ -19,16 +18,18 @@ import Test from './test/test';
 const App = () => (
   <div>
     <Modal />
-    {/* <Switch> */}
+    <Switch>
     <Route exact path="/" component={Splash} />
-    <Route path="/users/:id" component={ProfileContainer} />
-    <Route path="/test" component={Test} />
-    
-    <Route path="/trending" component={VideoIndexContainer} />
-    <ProtectedRoute path="/upload" component={VideoUploadContainer} />
     <AuthRoute path="/signup" component={SignupContainer} />
     <AuthRoute path="/login" component={LoginContainer} />
-    {/* </Switch> */}
+    <ProtectedRoute  path="/users/:id/edit" component={ProfileEditContainer} />
+    <ProtectedRoute path="/users/:id" component={ProfileContainer} />
+
+    <Route path="/test" component={Test} />
+
+    <Route path="/trending" component={VideoIndexContainer} />
+    <ProtectedRoute path="/upload" component={VideoUploadContainer} />
+    </Switch>
     {/* <Route path="/videos/1" component={VideoShow}/> */}
   </div>
 );

@@ -70,25 +70,25 @@ render () {
     // console.log(this.props.currentVideo.id)
     return (
         <div className="video-modal-all">
-            <div className="modal-left">
+            <div className="video-modal-left">
                 <button className="closeVidModal" onClick={() => this.props.closeModal()}>&times;</button>
-                <div className="modal-video">
+                <div className="video-modal-video">
                     <video className='vid' controls autoPlay loop src={this.props.currentVideo.videoUrl}></video>
                 </div>
             </div>
-            <div className="modal-right">
-                <div className="modal-vidinfo">
+            <div className="video-modal-right">
+                <div className="video-modal-vidinfo">
 
-                    <div className='modal-user'>
+                    <div className='video-modal-user'>
                         <p>{this.props.currentVideo.creator}</p>
                         <p>{this.props.currentVideo.caption}</p>
                         <Link to
                         ></Link><button onClick={this.handleDelete}>Delete</button>    
                     </div>
-                    <div className="modal-details">
+                    <div className="video-modal-details">
                     </div>
                 </div>
-                <div className="modal-comments">
+                <div className="video-modal-comments">
                     
                 </div>
             </div>      

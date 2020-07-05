@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import ProfileItem from './profile_item'
 import VideoIndexItem from "../videos/video_index/video_index_item_container";
 import NavBar from '../nav_bar/nav_bar_container'
+import { Link } from "react-router-dom";
+
 
 class Profile extends Component {
   constructor(props) {
@@ -28,9 +30,9 @@ class Profile extends Component {
     if (this.props.user.id === this.props.currentUser.id) {
       return (
         <div className="edit-profile-button">
-          {/* <Link to={`/users/${this.props.user.id}/edit`} className="edit-link"> */}
-          <button>Edit Profile</button>
-          {/* </Link> */}
+          <Link to={`/users/${this.props.user.id}/edit`} className="edit-link">
+            Edit Profile
+          </Link>
         </div>
       );
     } else {
