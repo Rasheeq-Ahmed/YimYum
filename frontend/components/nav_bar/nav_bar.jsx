@@ -90,7 +90,7 @@ class NavBar extends React.Component {
     );
 
 
-      console.log(this.props)
+      // console.log(this.props)
 
 
     return (

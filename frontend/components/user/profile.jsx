@@ -74,7 +74,8 @@ class Profile extends Component {
     }
     return (
       <div className="prof-all">
-        {/* {console.log(this.props)} */}
+      {console.log(this.props)}
+        {console.log(this.state)}
         <div className="prof-header">
           <NavBar />
         </div>

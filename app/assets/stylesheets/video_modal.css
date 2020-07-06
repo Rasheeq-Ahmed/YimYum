@@ -51,15 +51,12 @@
 align-items: center; */
 flex-direction: column;
 background-color: lightcoral;
+position: relative;
 }
 
-  .video-modal-left-head {
-    background-color: wheat;
-    width: 100%;
-  }
 
     .closeVidModal {
-      /* position: relative; */
+      position: absolute;
       top: 0;
       left: 0;
       /* padding: 1em; */
@@ -81,7 +78,7 @@ background-color: lightcoral;
     /* height: fit-content; */
     justify-content: center;
     align-items: center;
-  background-color: rgb(119, 203, 236);
+  /* background-color: rgb(119, 203, 236); */
   }
 
   .vid {
@@ -97,21 +94,41 @@ background-color: lightcoral;
   background-color: mediumaquamarine;
 }
 
-
-  .video-modal-user {
-    padding-top: 30px;
-    /* padding-left: 30px; */
-    font-size: 28px;
-    background-color: lime;
+  .vModal-user {
+      background-color: lightsteelblue;
+      height: 6em;
+      display: flex;
   }
 
+      .vModal-user-pic {
+          width: 6em;
+          height: 6em;
+          border-radius: 50%;
+          background-color: teal;
+      }
+      
+      .vModal-user-details {
+          width: 100%;
+          display: flex;
+          justify-content: space-between; 
+          align-items: center;
+          padding-left: 1em;
+      }
 
-  .video-modal-vidinfo {
-    display: flex;
-    flex-direction: column;
-    /* border: 2px solid yellow; */
-    width: 100%;
-    height: 100%;
-    background-color: rgb(224, 77, 77);
-  }
+          .vModal-user-info {
+              display: flex;
+              flex-direction: column;
+              
+              
+          }
 
+
+            .vModal-user-details > button {
+          background-color: white;
+          color:#fe2c55;
+          border: 1px solid #fe2c55;
+          font-size: 1em;
+          padding: .5em 1.5em;
+          font-weight: bold;
+          justify-content: space-between; 
+          }

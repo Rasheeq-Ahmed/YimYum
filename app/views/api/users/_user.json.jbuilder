@@ -1,4 +1,4 @@
-json.extract! user, :id, :username, :email, :video_ids, :password, :bio, :email
+json.extract! user, :id, :username,:name, :email, :video_ids, :password, :bio, :email
 # , :vid_ids, :comment_ids
 
 

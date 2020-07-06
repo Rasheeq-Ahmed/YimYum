@@ -10,10 +10,10 @@ class ProfileEdit extends React.Component {
     super(props);
 
     this.state = {
-      name: this.props.user.name || '',
+      name: this.props.user.name,
       username: this.props.user.username,
       bio: this.props.user.bio,
-      profilePhoto: this.props.user.profilePhoto,
+      // profilePhoto: this.props.user.profilePhoto,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,16 +25,15 @@ class ProfileEdit extends React.Component {
   }
 
   handleSubmit(e) {
+    e.preventDefault();
     let currentUser = { id: this.props.user.id };
     currentUser.name = this.state.name;
     currentUser.username = this.state.username;
     currentUser.bio = this.state.bio;
-    currentUser.profilePhoto = this.state.profilePhoto;
-    e.preventDefault();
+    // currentUser.profilePhoto = this.state.profilePhoto;
 
-    this.props
-      .updateUser(currentUser)
-      .then(() => this.props.history.push(`/users/${currentUser.id}/`));
+    this.props.updateUser(currentUser)
+      // .then(() => this.props.history.push(`/users/${currentUser.id}/`));
   }
 
   update(field) {
@@ -42,50 +41,68 @@ class ProfileEdit extends React.Component {
   }
 
   render() {
+
+    if (!this.props.user) {
+      return null;
+    }
+    console.log(this.state)
+    console.log(this.props)
     return (
       <div className="profile-edit-all">
-        <div className="profile-edit-header">
+        <div className="prof-header">
           <NavBar />
         </div>
-        <div className="profile-edit-form" onSubmit={this.handleSubmit}>
-          <div className="edit-photo">
-            <div>
-              <img
-                className="edit-profile-photo"
-                src={this.props.user.profilePhoto}
-              />
+        <div className="profile-edit-body">
+
+          <div className="profile-edit-form" >
+            <div className="edit-photo">
+              <div className="edit-profile-photo">
+                <img
+                  // className="edit-profile-photo"
+                  src={window.defaultPic}
+                />
+              </div>
+              <button onClick={() => this.props.openModal("update")} className="">
+                Change Profile Photo
+              </button>
             </div>
-            <button onClick={() => this.props.openModal("update")} className="">
-              Change Profile Photo
-            </button>
+            <div className="edit-content">
+              <h3 className="edit-title">Edit Profile</h3>
+              <div className="edit-fields">
+                Full Name
+                <input
+                  className="edit-name"
+                  type="text"
+                  value={this.state.name}
+                  onChange={this.update("name")}
+                />
+              </div>
+              <div>
+                Username
+                <input
+                  className="edit-name"
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.update("username")}
+                />
+              </div>
+              <div>
+                Bio
+                {/* <br /> */}
+                <textarea
+                  className="edit-bio"
+                  value={this.state.bio}
+                  onChange={this.update("bio")}
+                />
+              </div>
+              <button className="edit-button" onClick={ (e) => this.handleSubmit(e)}>
+                Update
+              </button>
+            </div>
           </div>
-          <div className="edit-content">
-            <h3 className="edit-title">Edit Profile</h3>
-            <div>
-              Name
-              <input
-                className="edit-name"
-                type="text"
-                value={this.state.name}
-                onChange={this.update("name")}
-              />
-            </div>
-            <div>
-              Bio
-              <br />
-              <textarea
-                className="edit-bio"
-                value={this.state.bio}
-                onChange={this.update("bio")}
-              />
-            </div>
-            <button className="edit-button" onClick={this.handleSubmit}>
-              Update
-            </button>
-          </div>
+
         </div>
 
-       
       </div>
     );
   }
