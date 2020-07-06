@@ -13,11 +13,15 @@ class ProfileEdit extends React.Component {
       name: this.props.user.name,
       username: this.props.user.username,
       bio: this.props.user.bio,
-      // profilePhoto: this.props.user.profilePhoto,
+      profilePhoto: this.props.user.profilePhoto,
+      photoFile: null,
+      photoUrl: null
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.handlePicFile = this.handlePicFile.bind(this);
+    this.handlePicSubmit = this.handlePicSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -30,7 +34,7 @@ class ProfileEdit extends React.Component {
     currentUser.name = this.state.name;
     currentUser.username = this.state.username;
     currentUser.bio = this.state.bio;
-    // currentUser.profilePhoto = this.state.profilePhoto;
+    currentUser.profilePhoto = this.state.profilePhoto;
 
     this.props.updateUser(currentUser)
       // .then(() => this.props.history.push(`/users/${currentUser.id}/`));
@@ -39,6 +43,82 @@ class ProfileEdit extends React.Component {
   update(field) {
     return (e) => this.setState({ [field]: e.currentTarget.value });
   }
+
+
+
+  handlePicFile(e) {
+    const file = e.currentTarget.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () =>
+      this.setState({ photoFile: file, photoUrl: reader.result });
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({ photoUrl: "", photoFile: null });
+    }
+  }
+
+  handlePicSubmit(e) {
+
+    e.preventDefault();
+    const formData = new FormData();
+
+
+
+    if (this.state.photoFile) {
+
+      formData.append('user[profile_photo]', this.state.photoFile);
+    }
+
+    this.props.updateUserPhoto(this.props.user.id, formData)
+      .then(() => {
+        this.setState({
+
+          photoFile: null,
+          photoUrl: null
+        });
+
+      })
+
+  }
+
+
+
+  renderProfPic(e) {
+    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
+
+    if (this.state.photoFile === null) {
+      return (
+        <div className="edit-profile-photo">
+          <img src={window.defaultPic}/>
+          <label htmlFor="pic-upload" className="edit-upload-button">
+            Change Profile Photo
+                <input id="pic-upload" type="file" accept="image/*" onChange={this.handlePicFile} />
+          </label>
+        </div>
+      )
+    } else {
+      return (
+        <div className="edit-profile-photo">
+          <div className="edit-preview">{preview}</div>
+        </div>
+      )
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   render() {
 
@@ -57,14 +137,15 @@ class ProfileEdit extends React.Component {
           <div className="profile-edit-form" >
             <div className="edit-photo">
               <div className="edit-profile-photo">
-                <img
+                {/* <img
                   // className="edit-profile-photo"
                   src={window.defaultPic}
-                />
+                /> */}
+                {this.renderProfPic()}
               </div>
-              <button onClick={() => this.props.openModal("update")} className="">
+              {/* <button onClick={() => this.props.openModal("update")} className="">
                 Change Profile Photo
-              </button>
+              </button> */}
             </div>
             <div className="edit-content">
               <h3 className="edit-title">Edit Profile</h3>
@@ -95,7 +176,7 @@ class ProfileEdit extends React.Component {
                   onChange={this.update("bio")}
                 />
               </div>
-              <button className="edit-button" onClick={ (e) => this.handleSubmit(e)}>
+              <button className="edit-button" onClick={(e) => {this.handleSubmit(e); this.handlePicSubmit} }>
                 Update
               </button>
             </div>
