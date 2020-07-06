@@ -25,7 +25,7 @@
 }
 
 .prof-info-all {
-    height: 35%;
+    /* height: 35%; */
     background-color: cornflowerblue;
     display: flex;
     flex-direction: column;
@@ -46,8 +46,8 @@
             justify-content: center;
         }
             .prof-pic {
-                width: 6em;
-                height: 6em;
+                width: 7em;
+                height: 7em;
                 border-radius: 50%;
             }
 
@@ -56,25 +56,53 @@
             height: 100%;
             background-color: lightgoldenrodyellow;
             display: flex;
-            align-items: center;
+            /* align-items: center; */
+            flex-direction: column;
             padding-left: 1em;
+            position: relative;
+        }
+
+            .prof-user-names > h2 {
+                font-size: 1.75em;
+                font-weight: bold;
+            }
+            .prof-user-names > h3 {
+                font-size: 1em;
+                font-weight: bold;
+
+            }
+
+
+        .edit-profile-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: .5em;
+            background-color: white;
+            color:#fe2c55;
+            border: 1px solid #fe2c55;
+            font-size: 1em;
+            font-weight: bold;
         }
     
     .prof-stats {
-        height: 25%;
+        height: 2em;
         background-color: lightgreen;
         display: flex;
-        justify-content: space-evenly;
+        /* justify-content: space-evenly; */
         /* flex-direction: row; */
         align-items: center;
 
     }
 
+        .prof-stats > li {
+            padding-right: 1em;
+        }
+
     .prof-bio {
-        height: 25%;
+        height: 2em;
         background-color: lightgrey;
         display: flex;
-        justify-content: space-evenly;
         /* flex-direction: row; */
         align-items: center;
     }

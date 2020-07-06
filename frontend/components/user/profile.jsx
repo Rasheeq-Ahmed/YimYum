@@ -92,7 +92,8 @@ class Profile extends Component {
                 </div>
                 <div className="prof-user-names">
                   <h2>{this.props.user.username}</h2>
-                  <h3></h3>
+                  <h3>{this.props.user.name}</h3>
+                  {this.renderEdit()}
                 </div>
               </div>
               <div className="prof-stats">
@@ -102,7 +103,6 @@ class Profile extends Component {
               </div>
               <div className="prof-bio">
                 {this.props.user.bio}
-                {this.renderEdit()}
               </div>
             </div>
             <div className="prof-vid-all">
