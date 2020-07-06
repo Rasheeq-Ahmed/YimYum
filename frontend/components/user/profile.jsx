@@ -86,7 +86,7 @@ class Profile extends Component {
                 <div className="prof-user-pic">
                   <img
                     className="prof-pic"
-                    src="https://tinyurl.com/yckwrcj6"
+                    src={this.props.user.profilePhoto}
                     alt=""
                   />
                 </div>

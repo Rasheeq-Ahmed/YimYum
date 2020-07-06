@@ -202,13 +202,31 @@
             align-items: center;
         }
             .edit-profile-photo {
-                height: 10em;
-                width: 10em;
+                /* height: 10em;
+                width: 10em; */
+                width: 90%;
+                height: 80%;
+                /* border-radius: 50%; */
+                background-color: turquoise;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-direction: column;
+            }
+
+                #pic-upload {
+                    display: none;
+                }
+
+                .edit-profile-photo > img {
+                height: 8em;
+                width: 8em;
                 border-radius: 50%;
                 background-color: turquoise;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                flex-direction: column;
             }
 
 

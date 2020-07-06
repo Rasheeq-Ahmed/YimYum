@@ -37,7 +37,7 @@ class ProfileEdit extends React.Component {
     currentUser.profilePhoto = this.state.profilePhoto;
 
     this.props.updateUser(currentUser)
-      // .then(() => this.props.history.push(`/users/${currentUser.id}/`));
+      .then(() => this.props.history.push(`/users/${currentUser.id}/`));
   }
 
   update(field) {
@@ -87,21 +87,24 @@ class ProfileEdit extends React.Component {
 
   renderProfPic(e) {
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
-
     if (this.state.photoFile === null) {
       return (
         <div className="edit-profile-photo">
-          <img src={window.defaultPic}/>
+          <img src={this.state.profilePhoto}/>
           <label htmlFor="pic-upload" className="edit-upload-button">
             Change Profile Photo
-                <input id="pic-upload" type="file" accept="image/*" onChange={this.handlePicFile} />
+            <input id="pic-upload" type="file" accept="image/*" onChange={this.handlePicFile} />
           </label>
         </div>
       )
     } else {
       return (
         <div className="edit-profile-photo">
-          <div className="edit-preview">{preview}</div>
+          {preview}
+          <label htmlFor="pic-upload" className="edit-upload-button">
+            Change Profile Photo
+            <input id="pic-upload" type="file" accept="image/*" onChange={this.handlePicFile} />
+          </label>
         </div>
       )
     }
@@ -176,7 +179,7 @@ class ProfileEdit extends React.Component {
                   onChange={this.update("bio")}
                 />
               </div>
-              <button className="edit-button" onClick={(e) => {this.handleSubmit(e); this.handlePicSubmit} }>
+              <button className="edit-button" onClick={(e) => {this.handleSubmit(e); this.handlePicSubmit(e)} }>
                 Update
               </button>
             </div>
