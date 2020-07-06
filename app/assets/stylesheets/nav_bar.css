@@ -49,7 +49,7 @@
 .watchvids:hover {
     color: #fe2c55;
     /* font-size: 1.6em; */
-    transition: 2s;
+    transition: 1s;
 }
 
 /* .nav-mid h1 {
@@ -66,7 +66,7 @@
 .nav-all {
     height: 100%;
     width: 100%;
-    background-color: mediumseagreen;
+    /* background-color: mediumseagreen; */
     display: flex;
     /* z-index: 1; */
 }
@@ -75,7 +75,7 @@
 .nav-left {
     height: 100%;
     width: 33.3%;
-    background-color: orchid;
+    /* background-color: orchid; */
     display: flex;
     align-items: center;
     padding-left: 2em;
@@ -109,13 +109,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: palegoldenrod;
+    /* background-color: palegoldenrod; */
 }
 
 .nav-right {
     max-height: 100%;
     width: 33.3%;
-    background-color: palegreen;
+    /* background-color: palegreen; */
     display: flex;
     align-items: center;
     justify-content: center;

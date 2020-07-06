@@ -11,6 +11,7 @@
 .login-header{
     height: 5em;
     width: 100%;
+    background-color: whitesmoke;
 }
 
     .authlink {
@@ -22,6 +23,8 @@
 .login-body {
     display: flex;
     justify-content: center;
+    height: 80%;
+    align-items: center;
 
  
 }

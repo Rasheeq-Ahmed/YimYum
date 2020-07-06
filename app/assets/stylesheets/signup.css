@@ -9,7 +9,9 @@
 
 .signup-header{
     width: 100%;
-    height: 5em     
+    height: 5em;
+    background-color: whitesmoke;
+
 
 }
 .signup-body {
