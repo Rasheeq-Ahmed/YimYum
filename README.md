@@ -1,24 +1,33 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+YimYim is a single page app clone of [TikTok](https://tiktok.com/).
 
-Things you may want to cover:
+Please check it out [here](https://yimyum.herokuapp.com//).
 
-* Ruby version
+## Technologies Used:
 
-* System dependencies
+* Ruby on Rails
+* React
+* Redux
+* Postresql
+* Javascript
+* HTML/CSS
 
-* Configuration
 
-* Database creation
+## Features:
 
-* Database initialization
+### Secure User Sign-up/Login:
 
-* How to run the test suite
+* User Authentication with both Login and Signup functionality.
+* Non logged in users are not able to upload videos with a Protected Route.
 
-* Services (job queues, cache servers, search engines, etc.)
+### Splash Page:
 
-* Deployment instructions
+Has navigation links to various Login page
 
-* ...
+### Video Index Page:
+
+Users are able to see all current videos and any new videos are uploaded.
+
+
+#### Sample Code:
