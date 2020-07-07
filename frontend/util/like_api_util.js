@@ -1,0 +1,7 @@
+export const createLike = like => {
+    return $.ajax({
+        url: '/api/likes',
+        method: 'POST',
+        data: {like}
+    });
+};
