@@ -89,19 +89,21 @@ render () {
                 </div>
             </div>
             <div className="video-modal-right">
+                {/* <div className="vModal-right-content"> */}
+
                 <div className="vModal-user">
-                    <Link to={`/users/${this.props.currentVideo.creator_id}`}>
+                    <Link to={`/users/${this.props.currentVideo.creator_id}`} onClick={() => this.props.closeModal()}>
                     <div className="vModal-user-pic">
                         <img src={this.props.users[vidCreator].profilePhoto} alt=""/>
                     </div>
                     </Link>
                     <div className="vModal-user-details">
                         <div className="vModal-user-info">
-                            <Link to={`/users/${this.props.currentVideo.creator_id}`}>
+                            <Link to={`/users/${this.props.currentVideo.creator_id}`} onClick={() => this.props.closeModal()}>
                                 <h1>{this.props.currentVideo.creator}</h1>
                             </Link>
-                            <Link to={`/users/${this.props.currentVideo.creator_id}`}>
-                                <h2>Full Name</h2>
+                            <Link to={`/users/${this.props.currentVideo.creator_id}`} onClick={() => this.props.closeModal()}>
+                                <h2>{this.props.users[vidCreator].name}</h2>
                             </Link>
                         </div>
                         <button>Follow</button>
@@ -133,9 +135,11 @@ render () {
                     <div className="video-modal-details">
                     </div>
                 </div> */}
-                <div className="video-modal-comments">
-                    
+                <div className="vModal-comments">
+                  Comments gonna go here  
                 </div>
+                {/* </div> */}
+
             </div>      
             
         </div>

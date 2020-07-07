@@ -37,6 +37,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  align-items: center;
   background-color: lightgoldenrodyellow;
 
 }
@@ -46,6 +47,7 @@
   display: flex;
   /* max-width: 500px;
   max-height: 700px; */
+  height: 100%;
   width:60%;
 /* justify-content: center;
 align-items: center; */
@@ -87,12 +89,20 @@ position: relative;
   }
 
 .video-modal-right {
+  height:  100%;
+  width: 35em;
+  display:flex;
+  flex-direction: column;
+
+  background-color: mediumaquamarine;
+}
+/* .vModal-right-content {
   height: 90%;
   width: 35em;
   display:flex;
   flex-direction: column;
-  background-color: mediumaquamarine;
-}
+  background-color: rgb(199, 255, 236);
+} */
 
   .vModal-user {
       background-color: lightsteelblue;
@@ -100,6 +110,7 @@ position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin: 2em 1em 0 1em;
   }
 
       .vModal-user-pic {
@@ -148,7 +159,43 @@ position: relative;
           padding: .5em 1.5em;
           font-weight: bold;
           justify-content: space-between; 
-          margin-right: 1em;
+          /* margin-right: 1em; */
           }
 
-    
+      .vModal-vidStats {
+        background-color: cadetblue;
+        display: flex;
+        height: 3em;
+        width: 10em;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-left: 1em;
+      }
+
+        .vModal-vidStats > img {
+          height: 70%;
+        }
+
+      
+      
+      .vModal-caption {
+        margin-left: 1em;
+        margin-right: 1em;
+        background-color: chartreuse;
+        height: 3em;
+        display: flex;
+        align-items: center;
+        padding-left: 0.5em;
+      }
+
+
+
+      .vModal-comments {
+        margin-left: 1em;
+        margin-right: 1em;
+        height: 100%;
+        background-color: rgb(255, 68, 0);
+        display:flex;
+        justify-content: center;
+        align-items: center;
+      }

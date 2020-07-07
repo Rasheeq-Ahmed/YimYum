@@ -6,7 +6,7 @@ import { fetchUser, fetchUsers } from "../../../actions/user_actions";
 
 const mapStateToProps = (state) => ({
   videos: Object.values(state.entities.videos),
-  users: Object.values(state.entities.users),
+  users: state.entities.users,
   currentUser: state.entities.users[state.session.id],
 });
 

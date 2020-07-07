@@ -21,6 +21,28 @@ user5 = User.create(username: 'marthastewart', password: 'nolongerlockedup', ema
 user6 = User.create(username: 'snoopdoggydog', password: 'ginandjuice', email: 'snoop.dogg@yimyum.com', name: 'Snoop Dogg', bio: "I want to open up an ice cream parlor and call myself Scoop Dogg" )
 user7 = User.create(username: 'davidchang', password: 'momofuku', email: "david.chang@yimyum.com", name: 'David Chang', bio: "Food is culture that lives within all of us")
 
+profile1 = open('https://yimyum-seeds.s3-us-west-1.amazonaws.com/profile-pics/gordan.jpg')
+user1.profile_photo.attach(io: profile1, filename: 'gordan.jpg')
+
+profile2 = open('https://yimyum-seeds.s3-us-west-1.amazonaws.com/profile-pics/guy.jfif')
+user2.profile_photo.attach(io: profile3, filename: 'guy.jfif')
+
+profile3 = open('https://yimyum-seeds.s3-us-west-1.amazonaws.com/profile-pics/bobby.jpeg')
+user3.profile_photo.attach(io: profile3, filename: 'bobby.jpeg')
+
+profile4 = open('https://yimyum-seeds.s3-us-west-1.amazonaws.com/profile-pics/zimmer.jpg')
+user4.profile_photo.attach(io: profile4, filename: 'zimmer.jpg')
+
+profile5 = open('https://yimyum-seeds.s3-us-west-1.amazonaws.com/profile-pics/martha.jpg')
+user5.profile_photo.attach(io: profile5, filename: 'martha.jpg')
+
+profile6 = open('https://yimyum-seeds.s3-us-west-1.amazonaws.com/profile-pics/snoop.jpg')
+user6.profile_photo.attach(io: profile6, filename: 'snoop.jpg')
+
+profile7 = open('https://yimyum-seeds.s3-us-west-1.amazonaws.com/profile-pics/chang.jpg')
+user7.profile_photo.attach(io: profile7, filename: 'chang.jpg')
+
+
 
 video2 = Video.create!({caption:"Fish are food not friends", creator_id: user6.id})
 video1 = Video.create!({caption:"Food is love. Food is life.", creator_id: user1.id})

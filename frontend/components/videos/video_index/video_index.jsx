@@ -19,8 +19,8 @@ class VideoIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchVideos();
         this.props.fetchUsers();
+        this.props.fetchVideos();
         // this.props.fetchVideo(110);
         // this.setState({testvideo: this.state.entities.videos[0]})
 
@@ -41,6 +41,9 @@ class VideoIndex extends React.Component {
 
 
     renderVideos() {
+      console.log(this.props)
+      console.log(this.state)
+
       return (
         <div className="video-body">
           {this.props.videos.map((video, idx) => (
@@ -55,7 +58,7 @@ class VideoIndex extends React.Component {
                     <h1>{video.creator}</h1>
                     </Link>
                     <Link to={`/users/${video.creator_id}`}>
-                    <h2>Full Name</h2>
+                      <h2>{this.props.users[video.creator_id].name}</h2>
                     </Link>
                   </div>
                   <button>Follow</button>
