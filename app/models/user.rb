@@ -11,6 +11,11 @@ class User < ApplicationRecord
         foreign_key: :creator_id,
         class_name: "Video"
 
+
+    has_many :likes,
+        foreign_key: :user_id,
+        class_name: "Like" 
+
   has_one_attached :profile_photo, dependent: :destroy  
     
 
