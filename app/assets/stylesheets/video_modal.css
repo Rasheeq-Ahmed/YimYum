@@ -87,8 +87,8 @@ position: relative;
   }
 
 .video-modal-right {
-  border: 2px solid white;
-  width: 480px;
+  height: 90%;
+  width: 35em;
   display:flex;
   flex-direction: column;
   background-color: mediumaquamarine;
@@ -98,13 +98,23 @@ position: relative;
       background-color: lightsteelblue;
       height: 6em;
       display: flex;
+      align-items: center;
+      justify-content: center;
   }
 
       .vModal-user-pic {
           width: 6em;
           height: 6em;
-          border-radius: 50%;
+          /* border-radius: 50%; */
           background-color: teal;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+
+      .vModal-user-pic > img {
+        height: 90%;
+        /* padding-left: 0.5em */
       }
       
       .vModal-user-details {
@@ -118,9 +128,16 @@ position: relative;
           .vModal-user-info {
               display: flex;
               flex-direction: column;
-              
-              
           }
+
+          .vModal-user-info > a > h1 {
+           font-size: 1.5em;
+          }
+          .vModal-user-info > h2 {
+           font-size: 1em;
+          }
+
+
 
 
             .vModal-user-details > button {
@@ -131,4 +148,7 @@ position: relative;
           padding: .5em 1.5em;
           font-weight: bold;
           justify-content: space-between; 
+          margin-right: 1em;
           }
+
+    

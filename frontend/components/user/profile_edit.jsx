@@ -91,9 +91,9 @@ class ProfileEdit extends React.Component {
       return (
         <div className="edit-profile-photo">
           <img src={this.state.profilePhoto}/>
-          <label htmlFor="pic-upload" className="edit-upload-button">
+          <label htmlFor="pic-upload-btn" className="pic-upload-button">
             Change Profile Photo
-            <input id="pic-upload" type="file" accept="image/*" onChange={this.handlePicFile} />
+            <input id="pic-upload-btn" type="file" accept="image/*" onChange={this.handlePicFile} />
           </label>
         </div>
       )
@@ -101,9 +101,9 @@ class ProfileEdit extends React.Component {
       return (
         <div className="edit-profile-photo">
           {preview}
-          <label htmlFor="pic-upload" className="edit-upload-button">
+          <label htmlFor="pic-upload-btn" className="pic-upload-button">
             Change Profile Photo
-            <input id="pic-upload" type="file" accept="image/*" onChange={this.handlePicFile} />
+            <input id="pic-upload-btn" type="file" accept="image/*" onChange={this.handlePicFile} />
           </label>
         </div>
       )
@@ -128,8 +128,8 @@ class ProfileEdit extends React.Component {
     if (!this.props.user) {
       return null;
     }
-    console.log(this.state)
-    console.log(this.props)
+    // console.log(this.state)
+    // console.log(this.props)
     return (
       <div className="profile-edit-all">
         <div className="prof-header">
@@ -153,31 +153,23 @@ class ProfileEdit extends React.Component {
             <div className="edit-content">
               <h3 className="edit-title">Edit Profile</h3>
               <div className="edit-fields">
-                Full Name
+                <div className="edit-name">
+                <h1>Name</h1>
                 <input
-                  className="edit-name"
                   type="text"
                   value={this.state.name}
                   onChange={this.update("name")}
                 />
               </div>
-              <div>
-                Username
-                <input
-                  className="edit-name"
-                  type="text"
-                  value={this.state.username}
-                  onChange={this.update("username")}
-                />
-              </div>
-              <div>
+                <div className="edit-bio"
+>
                 Bio
                 {/* <br /> */}
                 <textarea
-                  className="edit-bio"
                   value={this.state.bio}
                   onChange={this.update("bio")}
                 />
+              </div>
               </div>
               <button className="edit-button" onClick={(e) => {this.handleSubmit(e); this.handlePicSubmit(e)} }>
                 Update

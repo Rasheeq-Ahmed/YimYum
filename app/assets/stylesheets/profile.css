@@ -242,8 +242,17 @@
                 flex-direction: column;
             }
 
-                #pic-upload {
+                #pic-upload-btn {
                     display: none;
+                }
+
+                .pic-upload-button {
+                     background-color: white;
+                    color:#fe2c55;
+                    border: 1px solid #fe2c55;
+                    font-size: 1em;
+                    padding: .5em 1em;
+                    font-weight: bold;
                 }
 
                 .edit-profile-photo > img {
@@ -269,6 +278,62 @@
                 align-items: center;
             }
 
+                .edit-title {
+                    font-size: 2em;
+                    font-weight: bold;
+                }
+
+                .edit-fields {
+                    width: 100%;
+                    background-color: burlywood;
+                    display: flex;
+                    height: 80%;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                }
+
+                .edit-name {
+                    width: 100%;
+                    height: 5em;
+                    background-color: rgb(201, 117, 8);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                }
+
+                   .edit-name {
+                    width: 100%;
+                    height: 5em;
+                    background-color: rgb(201, 117, 8);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                }
+
+                
+
+
             .edit-bio  {
                 resize: none;
+                 width: 100%;
+                    height: 5em;
+                    background-color: rgb(201, 117, 8);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                
             }
+
+                .edit-bio > textarea {
+                    resize: none;
+                }
+
+
+        .edit-button {
+                 background-color: white;
+                    color:#fe2c55;
+                    border: 1px solid #fe2c55;
+                    font-size: 1em;
+                    padding: .5em 1em;
+                    font-weight: bold;
+        }

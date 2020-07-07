@@ -19,6 +19,7 @@ class VideoModal extends React.Component {
 
 
     componentDidMount() {
+        this.props.fetchUsers()
         this.setState({
             caption: this.props.currentVideo.caption,
             creator: this.props.currentVideo.creator
@@ -72,7 +73,8 @@ render () {
     //     )
 
     console.log(this.props)
-
+    // console.log(this.state)
+    let vidCreator = this.props.currentVideo.creator_id
 
     if (!this.props.currentVideo) {
         return null;
@@ -89,7 +91,9 @@ render () {
             <div className="video-modal-right">
                 <div className="vModal-user">
                     <Link to={`/users/${this.props.currentVideo.creator_id}`}>
-                    <div className="vModal-user-pic"></div>
+                    <div className="vModal-user-pic">
+                        <img src={this.props.users[vidCreator].profilePhoto} alt=""/>
+                    </div>
                     </Link>
                     <div className="vModal-user-details">
                         <div className="vModal-user-info">
