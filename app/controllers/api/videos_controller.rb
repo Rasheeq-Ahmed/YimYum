@@ -3,6 +3,7 @@ class Api::VideosController < ApplicationController
     
         def index
             @videos = Video.all
+            @likes = Like.all
             render :index
         end
         

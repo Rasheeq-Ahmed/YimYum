@@ -2,7 +2,7 @@ import {RECEIVE_ALL_VIDEOS, RECEIVE_VIDEO} from '../actions/video_actions'
 import {RECEIVE_LIKE, REMOVE_LIKE} from '../actions/like_actions'
 import {merge} from 'lodash';
 
-const likesReducer = (state = {} action) => {
+const likesReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = merge({}, state)
 

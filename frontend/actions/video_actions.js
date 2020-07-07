@@ -6,14 +6,17 @@ export const REMOVE_VIDEO = "REMOVE_VIDEO";
 export const RECEIVE_VIDEO_ERRORS = "RECEIVE_VIDEO_ERRORS";
 
 
- const receiveVideo = video => ({
+ const receiveVideo = ({video,user,likes}) => ({
     type: RECEIVE_VIDEO,
-    video
+    video,
+    user,
+    likes
 });
 
- const receiveAllVideos = videos => ({
+const receiveAllVideos = ({ videos, likes }) => ({
     type: RECEIVE_ALL_VIDEOS,
-    videos //all the json
+    videos, //all the json
+    likes
 });
 
  const deleteVideo = videoId => ({
