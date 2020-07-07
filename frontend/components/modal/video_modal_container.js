@@ -4,7 +4,7 @@ import { fetchVideo, updateVideo, removeVideo } from '../../actions/video_action
 import { fetchUser, fetchUsers } from '../../actions/user_actions'
 import {closeModal} from '../../actions/modal_actions';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
     currentVideo: state.entities.videos[state.ui.modal.videoId],
     currentUser: state.entities.users[state.session.id],
     users: state.entities.users,

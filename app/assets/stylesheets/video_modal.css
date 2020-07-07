@@ -68,8 +68,16 @@ position: relative;
       outline: none;
       background-color: rgba(172, 172, 172, 0.534);
       border: none;
-      color: white;
+      color: rgba(255, 255, 255, 0.575);
       cursor: pointer;
+      transition: 1s;
+    }
+
+    .closeVidModal:hover {
+      background-color: rgba(88, 88, 88, 0.534);
+      color: rgb(255, 255, 255);
+      transition: 1s;
+
     }
 
 
@@ -86,6 +94,8 @@ position: relative;
   .vid {
     /* width: 17em; */
     height: 40em;
+    outline: none;
+    cursor: pointer;
   }
 
 .video-modal-right {
@@ -112,11 +122,11 @@ position: relative;
       justify-content: center;
       margin: 2em 1em 0 1em;
   }
-
+    
       .vModal-user-pic {
           width: 6em;
           height: 6em;
-          /* border-radius: 50%; */
+          border-radius: 50%;
           background-color: teal;
           display: flex;
           justify-content: center;
@@ -125,6 +135,7 @@ position: relative;
 
       .vModal-user-pic > img {
         height: 90%;
+        border-radius: 50%;
         /* padding-left: 0.5em */
       }
       
@@ -185,6 +196,7 @@ position: relative;
         height: 3em;
         display: flex;
         align-items: center;
+        justify-content: space-between;
         padding-left: 0.5em;
       }
 

@@ -143,8 +143,21 @@
                     height: 6em;
                     border-radius: 50%;
                     background-color: teal;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                 }
-                
+
+    
+
+      .index-user-pic > img {
+        height: 90%;
+        border-radius: 50%;
+        /* padding-left: 0.5em */
+      }
+
+
+
                 .index-user-details {
                     width: 100%;
                     display: flex;

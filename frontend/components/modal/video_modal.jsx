@@ -38,6 +38,10 @@ class VideoModal extends React.Component {
     }
 
     renderDelete(){
+        if (!this.props.currentUser) {
+            return null;
+        }
+
         if (this.props.currentVideo.creator_id === this.props.currentUser.id){
             return (
                 <button onClick={this.handleDelete}>Delete</button>
@@ -72,13 +76,18 @@ render () {
     //     </div>
     //     )
 
-    console.log(this.props)
+    console.log(this.ownProps)
     // console.log(this.state)
-    let vidCreator = this.props.currentVideo.creator_id
+    // let vidCreator = this.props.currentVideo.creator_id
+
+    // if (!vidCreator) {
+    //     return null;
+    // }
 
     if (!this.props.currentVideo) {
         return null;
     }
+
     // console.log(this.props.currentVideo.id)
     return (
         <div className="video-modal-all">
@@ -94,7 +103,7 @@ render () {
                 <div className="vModal-user">
                     <Link to={`/users/${this.props.currentVideo.creator_id}`} onClick={() => this.props.closeModal()}>
                     <div className="vModal-user-pic">
-                        <img src={this.props.users[vidCreator].profilePhoto} alt=""/>
+                        <img src={this.props.users[this.props.currentVideo.creator_id].profilePhoto} alt=""/>
                     </div>
                     </Link>
                     <div className="vModal-user-details">
@@ -103,7 +112,7 @@ render () {
                                 <h1>{this.props.currentVideo.creator}</h1>
                             </Link>
                             <Link to={`/users/${this.props.currentVideo.creator_id}`} onClick={() => this.props.closeModal()}>
-                                <h2>{this.props.users[vidCreator].name}</h2>
+                                <h2>{this.props.users[this.props.currentVideo.creator_id].name}</h2>
                             </Link>
                         </div>
                         <button>Follow</button>
@@ -112,6 +121,7 @@ render () {
 
                 <div className="vModal-caption">
                     {this.props.currentVideo.caption}
+                    {this.renderDelete()}
                 </div>
                 <div className="vModal-vidStats">
                     <img src={window.likeSymbol} alt="likes"/>
@@ -134,10 +144,10 @@ render () {
                     </div>
                     <div className="video-modal-details">
                     </div>
-                </div> */}
+                </div>
                 <div className="vModal-comments">
                   Comments gonna go here  
-                </div>
+                </div> */}
                 {/* </div> */}
 
             </div>      

@@ -21,11 +21,14 @@ user5 = User.create(username: 'marthastewart', password: 'nolongerlockedup', ema
 user6 = User.create(username: 'snoopdoggydog', password: 'ginandjuice', email: 'snoop.dogg@yimyum.com', name: 'Snoop Dogg', bio: "I want to open up an ice cream parlor and call myself Scoop Dogg" )
 user7 = User.create(username: 'davidchang', password: 'momofuku', email: "david.chang@yimyum.com", name: 'David Chang', bio: "Food is culture that lives within all of us")
 
+profile0 = open('https://yimyum-seeds.s3-us-west-1.amazonaws.com/profile-pics/demo.png')
+demo.profile_photo.attach(io: profile0, filename: 'demo.png')
+
 profile1 = open('https://yimyum-seeds.s3-us-west-1.amazonaws.com/profile-pics/gordan.jpg')
 user1.profile_photo.attach(io: profile1, filename: 'gordan.jpg')
 
 profile2 = open('https://yimyum-seeds.s3-us-west-1.amazonaws.com/profile-pics/guy.jfif')
-user2.profile_photo.attach(io: profile3, filename: 'guy.jfif')
+user2.profile_photo.attach(io: profile2, filename: 'guy.jfif')
 
 profile3 = open('https://yimyum-seeds.s3-us-west-1.amazonaws.com/profile-pics/bobby.jpeg')
 user3.profile_photo.attach(io: profile3, filename: 'bobby.jpeg')

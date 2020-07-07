@@ -44,13 +44,19 @@ class VideoIndex extends React.Component {
       console.log(this.props)
       console.log(this.state)
 
+      if (!this.props.videos) {
+        return null;
+      }
+
       return (
         <div className="video-body">
-          {this.props.videos.map((video, idx) => (
+          {this.props.videos.reverse().map((video, idx) => (
             <div className="index-all">
               <div className="index-header">
                 <Link to={`/users/${video.creator_id}`}>
-                <div className="index-user-pic"></div>
+                <div className="index-user-pic">
+                    <img src={this.props.users[video.creator_id].profilePhoto}/>
+                </div>
                 </Link>
                 <div className="index-user-details">
                   <div className="index-user-info">
