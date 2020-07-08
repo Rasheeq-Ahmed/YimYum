@@ -2,7 +2,7 @@ import React from 'react';
 import NavBarContainer from '../../nav_bar/nav_bar_container'
 import FooterNav from '../../nav_bar/footer_nav'
 import VideoIndexItem from './video_index_item_container'
-import LikeContainer from '../../likes/like_container'
+// import LikeContainer from '../../likes/like_container'
 import { Link } from "react-router-dom";
 
 
@@ -17,6 +17,7 @@ class VideoIndex extends React.Component {
         }
         this.renderVideos = this.renderVideos.bind(this)
         this.profileNav = this.profileNav.bind(this)
+        this.scrollToTop = this.scrollToTop.bind(this)
     }
 
     componentDidMount() {
@@ -40,6 +41,12 @@ class VideoIndex extends React.Component {
       this.props.history.push(`/users/${video.creator_id}`);
     }
 
+
+
+    scrollToTop(e){
+      window.scrollTo({top: 0, behavior: 'smooth'});
+      
+    }
 
     renderVideos() {
       console.log(this.props)
@@ -77,7 +84,7 @@ class VideoIndex extends React.Component {
                   <VideoIndexItem key={idx} video={video} />
                 </div>
                 <div className="index-actions">
-                  <LikeContainer/>
+                  {/* <LikeContainer/> */}
                   <img src={window.likeSymbol} alt="likes"/>
                   <img src={window.commentSymbol} alt="comments"/>
                   <img src={window.shareSymbol} alt="shares"/>
@@ -134,6 +141,7 @@ class VideoIndex extends React.Component {
 
               <div className="vIndex-mid">
                {this.renderVideos()}
+               <img className="back-top" src={window.backTop} alt="" onClick={e => this.scrollToTop(e)}/>
               </div>
             </div>
 
