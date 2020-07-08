@@ -15,6 +15,23 @@ class User < ApplicationRecord
     has_many :likes,
         foreign_key: :user_id,
         class_name: "Like" 
+    
+    
+
+
+    #FUTURE FEATURES
+
+    # has_many :comments,
+    # foreign_key: :user_id,
+    # class_name: "Comment"
+    # has_many :follows,
+    # foreign_key: :follower_id,
+    # class_name: "Follow"
+    # has_many :followers,
+    # foreign_key: :following_id,
+    # class_name: "Follow"
+
+    
 
   has_one_attached :profile_photo, dependent: :destroy  
     

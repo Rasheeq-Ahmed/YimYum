@@ -11,3 +11,5 @@
 #     #     json.partial!('/api/comments/comment', comment: @like.likeable)
 #     end
 # end
+
+json.extract! @like, :id, :user_id, :likeable_id, :likeable_type

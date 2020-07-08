@@ -1,26 +1,30 @@
 class Api::LikesController < ApplicationController
 
-    before_action :require_login, only: [:create, :update, :destroy]
+    before_action :require_login, only: [:create, :destroy]
 
 
-    def create()
-        @like = Like.new(like_params)
-        @like.user_id = current_user.id
-
+    def create
+        @like = current_user.likes.new(like_params)
         if @like.save
             render :show
         else
-            render json: ["Unable to process action"], status: 422
+            render json:  @like.errors.full_messages, status: 422 # ["Unable to process action"]
         end
     end
 
+
+   def index
+    @likes = Like.all.includes(:user, :likeable)
+        render :index
+   end
+
+
    def destroy
-        @like = Like.find(params[:id])
-        if current_user.id == @like.user_id
-            @like.destroy
+        @like = current_user.likes.find(params[:id])
+           if @like.destroy
             render :show
         else
-            render json: ['Must be liker owner to destroy'], status: 422
+            render json: @like.errors.full_messages, status: 422 #['Must be liker owner to destroy']
         end
         
     end
@@ -28,10 +32,14 @@ class Api::LikesController < ApplicationController
     private 
     
     def like_params
-        params.require(:like).permit(:liked, :user_id, :likeable_id, :likeable_type)
+        params.require(:like).permit(:user_id, :likeable_id, :likeable_type)
     end
+
+    
+end
+
 
     
 
 
-end
+

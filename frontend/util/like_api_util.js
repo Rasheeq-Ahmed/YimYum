@@ -6,13 +6,13 @@ export const addLike = like => (
     })
 );
 
-// export const changeLike = like => (
-//     $.ajax({
-//         method: 'PATCH',
-//         url: `/api/likes/${like.id}`,
-//         data: { like }
-//     })
-// );
+export const changeLike = like => (
+    $.ajax({
+        method: 'PATCH',
+        url: `/api/likes/${like.id}`,
+        data: { like }
+    })
+);
 
 export const removeLike = likeId => (
     $.ajax({
