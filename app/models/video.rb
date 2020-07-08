@@ -9,6 +9,10 @@ class Video < ApplicationRecord
 
     has_many :likes, as: :likeable
     
+      def num_likes
+        likes = self.likes.select { |like| like.liked == true }
+        likes.length
+    end
 
 
 end
