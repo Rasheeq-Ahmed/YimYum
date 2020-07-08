@@ -19,7 +19,7 @@ class Api::UsersController < ApplicationController
     end
 
     def index
-        @users = User.all
+        @users = User.all.includes(:videos, :likes)
         render :index
     end
 

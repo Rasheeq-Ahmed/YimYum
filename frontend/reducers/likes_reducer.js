@@ -1,24 +1,21 @@
-import {RECEIVE_ALL_VIDEOS, RECEIVE_VIDEO} from '../actions/video_actions'
-import {RECEIVE_LIKE, DELETE_LIKE} from '../actions/like_actions'
-import {merge} from 'lodash';
+// import {RECEIVE_ALL_VIDEOS, RECEIVE_VIDEO} from '../actions/video_actions'
+import {RECEIVE_ALL_LIKES, RECEIVE_LIKE, REMOVE_LIKE} from '../actions/like_actions'
+import merge from "lodash/merge";
 
-const likesReducer = (oldState = {}, action) => {
-    Object.freeze(oldState);
+const likesReducer = (state = {}, action) => {
+    let oldState = Object.freeze(state);
     switch (action.type) {
+        case RECEIVE_ALL_LIKES:
+            return action.likes;
         case RECEIVE_LIKE:
-            return action.like;
-        case RECEIVE_VIDEO:
-            if (action.payload.like) {
-                return action.payload.like;
-            } else {
-                return {};
-            }
-        case DELETE_LIKE:
-            return {};
+            return merge({}, oldState, { [action.like.id]: action.like });
+        case REMOVE_LIKE:
+            let newState = merge({}, oldState);
+            delete newState[action.likeId];
+            return newState;
         default:
             return oldState;
     }
 };
-
 
 export default likesReducer;

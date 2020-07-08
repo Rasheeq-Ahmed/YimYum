@@ -1,22 +1,36 @@
-export const addLike = like => (
-    $.ajax({
-        method: 'POST',
-        url: '/api/likes',
-        data: { like }
-    })
-);
+export const fetchAllLikes = () => {
+    return (
+        $.ajax({
+            url: `/api/likes`,
+            method: "GET"
+        })
+    );
+};
+export const fetchLike = (id) => {
+    return (
+        $.ajax({
+            url: `/api/likes/${id}`,
+            method: "GET"
+        })
+    );
+};
 
-export const changeLike = like => (
-    $.ajax({
-        method: 'PATCH',
-        url: `/api/likes/${like.id}`,
-        data: { like }
-    })
-);
+export const createLike = (like) => {
+    return (
+        $.ajax({
+            url: `/api/likes`,
+            method: "POST",
+            data: { like }
+        })
+    );
+};
 
-export const removeLike = likeId => (
-    $.ajax({
-        method: 'DELETE',
-        url: `/api/likes/${likeId}`
-    })
-);
+export const deleteLike = (likeId) => {
+    return (
+        $.ajax({
+            url: `/api/likes/${likeId}`,
+            method: "DELETE",
+        })
+    );
+};
+

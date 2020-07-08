@@ -7,7 +7,7 @@ import uiReducer from './ui_reducer';
 const entitiesReducer = combineReducers({
     users: usersReducer,
     videos: videosReducer,
-    like: likesReducer,
+    likes: likesReducer,
     ui: uiReducer
 });
 

@@ -1,30 +1,39 @@
-import * as LikesAPIUtil from '../util/like_api_util';
+import * as LikeApiUtil from "../util/like_api_util";
 
-export const RECEIVE_LIKE = 'RECEIVE_LIKE';
-export const DELETE_LIKE = 'DELETE_LIKE';
+export const RECEIVE_ALL_LIKES = "RECEIVE_ALL_LIKES";
+export const RECEIVE_LIKE = "RECEIVE_LIKE";
+export const REMOVE_LIKE = "REMOVE_LIKE";
 
-const receiveLike = like => ({
-    type: RECEIVE_LIKE,
-    like
-});
+export const fetchAllLikes = () => dispatch => {
+    return LikeApiUtil.fetchAllLikes().then(likes => dispatch(receiveAllLikes(likes)));
 
-const deleteLike = likeId => ({
-    type: DELETE_LIKE,
-    likeId
-});
+};
+export const fetchLike = (like) => dispatch => {
+    return LikeApiUtil.fetchLike(like).then(like => dispatch(receiveLike(like)));
+};
+export const createLike = (like) => dispatch => {
+    return LikeApiUtil.createLike(like).then(like => dispatch(receiveLike(like)));
+};
+export const deleteLike = (likeId) => dispatch => {
+    return LikeApiUtil.deleteLike(likeId).then((like) => dispatch(removeLike(like)));
+};
 
-export const addLike = like => dispatch => (
-    LikesAPIUtil.addLike(like)
-        .then(like => dispatch(receiveLike(like)))
-);
 
-export const changeLike = like => dispatch => (
-    LikesAPIUtil.changeLike(like)
-        .then(like => dispatch(receiveLike(like)))
-);
-
-export const removeLike = likeId => dispatch => (
-    LikesAPIUtil.removeLike(likeId)
-        .then(like => dispatch(deleteLike(like.id)))
-);
-
+const receiveAllLikes = likes => {
+    return {
+        type: RECEIVE_ALL_LIKES,
+        likes
+    };
+};
+const receiveLike = like => {
+    return {
+        type: RECEIVE_LIKE,
+        like
+    };
+};
+const removeLike = like => {
+    return {
+        type: REMOVE_LIKE,
+        likeId: like.id
+    };
+};

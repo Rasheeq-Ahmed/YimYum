@@ -18,6 +18,15 @@ class Api::LikesController < ApplicationController
         render :index
    end
 
+   def show 
+        @like = like.find(params[:id])
+        if @like
+            render :show
+        else
+            renedr :index
+        end
+    end
+
 
    def destroy
         @like = current_user.likes.find(params[:id])
