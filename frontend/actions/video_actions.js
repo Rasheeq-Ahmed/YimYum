@@ -13,10 +13,9 @@ export const RECEIVE_VIDEO_ERRORS = "RECEIVE_VIDEO_ERRORS";
     likes
 });
 
-const receiveAllVideos = ({ videos, likes }) => ({
+const receiveAllVideos = (videos) => ({
     type: RECEIVE_ALL_VIDEOS,
     videos, //all the json
-    likes
 });
 
  const deleteVideo = videoId => ({

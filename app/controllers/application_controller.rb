@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
     end
 
     def require_login
-        redirect_to new_session_url unless logged_in?
+         render json: ["You must be logged in to use this feature"], status: 422 unless logged_in?
     end
 
 

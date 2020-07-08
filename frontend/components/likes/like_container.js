@@ -6,7 +6,7 @@ import Like from './like'
 const msp = (state, ownProps) => {
 
     const allLikes = state.entities.videos[ownProps.video.id].like_ids;
-    const likes = Object.values(state.entities.likes). filter(like => allLikes.includes(like.id));
+    const likes = Object.values(state.entities.likes).filter(like => allLikes.includes(like.id));
 
     const likeUsers = ownProps.video.like_ids.map(id => {
         return state.entities.likes[id].user_id
