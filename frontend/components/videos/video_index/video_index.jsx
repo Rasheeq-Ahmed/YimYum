@@ -2,7 +2,7 @@ import React from 'react';
 import NavBarContainer from '../../nav_bar/nav_bar_container'
 import FooterNav from '../../nav_bar/footer_nav'
 import VideoIndexItem from './video_index_item_container'
-// import LikeContainer from '../../likes/like_container'
+import LikeContainer from '../../likes/like_container'
 import { Link } from "react-router-dom";
 
 
@@ -84,7 +84,8 @@ class VideoIndex extends React.Component {
                   <VideoIndexItem key={idx} video={video} />
                 </div>
                 <div className="index-actions">
-                  {/* <LikeContainer/> */}
+                  <LikeContainer video={video} videoId={video.id} likes={this.props.likes} />
+
                   <img src={window.likeSymbol} alt="likes"/>
                   <img src={window.commentSymbol} alt="comments"/>
                   <img src={window.shareSymbol} alt="shares"/>

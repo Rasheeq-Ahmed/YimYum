@@ -10,6 +10,7 @@ const mapStateToProps = (state) => ({
   videos: Object.values(state.entities.videos),
   users: state.entities.users,
   currentUser: state.entities.users[state.session.id],
+  likes: state.entities.likes,
 });
 
 
