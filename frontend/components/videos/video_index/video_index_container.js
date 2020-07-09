@@ -17,8 +17,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   fetchVideos: () => dispatch(fetchVideos()),
   fetchVideo: (videoId) => dispatch(fetchVideo(videoId)),
-  addLike: (like) => dispatch(addLike(like)),
-  removeLike: (likeId) => dispatch(removeLike(likeId)),
+  // addLike: (like) => dispatch(addLike(like)),
+  // removeLike: (likeId) => dispatch(removeLike(likeId)),
 
   // fetchUsers: () => dispatch (fetchUsers())
   fetchUsers: () => dispatch(fetchUsers()),

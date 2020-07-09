@@ -7,12 +7,17 @@ class Video < ApplicationRecord
     foreign_key: :creator_id,
     class_name: "User"
 
-    has_many :likes, 
-    as: :likeable
+   has_many :likes,
+    dependent: :destroy
+
+
+    has_many :likers,
+    through: :likes,
+    source: :user
     
 
     #Future Feature
-    
+
     # has_many :comments,
     # foreign_key: :video_id,
     # class_name: :Comment

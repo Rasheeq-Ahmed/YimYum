@@ -1,2 +1,2 @@
-json.extract! @like, :id, :user_id, :likeable_id, :likeable_type
-json.extract! @like.user, :username, :name, :email
+json.extract! @like, :id, :user_id, :video_id #:comment_id
+# json.extract! @like.user, :username, :name, :email

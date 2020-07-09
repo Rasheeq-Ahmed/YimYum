@@ -1,98 +1,45 @@
-import React from 'react';
-
+import React from "react";
 
 class Like extends React.Component {
     constructor(props) {
         super(props);
-        this.fetchLike = this.fetchLike.bind(this);
-        this.liking = this.liking.bind(this);
-        // this.handleClick = _.throttle(this.handleClick.bind(this), 250); 
-        this.handleClick = this.handleClick.bind(this)
-        // this.handleClick = this.handleClick.bind(this);
-        // this.handleComment = this.handleComment.bind(this);
-        this.ready = null;
+        this.handleLike = this.handleLike.bind(this);
+        this.handleUnlike = this.handleUnlike.bind(this);
     }
 
-    fetchLike(likeableId) {
-        const likes = Object.values(this.props.likes);
+    handleUnlike(e) {
+        e.preventDefault();
 
-        for (let i = 0; i < likes.length; i++) {
-            const match = (likes[i].user_id === this.props.currentUser.id && likes[i].likeable_id === likeableId);
-            if (match) {
-                return likes[i].id;
-            }
-        }
+        this.props.deleteLike(this.props.video.id)
     }
+    handleLike(e) {
+        e.preventDefault();
 
-    liking(likeableId) {
-        const likes = Object.values(this.props.likes);
-
-        for (let i = 0; i < likes.length; i++) {
-            const match = (likes[i].user_id === this.props.currentUser.id && likes[i].likeable_id === likeableId);
-            if (match) {
-                return true;
-            }
-        }
-        return false;
+        this.props.createLike({ video_id: this.props.video.id })
     }
-
-    handleClick() {
-        this.ready = true;
-        const like = {
-            user_id: this.props.currentUser.id,
-            likeable_type: "Video",
-            likeable_id: this.props.videoId,
-        };
-
-        if (this.liking(like.likeable_id)) {
-            const likeId = this.fetchLike(like.likeable_id);
-            this.props.deleteLike(likeId);
-        } else {
-            this.props.createLike(like);
-        }
-        this.ready = false;
-    }
-
-    // handleComment(e) {
-    //     // $('.add-comment').first().focus(); 
-    //     // $('.add-comment').next().focus(); 
-    //     // Thank you to Alex Volynsky for helping me with the logic. 
-    //     const commentButton = document.getElementsByClassName("post-options-comment");
-    //     const elementsArr = Array.from(commentButton);
-    //     const index = elementsArr.indexOf(e.target);
-    //     document.getElementsByClassName("add-comment")[index].focus();
-    // }
 
     render() {
-        const likes = Object.values(this.props.likes);
-        const likeCount = likes.filter(like => like.likeable_id === this.props.postId).length;
-
-        const count = (likeCount !== 0) ?
-            likeCount
-            :
-            null;
-
-        if (this.liking(this.props.postId)) {
-            return (
-                <div className="post-options">
-                    <button className="post-options-heart-filled" onClick={this.handleClick}>Like</button>
-                    <div className="like-count">{count}</div>
-                    {/* <div className="post-options-comment" onClick={(e) => { this.handleComment(e) }}></div> */}
-                    {/* <div className="post-options-bookmark"></div> */}
-                </div>
-            )
+        if (!this.props.video) {
+            return null;
         }
-        else {
-            return (
-                <div className="post-options">
-                    <button className="post-options-heart" onClick={this.handleClick}>Like</button>
-                    <div className="like-count">{count}</div>
-                    {/* <div className="post-options-comment" onClick={(e) => { this.handleComment(e) }}></div> */}
-                    {/* <div className="post-options-bookmark"></div> */}
+        return (
+            <div>
+                <div className="like-button-div">
+                    <div className="like-button">
+                        {this.props.video.likers.includes(this.props.currentUser.id) ? (
+                            <div className="like-button-liked" onClick={this.handleUnlike}>
+                                <span className="like-icon">&#9829;</span>
+                            </div>
+                        ) : (
+                                <div className="like-button-unliked" onClick={this.handleLike}>
+                                    <span>&#9825;</span>
+                                </div>
+                            )}
+                    </div>
                 </div>
-            )
-        }
+            </div>
+        );
     }
 }
 
-export default Like; 
+export default Like;

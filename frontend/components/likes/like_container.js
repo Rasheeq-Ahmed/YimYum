@@ -1,18 +1,26 @@
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import { createLike, deleteLike } from '../../actions/like_actions';
-import Like from './like';
+import { connect } from "react-redux";
+import { createLike, deleteLike } from "../../actions/like_actions";
+import Like from "./like";
+import { fetchVideo } from "../../actions/video_actions";
 
-const msp = (state, ownProps) => {
-    return ({
-        currentUser: state.entities.users[state.session.id],
-        video: ownProps.videoId,
-    });
+const mapStateToProps = (state, ownProps) => {
+    const currentUser = state.entities.users[state.session.id];
+    const video = ownProps.video;
+    return {
+        currentUser,
+        video
+    };
 };
 
-const mdp = dispatch => ({
-    createLike: like => dispatch(createLike(like)),
-    deleteLike: like => dispatch(deleteLike(like))
-});
+const mapDispatchToProps = dispatch => {
+    return {
+        createLike: like => dispatch(createLike(like)),
+        deleteLike: id => dispatch(deleteLike(id)),
+        fetchVideo: id => dispatch(fetchVideo(id))
+    };
+};
 
-export default withRouter(connect(msp, mdp)(Like));
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Like);

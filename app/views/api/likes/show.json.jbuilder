@@ -12,5 +12,10 @@
 #     end
 # end
 
-json.extract! @like, :id, :user_id, :likeable_id, :likeable_type
-json.extract! @like.user, :username, :name, :email
+
+
+# json.extract! @like, :id, :user_id, :likeable_id, :likeable_type
+# json.extract! @like.user, :username, :name, :email
+
+
+json.partial! 'api/likes/like', like: @like

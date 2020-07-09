@@ -12,7 +12,7 @@ class VideoModal extends React.Component {
 
         this.renderDelete = this.renderDelete.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
-        this.handleVideoLike = this.handleVideoLike.bind(this)
+        // this.handleVideoLike = this.handleVideoLike.bind(this)
 
     }
 
@@ -58,27 +58,27 @@ class VideoModal extends React.Component {
         
     }
 
-    handleVideoLike() {
-        if (this.props.currentUserLike.liked !== undefined) {
-            if (this.props.currentUserLike.liked === false) {
-                this.props.changeLike({
-                    id: this.props.currentUserLike.id,
-                    liked: true,
-                    likeable_id: this.props.currentUserLike.likeable_id,
-                    likeable_type: this.props.currentUserLike.likeable_type
-                }).then(() => this.props.fetchVideo(this.props.currentVideo.id))
-            } else {
-                this.props.removeLike(this.props.currentUserLike.id)
-                    .then(() => this.props.fetchVideo(this.props.currentVideo.id))
-            }
-        } else {
-            this.props.addLike({
-                liked: true,
-                likeable_id: this.props.currentVideo.id,
-                likeable_type: 'Video'
-            }).then(() => this.props.fetchVideo(this.props.currentVideo.id))
-        }
-    }
+    // handleVideoLike() {
+    //     if (this.props.currentUserLike.liked !== undefined) {
+    //         if (this.props.currentUserLike.liked === false) {
+    //             this.props.changeLike({
+    //                 id: this.props.currentUserLike.id,
+    //                 liked: true,
+    //                 likeable_id: this.props.currentUserLike.likeable_id,
+    //                 likeable_type: this.props.currentUserLike.likeable_type
+    //             }).then(() => this.props.fetchVideo(this.props.currentVideo.id))
+    //         } else {
+    //             this.props.removeLike(this.props.currentUserLike.id)
+    //                 .then(() => this.props.fetchVideo(this.props.currentVideo.id))
+    //         }
+    //     } else {
+    //         this.props.addLike({
+    //             liked: true,
+    //             likeable_id: this.props.currentVideo.id,
+    //             likeable_type: 'Video'
+    //         }).then(() => this.props.fetchVideo(this.props.currentVideo.id))
+    //     }
+    // }
 
 
 
@@ -103,7 +103,7 @@ render () {
     //     </div>
     //     )
 
-    console.log(this.ownProps)
+    // console.log(this.ownProps)
     // console.log(this.state)
     // let vidCreator = this.props.currentVideo.creator_id
 
