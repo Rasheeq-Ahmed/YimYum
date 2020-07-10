@@ -1,5 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import LikeContainer from '../likes/like_container'
+
 
 class VideoModal extends React.Component {
     constructor(props) {
@@ -115,7 +117,7 @@ render () {
         return null;
     }
 
-    // console.log(this.props.currentVideo.id)
+    console.log(this.props.currentVideo)
     return (
         <div className="video-modal-all">
             <div className="video-modal-left">
@@ -151,8 +153,13 @@ render () {
                     {this.renderDelete()}
                 </div>
                 <div className="vModal-vidStats">
-                    <img src={window.likeSymbol} alt="likes" onClick={this.handleVideoLike}/>
-                    <img src={window.commentSymbol} alt="comments"/>
+                    <LikeContainer video={this.props.currentVideo} />
+                    <div className='comment-body'>
+                        <img src={window.commentSymbol} className="like-button-liked" />
+                        <h1>0</h1>
+                    </div>
+                    {/* <img src={window.likeSymbol} alt="likes" onClick={this.handleVideoLike}/>
+                    <img src={window.commentSymbol} alt="comments"/> */}
                 </div>
 
 
