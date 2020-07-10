@@ -13,9 +13,9 @@ class Comment < ApplicationRecord
     foreign_key: :video_id,
     class_name: "Video"
 
-    has_many :likes,
-        foreign_key: :comment_id,
-        class_name: "Like" 
+    # has_many :likes,
+    #     foreign_key: :comment_id,
+    #     class_name: "Like" 
     
 
 end

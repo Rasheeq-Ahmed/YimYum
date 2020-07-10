@@ -12,8 +12,8 @@ class Like < ApplicationRecord
         foreign_key: :video_id,
         class_name: "Video"
     
-    belongs_to :comment,
-        foreign_key: :comment_id,
-        class_name: "Comment"
+    # belongs_to :comment,
+    #     foreign_key: :comment_id,
+    #     class_name: "Comment"
 
 end

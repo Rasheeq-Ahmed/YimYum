@@ -117,7 +117,7 @@ render () {
         return null;
     }
 
-    console.log(this.props.currentVideo)
+    console.log(this.props)
     return (
         <div className="video-modal-all">
             <div className="video-modal-left">

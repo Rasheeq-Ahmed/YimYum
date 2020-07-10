@@ -7,4 +7,5 @@ json.likers video.likers.pluck(:id)
 
 # json.creator_id video.creator_id
 json.published video.created_at.strftime("%B %d, %Y")
+
 # 

@@ -16,11 +16,11 @@ class Video < ApplicationRecord
     source: :user
     
 
-    #Future Feature
+    # Future Feature
 
-    # has_many :comments,
-    # foreign_key: :video_id,
-    # class_name: :Comment
+    has_many :comments,
+    foreign_key: :video_id,
+    class_name: "Comment"
 
 
 end
