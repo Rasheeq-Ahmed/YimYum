@@ -23,21 +23,20 @@ class Like extends React.Component {
             return null;
         }
         return (
-            <div>
-                <div className="like-button-div">
-                    <div className="like-button">
+                    <div className="like-all">
                         {this.props.video.likers.includes(this.props.currentUser.id) ? (
-                            <div className="like-button-liked" onClick={this.handleUnlike}>
-                                <span className="like-icon">&#9829;</span>
-                            </div>
+                        <div className='like-body'>
+                        <img src={window.likedSymbol} className="like-button-liked" onClick={this.handleUnlike}/>
+                        <h1>{this.props.video.likers.length}</h1>
+                        </div>
                         ) : (
-                                <div className="like-button-unliked" onClick={this.handleLike}>
-                                    <span>&#9825;</span>
-                                </div>
+                        <div className="like-body">
+                        <img src={window.likeSymbol} className="like-button-unliked" onClick={this.handleLike}/>
+                        <h1>{this.props.video.likers.length}</h1>
+                        </div>
+                        
                             )}
                     </div>
-                </div>
-            </div>
         );
     }
 }

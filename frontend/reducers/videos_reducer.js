@@ -5,16 +5,19 @@ import { merge } from "lodash";
 
 const videosReducer = ( state = {}, action) => {
     let newObj = {};
+    let newState = {};
     Object.freeze(state);
     switch(action.type) {
         case RECEIVE_ALL_VIDEOS:
-            return Object.assign({},state,action.videos)
+            newState = merge({}, state, action.videos);
+            return newState;
         case RECEIVE_VIDEO:
-            return Object.assign({}, state,{[action.video.id]: action.video});
-        case REMOVE_VIDEO:
-            let newState = Object.assign({}, state)
-            delete newState[action.videoId]
+            newState = merge({}, state, { [action.video.id]: action.video });
             return newState
+        case REMOVE_VIDEO:
+            newState = merge({}, state);
+            delete newState[action.videoId]
+            return newState;
         
         
         

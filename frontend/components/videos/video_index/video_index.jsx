@@ -84,11 +84,16 @@ class VideoIndex extends React.Component {
                   <VideoIndexItem key={idx} video={video} />
                 </div>
                 <div className="index-actions">
-                  <LikeContainer video={video} videoId={video.id} likes={this.props.likes} />
+                   <LikeContainer video={video} videoId={video.id} likes={this.props.likes} />
 
-                  <img src={window.likeSymbol} alt="likes"/>
-                  <img src={window.commentSymbol} alt="comments"/>
-                  <img src={window.shareSymbol} alt="shares"/>
+                  <div className='comment-body'>
+                    <img src={window.commentSymbol} className="like-button-liked" />
+                    <h1>0</h1>
+                  </div>
+                  {/* <img src={window.commentSymbol} alt="comments"/> */}
+
+
+                  {/* <img src={window.shareSymbol} alt="shares"/> */}
                 </div>
               </div>
             </div>
