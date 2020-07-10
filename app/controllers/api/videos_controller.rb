@@ -50,7 +50,7 @@ class Api::VideosController < ApplicationController
             if @video.destroy
                 render :show
             else
-                render json: ['Something Went Wrong'], status: 404
+                render json: ['Must be creator to delete'], status: 404
             end
         end
         

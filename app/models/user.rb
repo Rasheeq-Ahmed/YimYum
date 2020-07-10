@@ -16,14 +16,15 @@ class User < ApplicationRecord
         foreign_key: :user_id,
         class_name: "Like" 
     
+    has_many :comments,
+    foreign_key: :user_id,
+    class_name: "Comment"
     
 
 
     #FUTURE FEATURES
 
-    # has_many :comments,
-    # foreign_key: :user_id,
-    # class_name: "Comment"
+    
     # has_many :follows,
     # foreign_key: :follower_id,
     # class_name: "Follow"
