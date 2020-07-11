@@ -153,7 +153,7 @@ render () {
                     {this.renderDelete()}
                 </div>
                 <div className="vModal-vidStats">
-                    <LikeContainer video={this.props.currentVideo} />
+                    <LikeContainer video={this.props.currentVideo} closeModal={this.props.closeModal} />
                     <div className='comment-body'>
                         <img src={window.commentSymbol} className="like-button-liked" />
                         <h1>0</h1>

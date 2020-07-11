@@ -56,6 +56,10 @@ class VideoIndex extends React.Component {
         return null;
       }
 
+      // if (this.props.currentUser) {
+      //   return null;
+      // }
+
       return (
         <div className="video-body">
           {this.props.videos.reverse().map((video, idx) => (
@@ -104,7 +108,7 @@ class VideoIndex extends React.Component {
 
     render () {
         
-        // console.log(this.props.currentUser)
+        console.log(this.props)
         return (
           <div className="vIndex-all">
             <div className="vIndex-header">
