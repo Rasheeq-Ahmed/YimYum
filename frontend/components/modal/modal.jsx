@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import VideoModalContainer from './video_modal_container';
+import ConfirmationModalContainer from './confirmation_modal_container'
 
 function Modal({ id, modal, closeModal }) {
     if (!modal) {
@@ -11,6 +12,8 @@ function Modal({ id, modal, closeModal }) {
     switch (modal) {
         case 'show':
             component = <VideoModalContainer />;
+        // case 'confirmation':
+        //     component = <ConfirmationModalContainer />;
             break;
         default:
             return null;

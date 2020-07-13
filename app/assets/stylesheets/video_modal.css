@@ -38,7 +38,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  background-color: lightgoldenrodyellow;
+  background-color: rgb(65, 65, 65);
 
 }
 
@@ -48,11 +48,11 @@
   /* max-width: 500px;
   max-height: 700px; */
   height: 100%;
-  width:60%;
+  width:50%;
 /* justify-content: center;
 align-items: center; */
 flex-direction: column;
-background-color: lightcoral;
+/* background-color: lightcoral; */
 position: relative;
 }
 
@@ -93,7 +93,7 @@ position: relative;
 
   .vid {
     /* width: 17em; */
-    height: 40em;
+    height: 50em;
     outline: none;
     cursor: pointer;
   }
@@ -115,7 +115,7 @@ position: relative;
 } */
 
   .vModal-user {
-      background-color: lightsteelblue;
+      background-color: white;
       height: 6em;
       display: flex;
       align-items: center;
@@ -127,7 +127,7 @@ position: relative;
           width: 6em;
           height: 6em;
           border-radius: 50%;
-          background-color: teal;
+          /* background-color: teal; */
           display: flex;
           justify-content: center;
           align-items: center;
@@ -174,13 +174,17 @@ position: relative;
           }
 
       .vModal-vidStats {
-        background-color: cadetblue;
+        /* background-color: cadetblue; */
+        background-color: white;
         display: flex;
         height: 3em;
-        width: 10em;
+        /* width: 100%; */
         align-items: center;
-        justify-content: space-evenly;
+        /* justify-content: space-evenly; */
         margin-left: 1em;
+        margin-right: 1em;
+        border-bottom: 1px solid #4d4d4d42;
+        
       }
 
         .vModal-vidStats > img {
@@ -192,7 +196,8 @@ position: relative;
       .vModal-caption {
         margin-left: 1em;
         margin-right: 1em;
-        background-color: chartreuse;
+        /* background-color: chartreuse; */
+        background-color:white;
         height: 3em;
         display: flex;
         align-items: center;
@@ -205,9 +210,12 @@ position: relative;
       .vModal-comments {
         margin-left: 1em;
         margin-right: 1em;
-        height: 100%;
-        background-color: rgb(255, 68, 0);
+        height: 60%;
+        /* background-color: rgb(255, 68, 0); */
+        background-color: white;
         display:flex;
-        justify-content: center;
+        /* justify-content: center; */
         align-items: center;
+        flex-direction: column;
       }
+      

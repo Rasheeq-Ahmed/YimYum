@@ -5,19 +5,19 @@ import { RECEIVE_ALL_COMMENTS, RECEIVE_COMMENT, REMOVE_COMMENT} from '../actions
 
 
 const commentsReducer =  (state = {}, action) => {
-    let oldState = Object.freeze(state);
+     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_ALL_COMMENTS:
             return action.comments;
         case RECEIVE_COMMENT:
-            return merge({}, oldState, { [action.comment.id]: action.comment });
+            return Object.assign({}, state, { [action.comment.id]: action.comment })
         case REMOVE_COMMENT:
-            let newState = merge({}, oldState);
-            delete newState[action.commentId];
-            return newState;
-            
+            let nextState = Object.assign({}, state);
+            delete nextState[action.commentId]
+            nextState = Object.assign({}, state);
+            return nextState;
         default:
-            return oldState;
+            return state;
     }
 }
 

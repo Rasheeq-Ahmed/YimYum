@@ -1,8 +1,8 @@
 class Api::CommentsController < ApplicationController
 
 
-    { def index
-        @comments = Comment.all
+     def index
+        @comments = Comment.where(video_id: params[:video_id])
         render :index
     end
 

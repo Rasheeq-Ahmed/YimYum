@@ -23,8 +23,8 @@ const removeComment = commentId => {
     };
 };
 
-export const fetchComments = () => dispatch => (
-    CommentAPIUtil.fetchComments() //ajax call from backend
+export const fetchComments = (videoId) => dispatch => (
+    CommentAPIUtil.fetchComments(videoId) //ajax call from backend
         .then(comments => dispatch(receiveAllComments(comments)),
             ) //dispatched and sent to reducer
 )
@@ -47,6 +47,7 @@ export const createComment = comment => dispatch => (
 export const deleteComment = (commentId) => (dispatch) => (
     CommentAPIUtil.deleteComment(commentId).then(
         (comment) => dispatch(removeComment(comment)),
+        
     )
     )
     

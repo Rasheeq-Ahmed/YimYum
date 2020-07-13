@@ -1,0 +1,147 @@
+
+
+.comment-outer {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+.comment-all {
+    height: 100%;
+}
+
+.comment-form {
+        display: flex;
+        height: 10%;
+        /* background-color: wheat; */
+        align-items: center;
+        border-top: 1px solid #4d4d4d42;
+
+        
+
+      }
+
+      .comment-inner-form {
+          height: 50%;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+      }
+
+      .comment-text {
+        height: 100%;
+        width: 60%;
+        border: none;
+        caret-color: #FE2C55;
+        line-height: 100%;
+        outline: none;
+        pointer-events: initial !important;
+        -webkit-appearance: none;
+        margin: 0;
+        box-sizing: border-box;
+        /* border-bottom: 1px solid rgba(22, 24, 35, 0.2); */
+        font-size: 1em;
+        font-family: sofia-pro, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        padding-left: .5em;
+          margin-left: 1em;
+        
+    
+      }
+
+      .comment-inner-form > button {
+          /* width: 10%; */
+          color: white;
+          background-color:#fe2c55;
+          /* border: 1px solid #fe2c55; */
+          /* border-radius: 2em; */
+          font-size: 1em;
+          /* padding: .5em 1em; */
+          font-weight: bold;
+          justify-content: space-between; 
+          outline: none;
+          border: none;
+          margin-right: 1em;
+      }
+
+.comment-list {
+    height: 90%;
+}
+
+
+.commentItem-all {
+    height: 5em;
+    width: 100%;
+    /* background-color: rgba(180, 180, 180, 0.507); */
+    display: flex;
+    align-items: center;
+    /* border: 1px solid #4d4d4d42; */
+
+}
+
+.commentItem-body {
+    /* background-color: darkkhaki; */
+    display: flex;
+    height: 80%;
+    width: 100%;
+    padding-left: .25em;
+
+}
+
+    .commentItem-pic {
+        height: 100%;
+    }
+    .commentItem-pic > img {
+        height: 100%;
+    }
+
+    .commentItem-info {
+        /* background-color: lightblue; */
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding-left: 1em;
+        position: relative;
+    }
+
+    .commentItem-info > h1 {
+        font-weight: bold;
+    }
+    .commentItem-info > p {
+        /* font-weight: bold; */
+    }
+
+
+
+    .delete-comment-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition-duration: 1s;
+        background-color: rgba(255, 255, 255, 0);
+        /* outline: none; */
+        /* border: none; */
+        margin: 0.5em;
+        /* color: whitesmoke */
+        cursor: pointer;
+    }
+
+    /* .delete-comment-btn:hover {
+        color: rgba(255, 0, 0, 0.432);
+        transition-duration: 1s;
+    } */
+
+
+
+
+/* .comment {
+    height: 3em;
+    width: 100%;
+    background-color: cyan;
+} */
+

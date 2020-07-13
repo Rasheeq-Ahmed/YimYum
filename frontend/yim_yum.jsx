@@ -5,7 +5,7 @@ import Root from './components/root';
 // import * as ACTIONS from './actions/session_actions';
 
 //Test IMPORTS
-
+import {fetchComments, fetchComment, createComment, deleteComment} from './actions/comment_actions'
 import {fetchVideos} from './actions/video_actions'
 import { removeVideo } from "./actions/video_actions";
 
@@ -31,6 +31,10 @@ let store;
     window.getState = store.getState
     window.fetchVideos = fetchVideos
     window.removeVideo = removeVideo
+    window.fetchComments = fetchComments
+    window.fetchComment = fetchComment
+    window.createComment = createComment
+    window.deleteComment = deleteComment
     window.store = store
 
 

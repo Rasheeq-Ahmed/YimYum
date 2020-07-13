@@ -3,7 +3,7 @@ import NavBarContainer from '../../nav_bar/nav_bar_container'
 import FooterNav from '../../nav_bar/footer_nav'
 import VideoIndexItem from './video_index_item_container'
 import LikeContainer from '../../likes/like_container'
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 
 
@@ -62,6 +62,10 @@ class VideoIndex extends React.Component {
 
       return (
         <div className="video-body">
+          <div className="top-btn">
+            <img className="back-top" src={window.backTop} alt="" onClick={e => this.scrollToTop(e)} />
+
+          </div>
           {this.props.videos.reverse().map((video, idx) => (
             <div className="index-all">
               <div className="index-header">
@@ -108,7 +112,7 @@ class VideoIndex extends React.Component {
 
     render () {
         
-        console.log(this.props)
+        // console.log(this.props)
         return (
           <div className="vIndex-all">
             <div className="vIndex-header">
@@ -150,8 +154,12 @@ class VideoIndex extends React.Component {
               </div>
 
               <div className="vIndex-mid">
+                
                {this.renderVideos()}
-               <img className="back-top" src={window.backTop} alt="" onClick={e => this.scrollToTop(e)}/>
+              </div>
+
+              <div className="vIndex-right">
+
               </div>
             </div>
 
@@ -164,7 +172,7 @@ class VideoIndex extends React.Component {
 }
 
 
-export default VideoIndex;
+export default withRouter(VideoIndex);
 
 
 

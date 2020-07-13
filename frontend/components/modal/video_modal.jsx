@@ -1,6 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import LikeContainer from '../likes/like_container'
+// import CommentContainer from '../comments/comment_item_container'
+import CommentIndexContainer from '../comments/comment_index_container'
 
 
 class VideoModal extends React.Component {
@@ -8,31 +10,127 @@ class VideoModal extends React.Component {
         super(props)
 
         this.state = {
-            caption: '',
-            creator: ''
+            // caption: '',
+            // creator: '',
+            body: "",
+            video_id: this.props.currentVideo.id,
+            // comments: state.entities.comments
+
         }
 
         this.renderDelete = this.renderDelete.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
+
         // this.handleVideoLike = this.handleVideoLike.bind(this)
 
+        // this.handleComment = this.handleComment.bind(this);
+        // this.handleDelete = this.handleDelete.bind(this);
+        // this.handleChange = this.handleChange.bind(this);
+        // this.handleInput = this.handleInput.bind(this);
+
+
+        // this.renderComments = this.renderComments.bind(this);
+
     }
 
+    // componentDidMount() {
+    //     this.props.fetchUsers()
+    //     // this.props.fetchComments(this.)
+    //     // this.forceUpdate();
+
+    //     // this.setState({
+    //     //     state: this.state
+    //     // })
+    // }
+
+
+    // componentDidMount() {
+    //     this.props.fetchComments(this.props.currentVideo.id);
+    // }
+
+    // componentDidUpdate(prevProps) {
+    //     if (prevProps.currentVideo !== this.props.currentVideo) {
+    //         this.props.fetchComments(this.props.currentVideo.id);
+    //     }
+    // }
+
+
+    // componentDidMount() {
+    //     this.props.fetchComments(this.props.currentVideo.id);
+    // }
+
+    // componentDidUpdate(prevProps) {
+    //     if (prevProps.currentVideo.id !== this.props.currentVideo.id) {
+    //         this.props.fetchComments(this.props.currentVideo.id);
+    //     }
+    // }
+
+  
+
+    // handleInput(e) {
+    //     this.setState({ body: e.currentTarget.value});
+    // }
+
+
+    ////////////////////////////// COMMENT //////////////////////////////////
+
+    // handleChange(field) {
+    //     return e => this.setState({ [field]: e.target.value });
+    // }
+
+    
+    // handleComment(e){
+    //     e.preventDefault();
+    //     if (this.state.body !== "") {
+    //         this.props.createComment(this.state);
+    //     }
+    //     this.setState({body: "", user_id: this.props.currentUser.id, video_id: this.props.currentVideo.id});
+    // }
+
+
+    // handleDeleteComment(e) {
+    //     e.preventDefault();
+    //     if (this.props.comment) {
+    //         this.props.deleteComment(this.props.comment.id)
+    //     }
+    //     this.forceUpdate();
+
+
+    // }
 
 
 
-    componentDidMount() {
-        this.props.fetchUsers()
-        this.setState({
-            caption: this.props.currentVideo.caption,
-            creator: this.props.currentVideo.creator
-        })
-    }
+// /////////////////////////////////////////////////////////////
 
 
+// renderComments() {
+//     // const comments = Object.values(this.props.comments)
+//     let vidComments  = this.props.comments.filter(comment => comment.video_id === this.props.currentVideo.id)
+
+//     return (
+//         <div className="comment-outer">
+//            { vidComments.map((comment, idx) => (
+//                <div className="comment-inner">
+//                    {/* <h1>{comment.body}</h1> */}
+//                    <CommentContainer comment={comment} deleteComment={this.props.deleteComment}/>
+//                </div>
+            
+//            ))}
+//             </div>
+//     )
+
+    
+
+// }
+
+
+/////////////////////// DELETE THE VIDEO //////////////////////////////////////////////
 
     handleDelete(e) {
         e.preventDefault();
+        window.confirm(
+            "Are you sure you want to delete this video?"
+        ) &&
         this.props.removeVideo(this.props.currentVideo.id)
         .then (() => {
         this.props.closeModal();
@@ -57,67 +155,34 @@ class VideoModal extends React.Component {
 
     confirmDelete(e) {
         e.preventDefault();
-        
     }
 
-    // handleVideoLike() {
-    //     if (this.props.currentUserLike.liked !== undefined) {
-    //         if (this.props.currentUserLike.liked === false) {
-    //             this.props.changeLike({
-    //                 id: this.props.currentUserLike.id,
-    //                 liked: true,
-    //                 likeable_id: this.props.currentUserLike.likeable_id,
-    //                 likeable_type: this.props.currentUserLike.likeable_type
-    //             }).then(() => this.props.fetchVideo(this.props.currentVideo.id))
-    //         } else {
-    //             this.props.removeLike(this.props.currentUserLike.id)
-    //                 .then(() => this.props.fetchVideo(this.props.currentVideo.id))
-    //         }
-    //     } else {
-    //         this.props.addLike({
-    //             liked: true,
-    //             likeable_id: this.props.currentVideo.id,
-    //             likeable_type: 'Video'
-    //         }).then(() => this.props.fetchVideo(this.props.currentVideo.id))
-    //     }
-    // }
 
+//////////////////////////////////////////////////////////////////////////////////////
 
-
+ 
 
 
 
 render () {
-    // const {currentVideo, currentUser} = this.props;
-    
-    // return (
-    //     <div className="show-all">
-
-    //         <div classname="video-player">
-    //             <div className='show-video'>
-    //                 <video autoPlay loop src={this.props.currentVideo.videoUrl} ></video>
-    //             </div>
-    //             <div className='show-video-description'>
-
-    //             </div>
-    //         </div>
-
-    //     </div>
-    //     )
-
-    // console.log(this.ownProps)
-    // console.log(this.state)
-    // let vidCreator = this.props.currentVideo.creator_id
-
-    // if (!vidCreator) {
-    //     return null;
-    // }
+ 
 
     if (!this.props.currentVideo) {
         return null;
     }
 
-    console.log(this.props)
+    // let vidComments = this.props.comments.filter(comment => comment.video_id === this.props.currentVideo.id).map(comment => {
+    //     return (
+    //         <div className="comment-inner">
+    //             {/* <h1>{comment.body}</h1> */}
+    //             <CommentContainer comment={comment} deleteComment={this.props.deleteComment} />
+    //         </div>
+    //     )
+    // })
+
+
+
+
     return (
         <div className="video-modal-all">
             <div className="video-modal-left">
@@ -153,7 +218,7 @@ render () {
                     {this.renderDelete()}
                 </div>
                 <div className="vModal-vidStats">
-                    <LikeContainer video={this.props.currentVideo} closeModal={this.props.closeModal} />
+                    <LikeContainer video={this.props.currentVideo} />
                     <div className='comment-body'>
                         <img src={window.commentSymbol} className="like-button-liked" />
                         <h1>0</h1>
@@ -169,19 +234,21 @@ render () {
 
 
 
-                {/* <div className="video-modal-vidinfo">
 
-                    <div className='video-modal-user'>
-                        <p>{this.props.currentVideo.creator}</p>
-                        <p>{this.props.currentVideo.caption}</p>
-                        {this.renderDelete()}    
-                    </div>
-                    <div className="video-modal-details">
-                    </div>
-                </div>
+
                 <div className="vModal-comments">
-                  Comments gonna go here  
-                </div> */}
+                    {/* <div className="comment-form">
+                        <form className="comment-inner-form">
+                            <input type="text" className="comment-text" placeholder="Add a comment..." defaultValue={this.state.body} onChange={this.handleInput}/>
+                            <button onClick={ e => this.handleComment(e)}>Post</button>
+                        </form>
+                    </div> */}
+                      <div className="comment-outer">
+                        {/* {vidComments} */}
+                        <CommentIndexContainer />
+
+                     </div>
+                </div> 
                 {/* </div> */}
 
             </div>      

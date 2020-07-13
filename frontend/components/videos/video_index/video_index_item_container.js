@@ -2,6 +2,7 @@ import VideoIndexItem from './video_index_item';
 import {connect} from 'react-redux';
 import { fetchVideo } from '../../../actions/video_actions';
 import {openModal} from '../../../actions/modal_actions'
+import {fetchComments} from '../../../actions/comment_actions'
 
 const mapStateToProps = state => ({
     currentUser: state.entities.users[state.session.id],
@@ -11,6 +12,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     fetchVideo: (videoId) => dispatch (fetchVideo(videoId)),
+    fetchComments: (videoId) => dispatch (fetchComments(videoId)),
     openModal: modal => dispatch(openModal(modal))
 })
 

@@ -178,6 +178,7 @@
         background-color: lawngreen;
         width: fit-content;
         height: 17em;
+        padding: 1em;
         /* width: fit-content; */
         /* width: initial;
         max-width: min-content; */
@@ -186,8 +187,8 @@
     }
 
     .video {
-        height: inherit;
-        padding: 1em;
+        height: 100%;
+        /* padding: 1em; */
     }
 
 
