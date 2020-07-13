@@ -114,7 +114,7 @@
 .upload-all {
     height: 100vh;
     width: 100%;
-    background-color: khaki;
+    background-color: white;
     /* position: relative; */
     display: flex;
     align-items: center;
@@ -125,7 +125,10 @@
 }
 
 .upload-header {
-    width: 100%;
+     width: 100%;
+    height: 5em;
+    /* background-color: whitesmoke; */
+     border-bottom: 1px solid #4d4d4d42;
 }
 
 
@@ -133,7 +136,7 @@
 .upload-body {
     max-width: 1200px;
     width: 100%;
-    background-color: lavender;
+    /* background-color: lavender; */
     height: 50em;
     display: flex;
     justify-content: center;
@@ -143,20 +146,23 @@
 
 
     .upload-title {
-    background-color: lightcoral;
+    /* background-color: lightcoral; */
     height: 5em;
     width: 100%;
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
     padding-left: 2em;
+    /* border-bottom: 1px solid #4d4d4d42; */
+
+
 }
         .upload-title > h1 {
             font-size: 2.5em;
             font-weight: bold;
         }
         .upload-subtitle > p {
-            font-size: .75em;
+            font-size: 1em;
             /* font-weight: bold; */
         }
 
@@ -164,14 +170,15 @@
 
     .upload-main{
         width: 100%;
+        height: 40em;
         display: flex;
         justify-content: center;
-        justify-content: center;
-        background-color: lightgreen;
+        align-items: center;
+        /* background-color: white; */
     }
 
     .upload-left {
-        background-color: lavenderblush;
+        /* background-color: lavenderblush; */
         width: fit-content;
         height: 30em;
         /* height: 90%; */
@@ -179,7 +186,7 @@
 
 
     .upload-right {
-        background-color: lightcyan;
+        /* background-color: lightcyan; */
         width: 50%;
         height: 30em;
         display: flex;
@@ -188,7 +195,7 @@
     }
 
         .upload-form {
-            background-color: lightskyblue;
+            /* background-color: lightskyblue; */
             width: 90%;
             height: 100%;
             display: flex;
@@ -220,7 +227,7 @@
 
 
             .upload-buttons {
-                background-color: magenta;
+                /* background-color: magenta; */
                 /* height: 5em; */
                 width: 90%;
                 height: 10%;
@@ -243,6 +250,8 @@
             font-weight:bold;
             padding: .5em 1em;
             text-decoration:none;
+            border: none;
+            outline: none;
             }
 
             
@@ -252,7 +261,7 @@
 
 
     .upload-field {
-        background-color: lawngreen;
+        /* background-color: lawngreen; */
         height: 100%;
         width: fit-content;
         display: flex;
