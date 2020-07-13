@@ -156,11 +156,17 @@
 
     .prof-vid-body {
         height: 100%;
+        width:100%;
         background-color: whitesmoke;
          display: flex;
          /* justify-content: space-evenly; */
          /* align-items: center; */
     }
+
+
+        .prof-vid-body > a {
+            width: 100%;
+        }
 
     .profile-grid {
     /* background-color: lavender; */
@@ -205,8 +211,11 @@
 
 
     .zero-video {
+        width: 100%;
+        height: 100%;
         display: flex;
         justify-content: center;
+        align-items: center;
         flex-direction: column;
         background-color: whitesmoke;
         
