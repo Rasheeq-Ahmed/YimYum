@@ -249,7 +249,6 @@
                     /* background-color: cornflowerblue; */
                     /* width: 50%; */
                     height:100%;
-                    cursor: pointer;;
                 }
 
                 .like-body {
@@ -258,6 +257,7 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    margin-left: .5em;
                     
                 }
                     .like-body > h1 {
@@ -267,6 +267,8 @@
                     }
                     .like-body > img {
                         height: 70%;
+                        cursor: pointer;;
+
                     }
 
 
@@ -288,6 +290,8 @@
                     }
                     .comment-body > img {
                         height: 70%;
+                        cursor: pointer;;
+
                     }
 
             
