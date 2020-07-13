@@ -103,9 +103,9 @@ class Signup extends React.Component{
                 {/* <div className="signup-redirect">Have an account<NavLink className="link" to="/signup">? Click here to log in.</NavLink></div> */}
               </form>
             </div>
-            <footer className="footer-container">
+            {/* <footer className="footer-container">
               <FooterNav />
-            </footer>
+            </footer> */}
           </div>
         );
     }

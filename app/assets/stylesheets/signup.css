@@ -8,9 +8,9 @@
 
 
 .signup-header{
-    width: 100%;
-    height: 5em;
-    background-color: whitesmoke;
+ height: 5em;
+    /* background-color: whitesmoke; */
+     border-bottom: 1px solid #4d4d4d42;
 
 
 }

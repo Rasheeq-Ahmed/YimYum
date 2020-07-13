@@ -1,6 +1,9 @@
 import React from 'react';
 import NavBarContainer from '../nav_bar/nav_bar_container'
 import FooterNav from '../nav_bar/footer_nav'
+import { Link, withRouter } from "react-router-dom";
+
+
 
 
 class VideoUpload extends React.Component {
@@ -57,7 +60,7 @@ class VideoUpload extends React.Component {
                     caption: '',
                     videoFile: null,
                 })
-            }).then(()=> this.props.history.push(`/users/${this.state.creator_id}`))
+            }).then(()=> this.props.history.push(`/users/${this.currentUser.id}`))
 
     }
 
@@ -216,4 +219,4 @@ class VideoUpload extends React.Component {
 }
 
 
-export default VideoUpload;
+export default withRouter(VideoUpload);

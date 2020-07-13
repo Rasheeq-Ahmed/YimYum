@@ -24,9 +24,9 @@ class ProfileEdit extends React.Component {
     this.handlePicSubmit = this.handlePicSubmit.bind(this);
   }
 
-  componentDidMount() {
-    this.props.fetchUser(this.props.match.params.id);
-  }
+  // componentDidMount() {
+  //   this.props.fetchUser(this.props.match.params.id);
+  // }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -37,7 +37,7 @@ class ProfileEdit extends React.Component {
     currentUser.profilePhoto = this.state.profilePhoto;
 
     this.props.updateUser(currentUser)
-      .then(() => this.props.history.push(`/users/${currentUser.id}/`));
+      .then(this.props.history.push(`/users/${this.props.user.id}/`));
   }
 
   update(field) {
@@ -124,7 +124,8 @@ class ProfileEdit extends React.Component {
 
 
   render() {
-
+    console.log(this.state)
+    console.log(this.props)
     if (!this.props.user) {
       return null;
     }
@@ -161,9 +162,10 @@ class ProfileEdit extends React.Component {
                   onChange={this.update("name")}
                 />
               </div>
-                <div className="edit-bio"
->
+                <div className="edit-bio">
+                  <h1>
                 Bio
+                  </h1>
                 {/* <br /> */}
                 <textarea
                   value={this.state.bio}

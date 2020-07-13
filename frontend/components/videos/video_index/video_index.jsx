@@ -53,12 +53,14 @@ class VideoIndex extends React.Component {
       // console.log(this.state)
 
       if (!this.props.videos) {
-        return null;
+        this.props.fetchVideos();
+
+
       }
 
-      // if (this.props.currentUser) {
-      //   return null;
-      // }
+      if (!this.props.users) {
+        this.props.fetchUsers();
+      }
 
       return (
         <div className="video-body">
@@ -111,6 +113,16 @@ class VideoIndex extends React.Component {
     }
 
     render () {
+
+      if (!this.props.videos) {
+        this.props.fetchVideos();
+
+
+      }
+
+      if (!this.props.users) {
+        this.props.fetchUsers();
+      }
         
         // console.log(this.props)
         return (

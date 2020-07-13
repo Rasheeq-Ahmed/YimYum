@@ -1,39 +1,44 @@
 .prof-all {
     width: 100%;
     height: 100vh;
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 
 .prof-header {
     height: 5em;
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
+     border-bottom: 1px solid #4d4d4d42;
+
 }
 
 .prof-body {
     height: 90%;
-    background-color: wheat;
+    /* background-color: wheat; */
     display: flex;
     justify-content: center;
+    align-items: center;
 
 }
 
 .prof-content {
     width: 50em;
-    background-color: coral;
-    height: 100%;
+    /* background-color: coral; */
+    height: 90%;
 }
 
 .prof-info-all {
     /* height: 35%; */
-    background-color: cornflowerblue;
+    /* background-color: cornflowerblue; */
+     /* border-bottom: 1px solid #4d4d4d42; */
+
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
     .prof-info-user {
-        background-color: lightblue;
+        /* background-color: lightblue; */
         height: 50%;
         display: flex;
         align-items: center;
@@ -41,7 +46,7 @@
         .prof-user-pic{
             width: fit-content;
             height: fit-content;
-            background-color: lightcoral;
+            /* background-color: lightcoral; */
             display: flex;
             justify-content: center;
         }
@@ -54,7 +59,7 @@
         .prof-user-names {
             width: 100%;
             height: 100%;
-            background-color: lightgoldenrodyellow;
+            /* background-color: lightgoldenrodyellow; */
             display: flex;
             /* align-items: center; */
             flex-direction: column;
@@ -86,12 +91,15 @@
         }
     
     .prof-stats {
-        height: 2em;
-        background-color: lightgreen;
+        height: 3em;
+        /* background-color: lightgreen; */
         display: flex;
         /* justify-content: space-evenly; */
         /* flex-direction: row; */
         align-items: center;
+        border-bottom: 1px solid #4d4d4d42;
+        
+
 
     }
 
@@ -100,11 +108,13 @@
         }
 
     .prof-bio {
-        height: 2em;
-        background-color: lightgrey;
+        height: 3em;
+        /* background-color: lightgrey; */
         display: flex;
         /* flex-direction: row; */
         align-items: center;
+        /* border-bottom: 1px solid #4d4d4d42; */
+        
     }
 
 
@@ -112,12 +122,12 @@
 
 .prof-vid-all {
     height: 65%;
-    background-color: darkkhaki;
+    /* background-color: whitesmoke; */
 }
 
     .prof-vid-header{
         height: fit-content;
-        background-color: lightseagreen;
+        /* background-color: whitesmoke; */
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -137,30 +147,31 @@
 
         }
 
-        .prof-vid-header:hover{
+        /* .prof-vid-header:hover{
             border-bottom: 2px solid black;
             transition-duration: 1s;
-        }
+        } */
 
     
 
     .prof-vid-body {
-        height: fit-content;
-        background-color: lightyellow;
+        height: 100%;
+        background-color: whitesmoke;
          display: flex;
-         justify-content: space-evenly;
+         /* justify-content: space-evenly; */
+         /* align-items: center; */
     }
 
     .profile-grid {
-    background-color: lavender;
+    /* background-color: lavender; */
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: fit-content ;
     height: fit-content;
     
 }
 .profile-items {
-    background-color: lemonchiffon;
+    /* background-color: lemonchiffon; */
     width: 42em;
     display: flex;
     flex-wrap: wrap;
@@ -175,7 +186,7 @@
 
     .profile-video {
         /* position: relative; */
-        background-color: lawngreen;
+        /* background-color: lawngreen; */
         width: fit-content;
         height: 17em;
         padding: 1em;
@@ -193,6 +204,20 @@
 
 
 
+    .zero-video {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-color: whitesmoke;
+        
+    }
+    .zero-video > p {
+        font-size: 2.5em;
+    }
+    .zero-video > img {
+        height: 5em;
+    }
+
 
 
 
@@ -206,8 +231,8 @@
 }
 
 .profile-edit-body {
-    height: 100%;
-    background-color: wheat;
+    height: 70%;
+    /* background-color: wheat; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -216,7 +241,7 @@
 
     .profile-edit-form {
         height: 25em;
-        background-color: white;
+        background-color: whitesmoke;
         width: 40em;
         display: flex;
     }
@@ -224,7 +249,7 @@
         .edit-photo {
             height: 100%;
             width: 40%;
-            background-color: thistle;
+            /* background-color: whitesmoke; */
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
@@ -236,7 +261,7 @@
                 width: 90%;
                 height: 80%;
                 /* border-radius: 50%; */
-                background-color: turquoise;
+                background-color: white;
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
@@ -260,7 +285,7 @@
                 height: 8em;
                 width: 8em;
                 border-radius: 50%;
-                background-color: turquoise;
+                /* background-color: turquoise; */
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -272,11 +297,12 @@
             .edit-content {
                 height: 100%;
                 width: 60%;
-                background-color: azure;
+                /* background-color: azure; */
                 display: flex;
                 flex-direction: column;
                 justify-content: space-evenly;
                 align-items: center;
+                position: relative;
             }
 
                 .edit-title {
@@ -286,47 +312,61 @@
 
                 .edit-fields {
                     width: 100%;
-                    background-color: burlywood;
+                    /* background-color: burlywood; */
                     display: flex;
                     height: 80%;
                     flex-direction: column;
-                    justify-content: space-evenly;
+                    /* justify-content: center; */
                 }
 
                 .edit-name {
-                    width: 100%;
+                    width: 90%;
                     height: 5em;
-                    background-color: rgb(201, 117, 8);
+                    /* background-color: white; */
                     display: flex;
                     flex-direction: column;
                     justify-content: space-evenly;
+                    
                 }
 
-                   .edit-name {
-                    width: 100%;
-                    height: 5em;
-                    background-color: rgb(201, 117, 8);
-                    display: flex;
+                   .edit-name > input {
+                    /* width: 100%;
+                    height: 5em; */
+                    background-color: white;
+                    /* display: flex;
                     flex-direction: column;
-                    justify-content: space-evenly;
+                    justify-content: space-evenly; */
+                    outline: none;
+                    border: 1px solid #4d4d4d42;
                 }
+
+                .edit-name > h1 {
+                    font-size: 1.5em;
+                 }
 
                 
 
 
             .edit-bio  {
                 resize: none;
-                 width: 100%;
-                    height: 5em;
-                    background-color: rgb(201, 117, 8);
+                 width: 90%;
+                    height: 10em;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-evenly;
-                
+                    margin-top: 1em;
             }
 
+                .edit-bio > h1 {
+                    font-size: 1.5em;
+                }
+
                 .edit-bio > textarea {
+                    height: 5em;
                     resize: none;
+                    background-color:white;
+                    outline: none;
+                    border: 1px solid #4d4d4d42;
                 }
 
 
@@ -337,4 +377,8 @@
                     font-size: 1em;
                     padding: .5em 1em;
                     font-weight: bold;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    outline: none;
         }

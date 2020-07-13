@@ -168,9 +168,9 @@ class Login extends React.Component {
             </div>
           </form>
         </div>
-        <footer className="footer-container">
+        {/* <footer className="footer-container">
           <FooterNav />
-        </footer>
+        </footer> */}
       </div>
     );
   }

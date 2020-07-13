@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ProfileItem from './profile_item'
 import VideoIndexItem from "../videos/video_index/video_index_item_container";
 import NavBar from '../nav_bar/nav_bar_container'
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 
 class Profile extends Component {
@@ -19,6 +19,7 @@ class Profile extends Component {
 
   componentDidMount() {
     this.props.fetchVideos();
+    // this.props.fetchUser(this.props.match.params.id);
 
     if (this.props.user === undefined) {
       this.props.fetchUsers();
@@ -44,11 +45,13 @@ class Profile extends Component {
     
     if (this.props.videos.length === 0) {
       return (
+          <Link to='/upload'>
         <div className="zero-video">
-          {/* <img src={window.camera} /> */}
+          <img src={window.videoIcon} />
           <p>Upload a Video</p>
-          <p> Share with your friends </p>
+          {/* <p> Share with your friends </p> */}
         </div>
+          </Link>
       );
     } else {
       return (
@@ -67,6 +70,7 @@ class Profile extends Component {
 
   render() {
     if (!this.props.user) {
+      this.props.fetchUsers()
         return null;
     }
     if (!this.props.videos) {
@@ -97,9 +101,9 @@ class Profile extends Component {
                 </div>
               </div>
               <div className="prof-stats">
+                <li>0 Videos</li>
                 <li>0 Following</li>
                 <li>0 Followers</li>
-                <li>0 Likes</li>
               </div>
               <div className="prof-bio">
                 {this.props.user.bio}
@@ -108,7 +112,7 @@ class Profile extends Component {
             <div className="prof-vid-all">
               <div className="prof-vid-header">
                 {/* <span>Videos</span> */}
-                <img src={window.videoIcon} />
+                {/* <img src={window.videoIcon} /> */}
                 {/* <span>Likes</span> */}
               </div>
               <div className="prof-vid-body">{this.renderVideos()}</div>
@@ -120,4 +124,4 @@ class Profile extends Component {
   }
 }
 
-export default Profile
+export default withRouter(Profile)
