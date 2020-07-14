@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     end
     resources :likes, only: [:create, :show, :index, :destroy]
     resources :comments, only: [:create, :show, :index, :destroy]
+    resources :follows, only: [:create, :show, :index, :destroy]
+
 
   end
 
