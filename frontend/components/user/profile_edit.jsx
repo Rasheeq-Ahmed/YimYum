@@ -37,7 +37,7 @@ class ProfileEdit extends React.Component {
     currentUser.profilePhoto = this.state.profilePhoto;
 
     this.props.updateUser(currentUser)
-      .then(this.props.history.push(`/users/${this.props.user.id}/`));
+      .then(this.props.history.goBack());
   }
 
   update(field) {
@@ -173,9 +173,11 @@ class ProfileEdit extends React.Component {
                 />
               </div>
               </div>
+              {/* <Link to={`/users/${this.props.user.id}/`}> */}
               <button className="edit-button" onClick={(e) => {this.handleSubmit(e); this.handlePicSubmit(e)} }>
                 Update
               </button>
+              {/* </Link> */}
             </div>
           </div>
 

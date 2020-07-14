@@ -18,11 +18,22 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchVideos();
+    this.props.fetchUsers();
+    this.props.fetchVideos().then(
+      this.props.fetchUsers()
+    );
+
     // this.props.fetchUser(this.props.match.params.id);
 
     if (this.props.user === undefined) {
       this.props.fetchUsers();
+    }
+  }
+
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.user.bio !== this.props.user.bio) {
+      this.props.fetchUsers()
     }
   }
 
