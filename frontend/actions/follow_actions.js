@@ -24,7 +24,7 @@ const removeFollow = followId => {
 };
 
 export const fetchFollows = () => dispatch => (
-    FollowAPIUtil.fetchFollows() //ajax call from backend
+    FollowAPIUtil.fetchAllFollows() //ajax call from backend
         .then(follows => dispatch(receiveAllFollows(follows)),
     ) //dispatched and sent to reducer
 )

@@ -5,7 +5,7 @@ class Api::FollowsController < ApplicationController
     def create
         @follow = current_user.follows.new(follow_params)
         if @follow.save
-            render: show
+            render :show
         else
             render json: @follow.errors.full_messages, status: 422
         end
@@ -31,7 +31,7 @@ class Api::FollowsController < ApplicationController
         if @follow.destroy
             render :show
         else
-            render kson: @follow.errors.full_messages, status: 404
+            render json: @follow.errors.full_messages, status: 404
         end
     end
 

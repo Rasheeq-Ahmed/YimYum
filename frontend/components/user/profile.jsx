@@ -3,6 +3,7 @@ import ProfileItem from './profile_item'
 import VideoIndexItem from "../videos/video_index/video_index_item_container";
 import NavBar from '../nav_bar/nav_bar_container'
 import { Link, withRouter } from "react-router-dom";
+import FollowContainer from '../follows/follow_container';
 
 
 class Profile extends Component {
@@ -21,7 +22,8 @@ class Profile extends Component {
     this.props.fetchUsers();
     this.props.fetchVideos().then(
       this.props.fetchUsers()
-    );
+    )
+    this.props.fetchFollows();
 
     // this.props.fetchUser(this.props.match.params.id);
 
@@ -31,11 +33,11 @@ class Profile extends Component {
   }
 
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.user.bio !== this.props.user.bio) {
-      this.props.fetchUsers()
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   if (prevProps.user.bio !== this.props.user.bio) {
+  //     this.props.fetchUsers()
+  //   }
+  // }
 
   renderEdit() {
    
@@ -98,6 +100,7 @@ class Profile extends Component {
           <div className="prof-content">
             <div className="prof-info-all">
               <div className="prof-info-user">
+                <FollowContainer/>
                 <div className="prof-user-pic">
                   <img
                     className="prof-pic"

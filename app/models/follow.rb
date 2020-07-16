@@ -5,7 +5,7 @@ class Follow < ApplicationRecord
 
         # follower_id is this user id
 
-    belongs_to :follower.
+    belongs_to :follower,
     primary_key: :id,
     foreign_key: :follower_id,
     class_name: "User"

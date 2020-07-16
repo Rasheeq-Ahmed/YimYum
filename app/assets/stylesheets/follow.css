@@ -1,0 +1,15 @@
+.follow-all {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.follow-all > button {
+    background-color: white;
+    color:#fe2c55;
+    border: 1px solid #fe2c55;
+    font-size: 1em;
+    padding: .5em 1.5em;
+    font-weight: bold;
+    justify-content: space-between; 
+}
