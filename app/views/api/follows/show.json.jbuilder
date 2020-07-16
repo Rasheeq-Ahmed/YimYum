@@ -4,4 +4,4 @@
 
 
 
-json.partial! "api/followings/following", follow: @follow
+json.partial! 'api/followings/following', follow: @follow
