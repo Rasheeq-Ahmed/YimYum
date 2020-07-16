@@ -5,18 +5,30 @@ class CommentIndexItem extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-           comment: this.props.comment,
-           deleted: ''
+        //    comment: this.props.comment,
+           deleted: "false"
         }
 
         this.handleDelete = this.handleDelete.bind(this);
     }
 
 
+    // componentDidMount() {
+    //     this.props.fetchComments(this.props.currentVideo.id);
+    //     // this.setState({deleted: "false"})
+    // }
+
+
     componentDidMount() {
         this.props.fetchComments(this.props.currentVideo.id);
-        this.setState({deleted: "false"})
+        this.setState({ deleted: "false" })
     }
+
+    // componentDidUpdate(prevProps) {
+    //     if (prevProps.comments.length !== this.props.comments.length) {
+    //         this.props.fetchComments(this.props.currentVideo.id);
+    //     }
+    // }
 
     // componentDidUpdate(prevProps) {
     //     if (prevProps.currentVideo.id !== this.props.currentVideo.id) {
@@ -30,17 +42,23 @@ class CommentIndexItem extends React.Component {
     handleDelete(e) {
         e.preventDefault();
         // this.props.fetchComments(this.props.currentVideo.id)
-        // this.forceUpdate()
 
-        this.props.deleteComment(this.props.comment.id).then(
-        this.props.fetchComments(this.props.currentVideo.id)
+        // this.setState({ deleted: "true" })
+        this.props.deleteComment(this.props.comment.id)
+        .then(
+            // this.forceUpdate(),
+            this.props.fetchComments(this.props.currentVideo.id)
         )
+        // .then(
+        // )
+
+
 
         this.props.fetchComments(this.props.currentVideo.id)
         
         //     this.props.fetchComments(this.props.currentVideo.id),
         //     this.setState({deleted: "true"}),
-        //     this.props.deleteComment(this.props.comment.id),
+            // this.props.deleteComment(this.props.comment.id)
         // )
         
         // this.setState({deleted: ''})
@@ -54,8 +72,8 @@ class CommentIndexItem extends React.Component {
         if (this.props.user && this.props.comment) {
             if (this.props.user.id === this.props.comment.user_id) {
                 return (
-                    <button className="delete-comment-btn" onClick={this.handleDelete}>
-                        <i class="fa fa-trash"></i>
+                    <button className="delete-comment-btn" onClick={(e) =>this.handleDelete(e)}>
+                        <i className="fa fa-trash"></i>
                     </button>
                 )
             }

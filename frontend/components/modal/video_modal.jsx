@@ -165,7 +165,8 @@ class VideoModal extends React.Component {
 
 
 render () {
- 
+    // console.log(this.props)
+    // console.log(this.state)
 
     if (!this.props.currentVideo) {
         return null;
@@ -245,7 +246,7 @@ render () {
                     </div> */}
                       <div className="comment-outer">
                         {/* {vidComments} */}
-                        <CommentIndexContainer />
+                        <CommentIndexContainer comments={this.props.comments}/>
 
                      </div>
                 </div> 

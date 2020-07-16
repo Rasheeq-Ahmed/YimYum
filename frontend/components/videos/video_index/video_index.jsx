@@ -69,7 +69,7 @@ class VideoIndex extends React.Component {
 
           </div>
           {this.props.videos.reverse().map((video, idx) => (
-            <div className="index-all">
+            <div key={idx} className="index-all">
               <div className="index-header">
                 <Link to={`/users/${video.creator_id}`}>
                 <div className="index-user-pic">
@@ -128,7 +128,7 @@ class VideoIndex extends React.Component {
         return (
           <div className="vIndex-all">
             <div className="vIndex-header">
-              <NavBarContainer />
+              {/* <NavBarContainer /> */}
             </div>
             <div className="vIndex-body">
               <div className="vIndex-left">
@@ -176,7 +176,7 @@ class VideoIndex extends React.Component {
             </div>
 
             <div className="vIndex-footer">
-              <FooterNav />
+              {/* <FooterNav /> */}
             </div>
           </div>
         );

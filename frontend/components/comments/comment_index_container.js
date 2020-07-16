@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 
 
 
-    comments: Object.values(state.entities.comments)
+    // comments: state.entities.comments
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -10,7 +10,7 @@ class CommentIndex extends React.Component {
         super(props);
         this.state = { 
             body: '',
-            comments: this.props.comments
+            // comments: Object.values(this.props.comments)
             
 
     
@@ -24,10 +24,13 @@ class CommentIndex extends React.Component {
 
     componentDidMount() {
        this.props.fetchComments(this.props.currentVideo.id);
+        // console.log(this.state)
+
+
     }
 
-    // componentDidUpdate(prevState) {
-    //     if (prevState.comments.id === this.state.comments.id) {
+    // componentDidUpdate(prevProps) {
+    //     if (prevProps.comments.length !== this.props.comments.length) {
     //         this.props.fetchComments(this.props.currentVideo.id);
     //     }
     // }
@@ -38,7 +41,7 @@ class CommentIndex extends React.Component {
     handleChange(e) {
         e.preventDefault();
         this.setState({ body: e.currentTarget.value })
-        this.props.fetchComments(this.props.currentVideo.id)
+        // this.props.fetchComments(this.props.currentVideo.id)
 
     }
 
@@ -50,7 +53,7 @@ class CommentIndex extends React.Component {
         this.setState({ body: "", user_id: this.props.currentUser.id, video_id: this.props.currentVideo.id });
         let video_id = this.props.currentVideo.id;
         this.props.createComment({ body: this.state.body, video_id })
-        this.props.fetchComments(this.props.currentVideo.id)
+        // this.props.fetchComments(this.props.currentVideo.id)
 
     }
 
@@ -72,10 +75,11 @@ class CommentIndex extends React.Component {
 
 
     render() {
+        
         console.log(this.props)
         // let {comments} = this.state
         // let commentList = this.props.fetchComments(this.props.currentVideo.id).values;
-
+        // let {comments} = this.state
         return(
         <div className="comment-all">
 
