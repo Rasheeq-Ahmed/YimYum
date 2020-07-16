@@ -85,7 +85,7 @@ class VideoIndex extends React.Component {
                       <h2>{this.props.users[video.creator_id].name}</h2>
                     </Link>
                   </div>
-                  <FollowContainer/>
+                  {/* <FollowContainer/> */}
                 </div>
               </div>
               <div className="index-body">

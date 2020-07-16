@@ -20,13 +20,26 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: "Comment"
     
-    has_many :follows,
-    foreign_key: :follower_id,
-    class_name: "Follow"
-    
-    has_many :followers,
-    foreign_key: :following_id,
-    class_name: "Follow"
+   
+    has_many :active_follows,  
+    class_name: :Following,
+    foreign_key: :user_id,
+    dependent: :destroy
+
+    has_many :passive_follows, 
+    class_name: :Following,
+    foreign_key: :followed_user_id,
+    dependent: :destroy
+
+    has_many :followings, 
+    through: :active_follows,
+    source: :following,
+    dependent: :destroy
+
+    has_many :followers, 
+    through: :passive_follows, 
+    source: :follower,
+    dependent: :destroy
 
 
     #FUTURE FEATURES

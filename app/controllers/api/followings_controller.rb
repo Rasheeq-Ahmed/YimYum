@@ -1,7 +1,8 @@
 class Api::FollowingsController < ApplicationController
-        before_action :require_login, only: [:create, :destroy]
+    
+    before_action :require_login, only: [:create, :destroy]
 
- def create
+     def create
         @follow = Following.new(follow_params)
         @follow.user_id = current_user.id 
 
@@ -30,4 +31,6 @@ class Api::FollowingsController < ApplicationController
     def follow_params
         params.require(:follow).permit(:followed_user_id)
     end
+
+
 end
