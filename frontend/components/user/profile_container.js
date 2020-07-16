@@ -6,6 +6,8 @@ import Profile from './profile'
 
 
 const mapStateToProps = (state, ownProps) => {
+    console.log(ownProps)
+
 //   videos: Object.values(state.entities.videos),
 //   users: Object.values(state.entities.users),
     const user = state.entities.users[ownProps.match.params.id];

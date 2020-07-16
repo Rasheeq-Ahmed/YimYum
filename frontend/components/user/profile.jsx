@@ -3,7 +3,7 @@ import ProfileItem from './profile_item'
 import VideoIndexItem from "../videos/video_index/video_index_item_container";
 import NavBar from '../nav_bar/nav_bar_container'
 import { Link, withRouter } from "react-router-dom";
-// import FollowContainer from '../follows/follow_container';
+import FollowContainer from '../follows/follow_container';
 
 
 class Profile extends Component {
@@ -16,9 +16,9 @@ class Profile extends Component {
 
     this.renderEdit = this.renderEdit.bind(this)
     this.renderVideos = this.renderVideos.bind(this)
-    this.renderFollow = this.renderFollow.bind(this)
-    this.handleFollow = this.handleFollow.bind(this)
-    this.handleUnfollow = this.handleUnfollow.bind(this)
+    // this.renderFollow = this.renderFollow.bind(this)
+    // this.handleFollow = this.handleFollow.bind(this)
+    // this.handleUnfollow = this.handleUnfollow.bind(this)
   }
 
   componentDidMount() {
@@ -46,49 +46,49 @@ class Profile extends Component {
 
 /////////////////////////// Follows ////////////////////////////////
 
-  handleFollow(e) {
-    e.preventDefault();
-    this.props.createFollow({ followed_user_id: this.props.user.id })
-      // .then(() => this.props.fetchUser(this.props.user.id))
-  }
+//   handleFollow(e) {
+//     e.preventDefault();
+//     this.props.createFollow({ followed_user_id: this.props.user.id })
+//       // .then(() => this.props.fetchUser(this.props.user.id))
+//   }
 
-  handleUnfollow(e) {
-    e.preventDefault();
-    this.props.deleteFollow(this.props.user.id)
-    // .then(() => {
-    //   this.props.fetchUser(this.props.user.id)
-    // })
-  } 
-
-
+//   handleUnfollow(e) {
+//     e.preventDefault();
+//     this.props.deleteFollow(this.props.user.id)
+//     // .then(() => {
+//     //   this.props.fetchUser(this.props.user.id)
+//     // })
+//   } 
 
 
-renderFollow() {
-  console.log(this.props)
+
+
+// renderFollow() {
+//   console.log(this.props)
   
-  // console.log(this.props.currentUser)
-  if (this.props.followStatus === true) {
-    return(
-    <div className="follow-all">
-        <button
-          className="profile-button"
-          onClick={this.handleUnfollow}>
-          Unfollow
-        </button>
-      </div>
-      ) 
-  } else {
-      return (
-        <div className="follow-all">
-          <button
-            className="profile-button"
-            onClick={this.handleFollow}>
-            Follow
-          </button>
-        </div>
-      )
-    } 
-}
+//   // console.log(this.props.currentUser)
+//   if (this.props.followStatus === true) {
+//     return(
+//     <div className="follow-all">
+//         <button
+//           className="profile-button"
+//           onClick={this.handleUnfollow}>
+//           Unfollow
+//         </button>
+//       </div>
+//       ) 
+//   } else {
+//       return (
+//         <div className="follow-all">
+//           <button
+//             className="profile-button"
+//             onClick={this.handleFollow}>
+//             Follow
+//           </button>
+//         </div>
+//       )
+//     } 
+// }
 
 
   /////////////////////////////////////// EDIT PROFILE /////////////////////////////////////////
@@ -143,7 +143,7 @@ renderFollow() {
 
   render() {
     if (!this.props.user) {
-      this.props.fetchUsers()
+      // this.props.fetchUsers()
         return null;
     }
     if (!this.props.videos) {
@@ -161,8 +161,8 @@ renderFollow() {
             <div className="prof-info-all">
               <div className="prof-info-user">
 
-                {this.renderFollow()}
-                {/* <FollowContainer/> */}
+                {/* {this.renderFollow()} */}
+                <FollowContainer user={this.props.user} followStatus={this.props.followStatus} />
                 <div className="prof-user-pic">
                   <img
                     className="prof-pic"
@@ -176,14 +176,15 @@ renderFollow() {
                   {this.renderEdit()}
                 </div>
               </div>
-              <div className="prof-stats">
-                <li>{this.props.videos.length} Videos</li>
-                <li>0 Following</li>
-                <li>0 Followers</li>
-              </div>
               <div className="prof-bio">
                 {this.props.user.bio}
               </div>
+              <div className="prof-stats">
+                <li>{this.props.videos.length} Videos</li>
+                <li>{this.props.user.followerIds.length} Followers</li>
+                <li>{this.props.user.followingIds.length} Following</li>
+              </div>
+              
             </div>
             <div className="prof-vid-all">
               <div className="prof-vid-header">

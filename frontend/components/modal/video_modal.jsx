@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom'
 import LikeContainer from '../likes/like_container'
 // import CommentContainer from '../comments/comment_item_container'
 import CommentIndexContainer from '../comments/comment_index_container'
+// import FollowContainer from '../follows/follow_container'
+
 
 
 class VideoModal extends React.Component {
@@ -210,7 +212,7 @@ render () {
                                 <h2>{this.props.users[this.props.currentVideo.creator_id].name}</h2>
                             </Link>
                         </div>
-                        <button>Follow</button>
+                        {/* <FollowContainer/> */}
                     </div>
                 </div>
 
