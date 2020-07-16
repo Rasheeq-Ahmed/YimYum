@@ -4,6 +4,7 @@ import FooterNav from '../../nav_bar/footer_nav'
 import VideoIndexItem from './video_index_item_container'
 import LikeContainer from '../../likes/like_container'
 import { Link, withRouter } from "react-router-dom";
+import FollowContainer from '../../follows/follow_container'
 
 
 
@@ -85,7 +86,7 @@ class VideoIndex extends React.Component {
                       <h2>{this.props.users[video.creator_id].name}</h2>
                     </Link>
                   </div>
-                  {/* <FollowContainer/> */}
+                  <FollowContainer/>
                 </div>
               </div>
               <div className="index-body">

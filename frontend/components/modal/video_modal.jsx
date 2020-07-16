@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import LikeContainer from '../likes/like_container'
 // import CommentContainer from '../comments/comment_item_container'
 import CommentIndexContainer from '../comments/comment_index_container'
-// import FollowContainer from '../follows/follow_container'
+import FollowContainer from '../follows/follow_container'
 
 
 
@@ -35,15 +35,16 @@ class VideoModal extends React.Component {
 
     }
 
-    // componentDidMount() {
-    //     this.props.fetchUsers()
-    //     // this.props.fetchComments(this.)
-    //     // this.forceUpdate();
+    componentDidMount() {
+        this.props.fetchUsers()
+        this.props.fetchVideos()
+        // this.props.fetchComments(this.)
+        // this.forceUpdate();
 
-    //     // this.setState({
-    //     //     state: this.state
-    //     // })
-    // }
+        // this.setState({
+        //     state: this.state
+        // })
+    }
 
 
     // componentDidMount() {
@@ -212,7 +213,7 @@ render () {
                                 <h2>{this.props.users[this.props.currentVideo.creator_id].name}</h2>
                             </Link>
                         </div>
-                        {/* <FollowContainer/> */}
+                        <FollowContainer user={this.props.users[this.props.currentVideo.creator_id]} followStatus={this.props.followStatus}/>
                     </div>
                 </div>
 
