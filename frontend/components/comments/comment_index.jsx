@@ -22,12 +22,12 @@ class CommentIndex extends React.Component {
 
 
 
-    componentDidMount() {
-       this.props.fetchComments(this.props.currentVideo.id);
-        // console.log(this.state)
+    // componentDidMount() {
+    // //    this.props.fetchComments(this.props.currentVideo.id);
+    //     // console.log(this.state)
 
 
-    }
+    // }
 
     // componentDidUpdate(prevProps) {
     //     if (prevProps.comments.length !== this.props.comments.length) {

@@ -13,28 +13,40 @@ class VideoIndex extends React.Component {
         super(props)
         
         this.state = {
-            testvideo: {},
-            loggedIn : false
+            // testvideo: {},
+            // loggedIn : false,
+            refresh: false,
+            users: this.props.users,
+            videos: this.props.videos
         }
         this.renderVideos = this.renderVideos.bind(this)
         this.profileNav = this.profileNav.bind(this)
         this.scrollToTop = this.scrollToTop.bind(this)
+        // this.renderFollowedUsers = this.renderFollowedUsers.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchUsers();
+
+        // const users = this.props.users
+        // console.log(this.state)
+        // this.setState({users: users})
         this.props.fetchVideos();
+
         // this.props.fetchVideo(110);
         // this.setState({testvideo: this.state.entities.videos[0]})
 
     }
 
 
-    // componentDidUpdate(prevProps){
-    //   if (prevProps.currentUser !== this.props.currenUser){
-    //     this.setState({loggedIn: true})
-    //   }
-    // }
+    componentDidUpdate(prevProps){
+      if (prevProps.currentUser.followingIds.length !== this.props.currentUser.followingIds.length){
+        this.props.fetchUsers();
+        this.props.fetchVideos();
+
+
+      }
+    }
 
 
     profileNav(e) {
@@ -49,10 +61,55 @@ class VideoIndex extends React.Component {
       
     }
 
+
+
+    // renderFollowedUsers() {
+    //   console.log(this.props)
+    //   // if (!this.props.videos) {
+    //   //   this.props.fetchVideos();
+
+
+    //   // }
+
+    //   if (!this.props.users) {
+    //     this.props.fetchUsers();
+    //   }
+    //   let followed = this.props.currentUser.followingIds
+      
+    //   return (
+    //     <div>
+    //       {followed.map((following,idx) => (
+    //         <div className='follow-accts'>
+    //           <div className="follow-pic">
+    //             {/* <img src={this.props.users.following.profilePhoto} alt=""/> */}
+    //           </div>
+    //           <div className="follow-info">
+    //             <p>{this.props.users.following.username}</p>
+    //             <p>{this.props.users.following.name}</p>
+    //           </div>
+    //         </div>
+    //       ))}
+    //     </div>
+      
+       
+
+    //   )    
+    // }
+    
+          
+  
+
+
+
+
+
     renderVideos() {
       // console.log(this.props)
       // console.log(this.state)
+      // let followStatus = this.props.creator_id
+      
 
+      
       if (!this.props.videos) {
         this.props.fetchVideos();
 
@@ -86,8 +143,9 @@ class VideoIndex extends React.Component {
                       <h2>{this.props.users[video.creator_id].name}</h2>
                     </Link>
                   </div>
-                  <FollowContainer/>
                 </div>
+                  {}
+                  <FollowContainer user={this.props.users[video.creator_id]} refresh={this.state.refresh} />
               </div>
               <div className="index-body">
                 <div className="index-caption">{video.caption}</div>
@@ -115,24 +173,47 @@ class VideoIndex extends React.Component {
 
     render () {
 
+
+
+            let followed = this.props.currentUser.followingIds
+            // const test = 1;
+            // console.log(followed)
+      if (!this.props.users) {
+        this.props.fetchUsers();
+      }
+
+
+      // if (!followed) {
+      //   return null;
+      // }
+
+
+
+
+
+
+
+
+
+      
+
       if (!this.props.videos) {
         this.props.fetchVideos();
 
 
       }
-
-      if (!this.props.users) {
-        this.props.fetchUsers();
-      }
-        
-        // console.log(this.props)
+      //  console.log(this.props)
+      // console.log(this.state)
+      
         return (
           <div className="vIndex-all">
             <div className="vIndex-header">
-              {/* <NavBarContainer /> */}
+              {}
+              <NavBarContainer />
             </div>
             <div className="vIndex-body">
               <div className="vIndex-left">
+          {/* {console.log(this.props.users.test.username)} */}
                 <div className="vIndex-nav">
                     <div className="nav-foryou">
                         <img src={window.house} alt="for-you" />
@@ -145,7 +226,27 @@ class VideoIndex extends React.Component {
                 </div>
                 <div className="vIndex-follow">
                     <h1 className="top-accounts">Your top accounts</h1>
-                    <div className='follow-accts'>
+
+                  <div>
+                    {followed.map((following,idx) => (
+                      <div className='follow-accts'>
+                        <div className="follow-pic">
+                          {/* <img src={this.props.users.following.profilePhoto} alt=""/> */}
+                        </div>
+                        <div className="follow-info">
+                          {/* <p>{this.props.users[following].username}</p>
+                          <p>{this.props.users[following].name}</p> */}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+
+
+
+
+                    {/* {this.renderFollowedUsers()} */}
+                    {/* <div className='follow-accts'>
                         <div className="follow-pic">
                             
                         </div>
@@ -153,7 +254,7 @@ class VideoIndex extends React.Component {
                             <p>Username</p>
                             <p>Name</p>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="see-all">
                         <p>See All</p>
                         <img src={window.dropdownArrow}/>
@@ -185,13 +286,13 @@ class VideoIndex extends React.Component {
 }
 
 
-export default withRouter(VideoIndex);
+export default withRouter(React.memo(VideoIndex));
 
 
 
 
 
-//  <div className="trending-right">
+{/* //  <div className="trending-right"> */}
    {/* <div className='suggested-accts'>
                             <div className='sugg-header'>Suggested Accounts</div>
                             <div className='sugg-acc'>

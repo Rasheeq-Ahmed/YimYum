@@ -28,13 +28,12 @@ const usersReducer = ( state = {}, action) => {
 
 
       case RECEIVE_CURRENT_USER:
-        return Object.assign({}, state, {
-          [action.currentUser.id]: action.currentUser,
-        });
+        return merge({}, state, { [action.currentUser.id]: action.currentUser });
+
       case RECEIVE_USER:
         return merge({}, state, { [action.user.id]: action.user });
       case RECEIVE_USERS:
-        return action.users;
+        return merge({}, state, action.users);
       case RECEIVE_VIDEO:
         return merge({}, state, { [action.user.id]: action.user });
       default:

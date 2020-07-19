@@ -21,7 +21,7 @@ class CommentIndexItem extends React.Component {
 
     componentDidMount() {
         this.props.fetchComments(this.props.currentVideo.id);
-        this.setState({ deleted: "false" })
+        // this.setState({ deleted: "false" })
     }
 
     // componentDidUpdate(prevProps) {
@@ -45,12 +45,12 @@ class CommentIndexItem extends React.Component {
 
         // this.setState({ deleted: "true" })
         this.props.deleteComment(this.props.comment.id)
-        .then(
-            // this.forceUpdate(),
-            this.props.fetchComments(this.props.currentVideo.id)
-        )
         // .then(
+        //     // this.forceUpdate(),
+            this.props.fetchComments(this.props.currentVideo.id)
         // )
+        // // .then(
+        // // )
 
 
 
@@ -82,8 +82,8 @@ class CommentIndexItem extends React.Component {
     }
 
     render() {
-        console.log(this.state)
-        console.log(this.props)
+        // console.log(this.state)
+        // console.log(this.props)
         // this.props.fetchComments(this.props.currentVideo.id)
         if (!this.props.comment) {
             return null;

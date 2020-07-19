@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {login, clearSessionErrors} from '../../actions/session_actions';
 import Login from './login'
+import { withRouter } from 'react-router-dom';
 
 
 
@@ -15,4 +16,4 @@ const mapDispatchToProps = dispatch => ({
     clearSessionErrors: () => dispatch(clearSessionErrors())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login))

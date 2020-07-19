@@ -158,6 +158,7 @@
                 /* background-color: lightsteelblue; */
                 height: 6em;
                 display: flex;
+                position: relative;
             }
 
                 .index-user-pic {

@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import VideoModalContainer from './video_modal_container';
 import ConfirmationModalContainer from './confirmation_modal_container'
+import { withRouter } from 'react-router-dom';
 
 function Modal({ id, modal, closeModal }) {
     if (!modal) {
@@ -53,4 +54,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Modal))

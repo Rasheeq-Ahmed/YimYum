@@ -3,10 +3,11 @@ import { fetchVideos } from "../../actions/video_actions";
 import { fetchUser ,fetchUsers} from '../../actions/user_actions'
 import { createFollow, deleteFollow } from '../../actions/follow_actions'
 import Profile from './profile'
+import { withRouter } from "react-router-dom";
 
 
 const mapStateToProps = (state, ownProps) => {
-    console.log(ownProps)
+    // console.log(ownProps)
 
 //   videos: Object.values(state.entities.videos),
 //   users: Object.values(state.entities.users),
@@ -31,7 +32,7 @@ const mapStateToProps = (state, ownProps) => {
     return {
        user, 
        videos,
-       currentUser:
+       currentUser,
        followerIds,
        followStatus
         // follows: state.entities.follows,
@@ -48,4 +49,5 @@ const mapDispatchToProps = (dispatch) => ({
     deleteFollow: follow => dispatch(deleteFollow(follow)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Profile)
+)

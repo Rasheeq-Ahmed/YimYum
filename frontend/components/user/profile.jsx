@@ -162,7 +162,7 @@ class Profile extends Component {
               <div className="prof-info-user">
 
                 {/* {this.renderFollow()} */}
-                <FollowContainer user={this.props.user} followStatus={this.props.followStatus} />
+                <FollowContainer user={this.props.user} followStatus={this.props.followStatus} props={this.props} />
                 <div className="prof-user-pic">
                   <img
                     className="prof-pic"
@@ -171,9 +171,11 @@ class Profile extends Component {
                   />
                 </div>
                 <div className="prof-user-names">
-                  <h2>{this.props.user.username}</h2>
-                  <h3>{this.props.user.name}</h3>
-                  {this.renderEdit()}
+                {this.renderEdit()}
+                  <h2>{this.props.user.username}
+                  </h2>
+                  <h3>{this.props.user.name}
+                  </h3>
                 </div>
               </div>
               <div className="prof-bio">
@@ -183,6 +185,7 @@ class Profile extends Component {
                 <li>{this.props.videos.length} Videos</li>
                 <li>{this.props.user.followerIds.length} Followers</li>
                 <li>{this.props.user.followingIds.length} Following</li>
+
               </div>
               
             </div>

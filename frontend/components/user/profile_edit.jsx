@@ -172,11 +172,11 @@ class ProfileEdit extends React.Component {
                   onChange={this.update("bio")}
                 />
               </div>
-              </div>
-              {/* <Link to={`/users/${this.props.user.id}/`}> */}
               <button className="edit-button" onClick={(e) => {this.handleSubmit(e); this.handlePicSubmit(e)} }>
                 Update
               </button>
+              </div>
+              {/* <Link to={`/users/${this.props.user.id}/`}> */}
               {/* </Link> */}
             </div>
           </div>

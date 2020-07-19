@@ -17,6 +17,7 @@ class VideoModal extends React.Component {
             body: "",
             video_id: this.props.currentVideo.id,
             // comments: state.entities.comments
+            // comments: this.props.comments
 
         }
 
@@ -38,6 +39,8 @@ class VideoModal extends React.Component {
     componentDidMount() {
         this.props.fetchUsers()
         this.props.fetchVideos()
+        this.props.fetchComments(this.props.currentVideo.id);
+
         // this.props.fetchComments(this.)
         // this.forceUpdate();
 
@@ -52,7 +55,7 @@ class VideoModal extends React.Component {
     // }
 
     // componentDidUpdate(prevProps) {
-    //     if (prevProps.currentVideo !== this.props.currentVideo) {
+    //     if (prevProps.comments.length !== this.props.comments.length) {
     //         this.props.fetchComments(this.props.currentVideo.id);
     //     }
     // }
@@ -186,7 +189,7 @@ render () {
 
 
 
-
+    // console.log(this.props)
     return (
         <div className="video-modal-all">
                 <button className="closeVidModal" onClick={() => this.props.closeModal()}>&times;</button>
@@ -213,8 +216,8 @@ render () {
                                 <h2>{this.props.users[this.props.currentVideo.creator_id].name}</h2>
                             </Link>
                         </div>
-                        <FollowContainer user={this.props.users[this.props.currentVideo.creator_id]} followStatus={this.props.followStatus}/>
                     </div>
+                        <FollowContainer user={this.props.users[this.props.currentVideo.creator_id]} followStatus={this.props.followStatus}/>
                 </div>
 
                 <div className="vModal-caption">
@@ -249,7 +252,13 @@ render () {
                     </div> */}
                       <div className="comment-outer">
                         {/* {vidComments} */}
-                        <CommentIndexContainer comments={this.props.comments}/>
+                        <CommentIndexContainer comments={this.props.comments} 
+                        currentUser={this.props.currentUser} 
+                        currentVideo={this.props.currentVideo} 
+                        users={this.props.users}
+                        deleteComment={this.props.deleteComment}
+                        fetchComments={this.props.fetchComments}
+                        />
 
                      </div>
                 </div> 

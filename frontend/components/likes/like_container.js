@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import { createLike, deleteLike } from "../../actions/like_actions";
 import Like from "./like";
 import { fetchVideo } from "../../actions/video_actions";
+import { withRouter } from "react-router-dom";
 
 const mapStateToProps = (state, ownProps) => {
     const currentUser = state.entities.users[state.session.id];
@@ -20,7 +21,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Like);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Like))

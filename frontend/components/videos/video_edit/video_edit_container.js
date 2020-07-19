@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { updateVideo, deleteVideo, fetchVideo } from "../../../actions/video_actions";
 import VideoEdit from "./video_edit";
+import { withRouter } from "react-router-dom";
 
 const mapStateToProps = (state, ownProps) => ({
   video: state.entities.videos[ownProps.match.params.videoId],
@@ -14,4 +15,4 @@ const mapDispatchToProps = (dispatch) => ({
   updateVideo: (formData, videoId) => dispatch(updateVideo(formData, videoId)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(VideoEdit);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(VideoEdit))

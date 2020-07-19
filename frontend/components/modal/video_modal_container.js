@@ -4,20 +4,21 @@ import { fetchVideo, updateVideo, removeVideo, fetchVideos } from '../../actions
 import { fetchUser, fetchUsers } from '../../actions/user_actions'
 import {closeModal,openModal} from '../../actions/modal_actions';
 import { fetchComments, fetchComment, createComment, deleteComment } from '../../actions/comment_actions'
+import { withRouter } from 'react-router-dom';
 
 
 const mapStateToProps = (state, ownProps) => {
     const currentUser = state.entities.users[state.session.id];
 
     // let currentUserLike = state.entities.like === {} ? null : state.entities.like
-    let creator = state.entities.videos[state.ui.modal.videoId].creator_id;
+    // let creator = state.entities.videos[state.ui.modal.videoId].creator_id;
     // let followerIds = null;
-    let followStatus = false;
-    if (creator) {
-        followStatus = state.entities.users[creator].followerIds.includes(currentUser.id)
-    } else {
-        followStatus = false;
-    }
+    // let followStatus = false;
+    // if (creator) {
+    //   let followStatus = state.entities.users[creator].followerIds.includes(currentUser.id)
+    // } else {
+    //     followStatus = false;
+    // }
 
     return{
         currentVideo: state.entities.videos[state.ui.modal.videoId],
@@ -25,7 +26,7 @@ const mapStateToProps = (state, ownProps) => {
         users: state.entities.users,
         formType: 'show',
         comments: Object.values(state.entities.comments),
-        followStatus: followStatus
+        // followStatus: followStatus
         // currentUserLike: currentUserLike
     }
     
@@ -43,11 +44,11 @@ const mapDispatchToProps = dispatch => ({
     fetchVideos: () => dispatch(fetchVideos()),
     removeVideo: videoId => dispatch(removeVideo(videoId)),
     updateVideo: (formData, videoId) => dispatch(updateVideo(formData, videoId)),
-    
+
     closeModal: () => dispatch (closeModal()),
     // openModal: () => dispatch (openModal()),
 
 
 })
 
-export default connect(mapStateToProps,mapDispatchToProps)(VideoModal)
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(VideoModal))

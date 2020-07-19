@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import {createVideo} from '../../actions/video_actions'
 import VideoUpload from './video_upload'
+import { withRouter } from 'react-router-dom';
 
 
 const mapStateToProps = (state, ownProps) => ({
@@ -13,4 +14,4 @@ const mapDispatchToProps = dispatch => ({
     // clearSessionErrors: () => dispatch(clearSessionErrors())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(VideoUpload);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(VideoUpload))

@@ -15,10 +15,15 @@ const removeFollow = follow => ({
 
 export const createFollow = follow => dispatch => (
     FollowAPIUtil.createFollow(follow)
-        .then(res => dispatch(receiveFollow(res)))
+        .then(res => dispatch(receiveFollow(res))
+        // (location.reload(), 3000)
+)
+        
 );
 
 export const deleteFollow = id => dispatch => (
     FollowAPIUtil.deleteFollow(id)
-        .then(res => dispatch(removeFollow(res)))
+        .then(res => dispatch(removeFollow(res))
+            // (location.reload(), 3000)
+)
 );

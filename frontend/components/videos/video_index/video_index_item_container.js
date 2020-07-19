@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import { fetchVideo } from '../../../actions/video_actions';
 import {openModal} from '../../../actions/modal_actions'
 import {fetchComments} from '../../../actions/comment_actions'
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => ({
     currentUser: state.entities.users[state.session.id],
@@ -16,4 +17,4 @@ const mapDispatchToProps = dispatch => ({
     openModal: modal => dispatch(openModal(modal))
 })
 
-export default connect(mapStateToProps,mapDispatchToProps)(VideoIndexItem)
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(VideoIndexItem))

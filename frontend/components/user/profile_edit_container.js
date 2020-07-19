@@ -4,6 +4,7 @@ import { updateUser, fetchUser, updateUserPhoto} from "../../actions/user_action
 // import { fetchUser, fetchUsers } from "../../actions/user_actions";
 
 import { closeModal, openModal } from "../../actions/modal_actions";
+import { withRouter } from "react-router-dom";
 
 const msp = (state, ownProps) => {
   return {
@@ -22,4 +23,5 @@ const mdp = (dispatch) => {
   };
 };
 
-export default connect(msp, mdp)(ProfileEdit);
+export default withRouter(connect(msp, mdp)(ProfileEdit)
+)

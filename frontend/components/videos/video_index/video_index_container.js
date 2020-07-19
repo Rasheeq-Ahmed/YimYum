@@ -7,11 +7,16 @@ import { addLike, removeLike } from '../../../actions/like_actions';
 
 
 const mapStateToProps = (state) => ({
+
   videos: Object.values(state.entities.videos),
   users: state.entities.users,
   currentUser: state.entities.users[state.session.id],
-  // likes: state.entities.likes,
-});
+
+})
+  // const currentUser = state.entities.users[state.session.id];
+  // let creator = state.entities.videos[state.ui.modal.videoId].creator_id;
+
+
 
 
 const mapDispatchToProps = (dispatch) => ({
@@ -25,4 +30,4 @@ const mapDispatchToProps = (dispatch) => ({
   fetchUser: (id) => dispatch(fetchUser(id)),
 });
 
-export default connect(mapStateToProps,mapDispatchToProps)(VideoIndex)
+export default (connect(mapStateToProps,mapDispatchToProps)(VideoIndex))

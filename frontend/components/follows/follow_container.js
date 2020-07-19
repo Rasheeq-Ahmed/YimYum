@@ -3,6 +3,8 @@ import { fetchVideos } from "../../actions/video_actions";
 import { fetchUser, fetchUsers } from '../../actions/user_actions'
 import { createFollow, deleteFollow } from '../../actions/follow_actions'
 import Follows from './follows'
+import { withRouter } from "react-router-dom";
+
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -46,4 +48,4 @@ const mapDispatchToProps = (dispatch) => ({
     deleteFollow: follow => dispatch(deleteFollow(follow)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Follows);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Follows))

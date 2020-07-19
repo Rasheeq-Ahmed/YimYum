@@ -129,6 +129,7 @@ flex-direction: column;
       align-items: center;
       justify-content: center;
       margin: 2em 1em 0 1em;
+      position: relative;
   }
     
       .vModal-user-pic {
@@ -158,6 +159,7 @@ flex-direction: column;
           .vModal-user-info {
               display: flex;
               flex-direction: column;
+              height: 100%;
           }
 
           .vModal-user-info > a > h1 {
