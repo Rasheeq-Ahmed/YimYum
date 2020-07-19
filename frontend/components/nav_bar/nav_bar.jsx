@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link,withRouter} from 'react-router-dom';
 
 
 class NavBar extends React.Component {
@@ -40,7 +40,7 @@ componentDidMount(){
   logoutUser(e) {
     e.preventDefault();
     this.props.logout()
-    // .then(() => this.props.history.push("/trending"));
+    .then(() => this.props.history.push("/"));
   }
 
 
@@ -122,4 +122,4 @@ componentDidMount(){
     );
   }
 }
-export default NavBar;
+export default withRouter(NavBar);

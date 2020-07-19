@@ -87,6 +87,11 @@ class Follows extends React.Component {
         let {followStatus} = this.state 
         // console.log(this.props.currentUser)
 
+            if (!this.props.currentUser) {
+                return null
+            }
+
+
             if (this.props.user.id === this.props.currentUser.id) {
                 return null;
             }
