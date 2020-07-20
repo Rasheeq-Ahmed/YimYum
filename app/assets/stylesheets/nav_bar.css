@@ -102,6 +102,21 @@
     .yim-yum {
 
     }
+
+
+      /* <div>
+          {users.filter(user => user.followerIds.includes(this.props.currentUser.id)).map(filteredName => (
+             <div className='follow-accts'>
+              <div className="follow-pic">
+                {<img src={filteredName.profilePhoto} alt=""/>}
+              </div>
+              <div className="follow-info">
+                <p>{filteredName.username}</p>
+                {<p>{filteredName.name}</p>}
+              </div>
+            </div>
+          ))}
+        </div> */
     
 
 .nav-mid {

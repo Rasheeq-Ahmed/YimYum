@@ -27,7 +27,7 @@ const App = () => (
 
     <Route path="/test" component={Test} />
 
-    <Route path="/trending" component={VideoIndexContainer} />
+    <ProtectedRoute path="/trending" component={VideoIndexContainer} />
     <ProtectedRoute path="/upload" component={VideoUploadContainer} />
     </Switch>
     {/* <Route path="/videos/1" component={VideoShow}/> */}

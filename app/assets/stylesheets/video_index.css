@@ -106,10 +106,18 @@
 
             }
                 .follow-pic {
-                    width: 2.5em;
+                    
+                    height: 2em;
                     border-radius: 50%;
                     background-color: mediumorchid;
                 }
+                
+                .follow-pic > img {
+                    height: 100%;
+                    border-radius: 50%;
+
+                }
+
                 .follow-info {
                     padding-left: .5em;
                 }
