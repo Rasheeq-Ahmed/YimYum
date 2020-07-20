@@ -28,6 +28,9 @@ class VideoIndex extends React.Component {
         this.renderFollowedUsers = this.renderFollowedUsers.bind(this)
         this.renderSuggested = this.renderSuggested.bind(this)
         this.renderFollowingVideos = this.renderFollowingVideos.bind(this)
+        this.renderVid = this.renderVid.bind(this)
+        this.handleFollowVid = this.handleFollowVid.bind(this)
+        this.handleForYouVid = this.handleForYouVid.bind(this)
     }
 
     componentDidMount() {
@@ -155,9 +158,31 @@ class VideoIndex extends React.Component {
   }
 
 
+  handleFollowVid(e){
+    e.preventDefault(e)
+    this.setState({followVids: true})
+    this.setState({foryou: false})
+  }
+  handleForYouVid(e){
+    e.preventDefault(e)
+    this.setState({followVids: false})
+    this.setState({foryou: true})
+  }
 
 
+  renderVid() {
+    if (this.state.followVids) {
+      return (
+        this.renderFollowingVideos()
+      )
+    } else {
+      return(
+        this.renderVideos()
+      )
+    }
 
+
+  }
 
 
 
@@ -399,11 +424,11 @@ class VideoIndex extends React.Component {
               <div className="vIndex-left">
           {/* {console.log(this.props.users.test.username)} */}
                 <div className="vIndex-nav">
-                    <div className="nav-foryou">
+                    <div className="nav-foryou" onClick={this.handleForYouVid}>
                         <img src={window.house} alt="for-you" />
                         <h1 className="foryou">For You</h1>
                     </div>
-                    <div className="nav-follow">
+                    <div className="nav-follow" onClick={this.handleFollowVid}>
                         <img src={window.following} alt="follow" />
                         <h1 className="following">Following</h1>
                     </div>
@@ -442,9 +467,9 @@ class VideoIndex extends React.Component {
               </div>
 
               <div className="vIndex-mid">
-                
+                {this.renderVid()}
                {/* {this.renderVideos()} */}
-               {this.renderFollowingVideos()}
+               {/* {this.renderFollowingVideos()} */}
               </div>
 
               <div className="vIndex-right">
