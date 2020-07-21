@@ -417,6 +417,10 @@
             font-size: 2em;
             flex-direction: column;
         }
+
+        .empty-follows > i {
+            padding: 1em;
+        }
 /* .trending-right {
     background-color: gray;
     display: flex;

@@ -321,8 +321,8 @@ class VideoIndex extends React.Component {
     if (this.props.videos.filter(video => this.props.currentUser.followingIds.includes(video.creator_id)).length === 0) {
       return (
         <div className='empty-follows'>
-          <i class="fa fa-users" aria-hidden="true"></i>
-          Please follow some users
+          <i className="fa fa-users fa-2x" aria-hidden="true"></i>
+          You are not following anyone
         </div>
       )
     } else {
