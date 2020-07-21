@@ -22,7 +22,11 @@ const usersReducer = ( state = {}, action) => {
         newState[action.follow.user_id].followingIds = newState[action.follow.user_id].followingIds
           .filter(followedId => followedId !== action.follow.followed_user_id)
         return newState;
-
+        // newState[action.follow.followed_user_id].followerIds = newState[action.follow.followed_user_id].followerIds
+        //   .map(userId => userId !== action.follow.user_id)
+        // newState[action.follow.user_id].followingIds = newState[action.follow.user_id].followingIds
+        //   .map(followedId => followedId !== action.follow.followed_user_id)
+        // return newState;
 
 
 

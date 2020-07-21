@@ -14,13 +14,26 @@ class Video < ApplicationRecord
     has_many :likers,
     through: :likes,
     source: :user
+   
+   
+    has_many :comments,
+    dependent: :destroy
+
+
+    has_many :commentors,
+    through: :comments,
+    source: :user
+
+
+
+
     
 
     # Future Feature
 
-    has_many :comments,
-    foreign_key: :video_id,
-    class_name: "Comment"
+    # has_many :comments,
+    # foreign_key: :video_id,
+    # class_name: "Comment"
 
 
 end

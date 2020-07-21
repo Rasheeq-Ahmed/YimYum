@@ -12,10 +12,10 @@ class VideoIndexItem extends React.Component {
             }
         }
 
-        // componentDidMount() {
-        //     // this.props.fetchVideo(110)
-        //     this.props.fetchComments(this.props.video.id)
-        // }
+        componentDidMount() {
+            // this.props.fetchVideo(110)
+            this.props.fetchComments(this.props.video.id)
+        }
         
         
 

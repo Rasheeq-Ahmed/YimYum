@@ -102,7 +102,7 @@ class Follows extends React.Component {
 
                 if ( this.props.user.followerIds.includes(this.props.currentUser.id)) {
             return (
-                <div className="follow-all">
+                <div  id="follow" className="follow-all">
                     <button
                         className="profile-button"
                         onClick={this.handleUnfollow}>
@@ -112,7 +112,7 @@ class Follows extends React.Component {
             )
         } else {
             return (
-                <div className="follow-all">
+                <div id="follow" className="follow-all">
                     <button
                         className="profile-button"
                         onClick={this.handleFollow}>

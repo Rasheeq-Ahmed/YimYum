@@ -139,7 +139,7 @@ class VideoModal extends React.Component {
         ) &&
         this.props.removeVideo(this.props.currentVideo.id)
         .then (() => {
-        this.props.closeModal();
+        this.props.closeModal()
 
         })
     }
@@ -228,7 +228,7 @@ render () {
                     <LikeContainer video={this.props.currentVideo} />
                     <div className='comment-body'>
                         <img src={window.commentSymbol} className="like-button-liked" />
-                        <h1>0</h1>
+                        <h1>{this.props.comments.filter(comment => comment.video_id === this.props.currentVideo.id).length}</h1>
                     </div>
                     {/* <img src={window.likeSymbol} alt="likes" onClick={this.handleVideoLike}/>
                     <img src={window.commentSymbol} alt="comments"/> */}

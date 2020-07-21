@@ -30,7 +30,7 @@
 
     .vIndex-left {
         min-width: 15em;
-        width: 16.6665%;
+        width: fit-content;
         height: fit-content;
         display: flex;
         flex-direction: column;
@@ -58,6 +58,10 @@
             font-size: 1.5em;
             padding-left: .5em;
              cursor: pointer;
+               color:#fe2c55;
+            background-color: whitesmoke;
+            font-weight: bolder;
+
             }
 
             .nav-foryou:hover {
@@ -65,6 +69,18 @@
             }
             .nav-follow:hover {
                 background-color: whitesmoke;
+            }
+
+            .tab {
+
+                     display: flex;
+            align-items: center;
+            /* justify-content: center; */
+            /* background-color: rgb(147, 218, 115); */
+            font-size: 1.5em;
+            padding-left: .5em;
+            cursor: pointer;
+
             }
             
 
@@ -75,12 +91,17 @@
             /* background-color: rgb(147, 218, 115); */
             font-size: 1.5em;
             padding-left: .5em;
+            color:#fe2c55;
+            cursor: pointer;
+            background-color: whitesmoke;
+            font-weight: bolder;
             }
 
 
         .vIndex-follow {
             display: flex;
-            height: 10em;
+            height: fit-content;
+            width: fit-content;
             flex-direction: column;
             justify-content: space-evenly;
             /* background-color: lightblue; */
@@ -92,34 +113,54 @@
         }
 
             .top-accounts {
-               font-size: 16px;
+               font-size: 1em;
                color: #161823; 
                opacity: 50%;
+               margin-top: 1em;
                /* padding-left: 1em; */
                
             }
 
             .follow-accts {
                 /* height: 2em; */
-                /* padding-left: 1em; */
+                padding-top: 1em;
                 display: flex;
+                position: relative;
+                align-items: center;
 
             }
+
+                .follow-accts #follow {
+                    right: 0;
+                    top: 1.5em;
+                    position: absolute;
+                }
                 .follow-pic {
                     
-                    height: 2em;
+                    height: 4em;
                     border-radius: 50%;
                     background-color: mediumorchid;
                 }
                 
-                .follow-pic > img {
+                .follow-pic >  a > img {
                     height: 100%;
                     border-radius: 50%;
 
                 }
 
                 .follow-info {
-                    padding-left: .5em;
+                    padding-left: .5em; 
+                }
+                
+                .follow-info > a > h1 {
+                    font-size: 1.1em;
+                    font-weight: bolder;
+                    display: flex;
+                    align-items: center;
+                }
+                .follow-info >  a > h1  > img{
+                    height: .8em;
+                    padding-left: .2em
                 }
             
             .see-all {
@@ -134,7 +175,7 @@
 
     
         .vIndex-mid {
-            width: 66.666%;
+            min-width: 50%;
             /* background-color: bisque; */
             display: flex;
             justify-content: center;
@@ -207,7 +248,7 @@
                         font-weight: bold;
                     }
                      .index-user-info > a > h2 {
-                        font-size: 1em;
+                        font-size: 1.2em;
                         /* font-weight: bold; */
                     }
 
@@ -233,6 +274,7 @@
                     /* background-color: turquoise; */
                     display: flex;
                     align-items: center;
+                    font-size: larger;
                 }
 
                 .index-video {
@@ -243,6 +285,7 @@
 
                 .video {
                     cursor: pointer;
+                    border-radius: 1em;
 
                 }
 
@@ -326,13 +369,53 @@
 
 
             .vIndex-right {
-                width: 15.6665%;
+                /* width: 15.6665%; */
                 /* background-color: lightcoral; */
             }
+
+                .suggest-all {
+                    margin-top: 10em;
+                    width: 25em;
+                    height: 21.5em;
+                    /* background-color: yellow; */
+                    overflow-y: scroll;
+                    border: 1px solid #4d4d4d42;
+                    border-radius: 1em;
+
+                }
+
+                    .suggest-header {
+                        height: 4em;
+                        /* background-color: wheat; */
+                        display: flex;
+                        align-items: center;
+                        padding: 1em;
+                    }
+
+                        .sugg-title{
+                        font-size: 1.5em;
+                        font-weight: bold;
+
+                        }
+
+                    .suggest-body {
+                        padding-left: 1em;
+                        padding-right: 1em;
+                    }
 
 
         .vIndex-footer {
             height: 5em;
+        }
+
+
+
+        .empty-follows {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            flex-direction: column;
         }
 /* .trending-right {
     background-color: gray;

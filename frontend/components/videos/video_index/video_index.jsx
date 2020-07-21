@@ -31,6 +31,7 @@ class VideoIndex extends React.Component {
         this.renderVid = this.renderVid.bind(this)
         this.handleFollowVid = this.handleFollowVid.bind(this)
         this.handleForYouVid = this.handleForYouVid.bind(this)
+        // this.renderComments = this.renderComments.bind(this)
     }
 
     componentDidMount() {
@@ -50,12 +51,17 @@ class VideoIndex extends React.Component {
     }
 
 
-    componentDidUpdate(prevProps){
+    componentDidUpdate(prevProps,prevState){
       if (prevProps.currentUser.followingIds.length !== this.props.currentUser.followingIds.length){
         this.props.fetchUsers();
         this.props.fetchVideos();
-      }
+      }   
       
+      // if (prevProps.comments.length !== this.props.comments.length) {
+      //   this.props.fetchVideos();
+
+      // }
+   
 
 
 
@@ -100,14 +106,18 @@ class VideoIndex extends React.Component {
       
       return (
         <div>
-          {users.filter(user => user.followerIds.includes(this.props.currentUser.id)).reverse().map((filteredName, idx) => (
+          {users.filter(user => user.followerIds.includes(this.props.currentUser.id)).map((filteredName, idx) => (
             <div key={idx} className='follow-accts'>
               <div className="follow-pic">
-                <img src={filteredName.profilePhoto} alt="" />
+                <Link to={`/users/${filteredName.id}`}><img src={filteredName.profilePhoto} alt="" /></Link>
               </div>
               <div className="follow-info">
-                <p>{filteredName.username}</p>
-                <p>{filteredName.name}</p>
+                <Link to={`/users/${filteredName.id}`}>
+                  <h1>{filteredName.username}
+                    <img src={window.verified}></img>
+                  </h1>
+                </Link>
+                <Link to={`/users/${filteredName.id}`}><p>{filteredName.name}</p></Link>
               </div>
             </div>
           ))}
@@ -116,6 +126,15 @@ class VideoIndex extends React.Component {
     
       )    
     }
+    
+
+
+    //////////////////////// RENDER COMMENTS /////////////////////////////////////////////////////
+
+
+   
+
+
     
           
    //////////////////////////////// UnFOLLLOWED ACCOUNTS ///////////////////////////////////
@@ -140,15 +159,20 @@ class VideoIndex extends React.Component {
 
     return (
       <div>
-        {users.filter(user => !user.followerIds.includes(this.props.currentUser.id)).map(filteredName => (
-          <div className='follow-accts'>
+        {users.filter(user => !user.followerIds.includes(this.props.currentUser.id) && user !== this.props.currentUser).map((filteredName, idx) => (
+          <div key={idx} className='follow-accts'>
             <div className="follow-pic">
-              <img src={filteredName.profilePhoto} alt="" />
+              <Link to={`/users/${filteredName.id}`}><img src={filteredName.profilePhoto} alt="" /></Link>
             </div>
             <div className="follow-info">
-              <p>{filteredName.username}</p>
-              <p>{filteredName.name}</p>
+              <Link to={`/users/${filteredName.id}`}>
+                <h1>{filteredName.username}
+                <img src={window.verified}></img>
+              </h1>
+              </Link>
+              <Link to={`/users/${filteredName.id}`}><p>{filteredName.name}</p></Link>
             </div>
+            <FollowContainer user={this.props.users[filteredName.id]} refresh={this.state.refresh} />
           </div>
         ))}
       </div>
@@ -162,15 +186,24 @@ class VideoIndex extends React.Component {
     e.preventDefault(e)
     this.setState({followVids: true})
     this.setState({foryou: false})
+    console.log(this.state)
   }
   handleForYouVid(e){
     e.preventDefault(e)
     this.setState({followVids: false})
     this.setState({foryou: true})
+    console.log(this.state)
+
   }
 
 
   renderVid() {
+
+    if (!this.props.videos) {
+      this.props.fetchVideos();
+
+
+    }
     if (this.state.followVids) {
       return (
         this.renderFollowingVideos()
@@ -251,7 +284,7 @@ class VideoIndex extends React.Component {
 
                   <div className='comment-body'>
                     <img src={window.commentSymbol} className="like-button-liked" />
-                    <h1>0</h1>
+                    <h1>{video.comments.length}</h1>
                   </div>
                   {/* <img src={window.commentSymbol} alt="comments"/> */}
 
@@ -277,7 +310,7 @@ class VideoIndex extends React.Component {
 
     if (!this.props.videos) {
       this.props.fetchVideos();
-
+ 
 
     }
 
@@ -285,6 +318,15 @@ class VideoIndex extends React.Component {
       this.props.fetchUsers();
     }
 
+    if (this.props.videos.filter(video => this.props.currentUser.followingIds.includes(video.creator_id)).length === 0) {
+      return (
+        <div className='empty-follows'>
+          <i class="fa fa-users" aria-hidden="true"></i>
+          Please follow some users
+        </div>
+      )
+    } else {
+      // console.log(this.props)
     return (
       <div className="video-body">
         <div className="top-btn">
@@ -322,7 +364,7 @@ class VideoIndex extends React.Component {
 
                 <div className='comment-body'>
                   <img src={window.commentSymbol} className="like-button-liked" />
-                  <h1>0</h1>
+                  <h1>{followVideo.comments.length}</h1>
                 </div>
                 {/* <img src={window.commentSymbol} alt="comments"/> */}
 
@@ -335,8 +377,9 @@ class VideoIndex extends React.Component {
       </div>
     );
   }
-
-
+}
+  
+  
 
 
 
@@ -408,7 +451,7 @@ class VideoIndex extends React.Component {
 
       // }
       
-      // console.log(this.props)
+      console.log(this.props)
       // console.log(this.props.users)
       // console.log(this.props.users[this.props.currentUser.id].name)
       // console.log(this.props.users[followed[0]])
@@ -424,11 +467,11 @@ class VideoIndex extends React.Component {
               <div className="vIndex-left">
           {/* {console.log(this.props.users.test.username)} */}
                 <div className="vIndex-nav">
-                    <div className="nav-foryou" onClick={this.handleForYouVid}>
+                    <div className={this.state.foryou ? "nav-foryou" : 'tab'} onClick={this.handleForYouVid}>
                         <img src={window.house} alt="for-you" />
                         <h1 className="foryou">For You</h1>
                     </div>
-                    <div className="nav-follow" onClick={this.handleFollowVid}>
+                  <div className={this.state.followVids ? "nav-follow" : 'tab'} onClick={this.handleFollowVid}>
                         <img src={window.following} alt="follow" />
                         <h1 className="following">Following</h1>
                     </div>
@@ -454,10 +497,10 @@ class VideoIndex extends React.Component {
                             <p>Name</p>
                         </div>
                     </div> */}
-                    <div className="see-all">
+                    {/* <div className="see-all">
                         <p>See All</p>
                         <img src={window.dropdownArrow}/>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="vIndex-prof"></div>

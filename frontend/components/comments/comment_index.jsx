@@ -22,18 +22,18 @@ class CommentIndex extends React.Component {
 
 
 
-    // componentDidMount() {
-    // //    this.props.fetchComments(this.props.currentVideo.id);
-    //     // console.log(this.state)
+    componentDidMount() {
+       this.props.fetchComments(this.props.currentVideo.id);
+        // console.log(this.state)
 
 
-    // }
+    }
 
-    // componentDidUpdate(prevProps) {
-    //     if (prevProps.comments.length !== this.props.comments.length) {
-    //         this.props.fetchComments(this.props.currentVideo.id);
-    //     }
-    // }
+    componentDidUpdate(prevProps) {
+        if (prevProps.comments.length !== this.props.comments.length) {
+            this.props.fetchComments(this.props.currentVideo.id);
+        }
+    }
 
 
 
@@ -89,6 +89,7 @@ class CommentIndex extends React.Component {
             <ul className="comment-list">
                 {this.props.comments.map((comment, idx) => {
                     return <CommentIndexItem
+                    key={idx}
                     comment={comment}
                     users={this.props.users}
                     user={this.props.currentUser}

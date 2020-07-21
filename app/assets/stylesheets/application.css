@@ -23,9 +23,10 @@
 
 
 
-/* a {
-    width: fit-content;
-} */
+
+a:hover {
+    text-decoration: underline;
+}
 
 
  /* html {

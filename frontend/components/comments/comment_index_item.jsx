@@ -45,9 +45,12 @@ class CommentIndexItem extends React.Component {
 
         // this.setState({ deleted: "true" })
         this.props.deleteComment(this.props.comment.id)
+        this.props.fetchVideos()
+
         // .then(
         //     // this.forceUpdate(),
             this.props.fetchComments(this.props.currentVideo.id)
+            this.props.fetchVideos()
         // )
         // // .then(
         // // )
