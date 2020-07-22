@@ -23,7 +23,7 @@
     justify-content: center;
     align-items: center;
     width: 100%; */
-   background-color:rgb(255, 189, 189);
+   background-color:rgba(149, 149, 149, 0.452);
    height: 100%;
    width: 100%;
 
@@ -39,7 +39,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  background-color: rgb(65, 65, 65);
+  /* background-color: rgb(255, 121, 121); */
 
 }
 
@@ -48,12 +48,14 @@
   display: flex;
   /* max-width: 500px;
   max-height: 700px; */
-  height: 100%;
+  height: 40em;
   /* width:50%; */
 /* justify-content: center;
 align-items: center; */
 flex-direction: column;
 /* background-color: lightcoral; */
+ border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
 }
 
 
@@ -65,7 +67,7 @@ flex-direction: column;
       /* font-size: 2em; */
       border-radius: 50%;
       margin-left: 2em;
-      margin-top: 1em;
+      margin-top: 2em;
       outline: none;
       border: none;
       /* padding: .5em; */
@@ -103,18 +105,22 @@ flex-direction: column;
 
   .vid {
     /* width: 17em; */
-    height: 50em;
+    height: 100%;
     outline: none;
     cursor: pointer;
+     border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
   }
 
 .video-modal-right {
-  height:  50em;
+  height:  40em;
   width: 35em;
   display:flex;
   flex-direction: column;
 
   background-color: white;
+   border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
 }
 /* .vModal-right-content {
   height: 90%;
