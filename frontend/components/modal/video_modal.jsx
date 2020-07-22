@@ -192,7 +192,7 @@ render () {
     // console.log(this.props)
     return (
         <div className="video-modal-all">
-                <div id="closeVidModal" onClick={() => this.props.closeModal()}>&times;</div>
+            <div id="closeVidModal" onClick={() => this.props.closeModal()}> <p>&times;</p></div>
             <div className="video-modal-left">
                 <div className="video-modal-video">
                     <video className='vid' controls loop src={this.props.currentVideo.videoUrl}></video>
