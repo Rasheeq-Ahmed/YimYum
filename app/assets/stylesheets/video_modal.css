@@ -57,7 +57,7 @@ flex-direction: column;
 }
 
 
-    .closeVidModal {
+    #closeVidModal {
       position: absolute;
       width: 5vh;
       height: 5vh;
@@ -76,7 +76,7 @@ flex-direction: column;
       cursor: pointer;
       transition: 1s;
       display: flex;
-      align-items: center;
+      /* align-items: center; */
       justify-content: center;
     }
 
