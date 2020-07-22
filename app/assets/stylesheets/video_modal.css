@@ -165,7 +165,7 @@ flex-direction: column;
           .vModal-user-info > a > h1 {
            font-size: 1.5em;
           }
-          .vModal-user-info > h2 {
+          .vModal-user-info > a > h2 {
            font-size: 1em;
           }
 

@@ -151,6 +151,11 @@
                 .follow-info {
                     padding-left: .5em; 
                 }
+
+                .follow-info > a:hover {
+                    text-decoration: underline;
+
+                }
                 
                 .follow-info > a > h1 {
                     font-size: 1.1em;
