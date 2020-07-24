@@ -121,6 +121,7 @@ flex-direction: column;
   background-color: white;
    border-top-right-radius: 1em;
     border-bottom-right-radius: 1em;
+    overflow-y: hidden;
 }
 /* .vModal-right-content {
   height: 90%;
