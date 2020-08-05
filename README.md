@@ -57,7 +57,7 @@ After a user logs in they are directed to a video feed that contains all video u
 ## Comments
   Users can post and delete comments upon clicking on a video which will open up a modal for the video.
   
-   <img src='/app/assets/images/readme/modal.PNG'>
+   <img src='/app/assets/images/readme/video_modal.PNG'>
 
   
   
@@ -70,9 +70,9 @@ Users each have a a profile page where you can see each user's videos. You can a
 
  <img src='/app/assets/images/readme/profile.PNG' width='600'>
  
- ### Edit Profile
- Users can edit their own profile picture and bio. 
-  <img src='/app/assets/images/readme/edit-prof.PNG' width='500'>
+Users can edit their own profile picture and bio.
+
+  <img src='/app/assets/images/readme/edit-prof.PNG' width='600'>
 
 ## Followers and Following
 Once logged in, users can decide whether or not they would like to follow other users. You can follow users through the suggested accounts, video feed, or video modal.
