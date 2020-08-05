@@ -70,9 +70,9 @@ Users each have a a profile page where you can see each user's videos. You can a
 
  <img src='/app/assets/images/readme/profile.PNG' width='600'>
  
+### Edit Profile
 Users can edit their own profile picture and bio.
-
-  <img src='/app/assets/images/readme/edit-prof.PNG' width='600'>
+<img src='/app/assets/images/readme/edit-prof.PNG' width='400'>
 
 ## Followers and Following
 Once logged in, users can decide whether or not they would like to follow other users. You can follow users through the suggested accounts, video feed, or video modal.
