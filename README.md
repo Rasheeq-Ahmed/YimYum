@@ -70,7 +70,7 @@ Users each have a a profile page where you can see each user's videos. You can a
 
 <img src='/app/assets/images/readme/profile.PNG' width='600'>
  
-## Edit Profile
+### Edit Profile
 Users can edit their own profile picture and bio.
 
 <img alignt='left' src='/app/assets/images/readme/edit-prof.PNG' width='400'>
