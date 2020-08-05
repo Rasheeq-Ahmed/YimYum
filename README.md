@@ -68,9 +68,9 @@ Once logged in, users can decide whether or not they would like to like the vide
 ## Profiles
 Users each have a a profile page where you can see each user's videos. You can also see the user's profile picture, bio, as well as the following stats: video count, follower count, following count.
 
- <img src='/app/assets/images/readme/profile.PNG' width='600'>
+<img src='/app/assets/images/readme/profile.PNG' width='600'>
  
-### Edit Profile
+## Edit Profile
 Users can edit their own profile picture and bio.
 <img src='/app/assets/images/readme/edit-prof.PNG' width='400'>
 
