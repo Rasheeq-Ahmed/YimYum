@@ -13,7 +13,7 @@ Please check it out [Live Link](https://yimyum.herokuapp.com//).
 * Javascript
 * HTML/CSS
 
-Yim Yum is video sharing website where users can upload, watch, and interact with each other's videos through comments and likes. Users can also follow other users It was built utlizing a Rails backend with a React/Redux frontend.
+
 
 ## Features
  * BCrypt encrypted user authentication from frontend to backend
@@ -63,32 +63,3 @@ The following is a list of features I would like to add to the app:
 * Likes for comments
 * Ability to reply to comments
 * Search functionality hashtags
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Features:
-
-### Secure User Sign-up/Login:
-
-* User Authentication with both Login and Signup functionality.
-
-### Splash Page:
-
-Has navigation links to various Login page
-
-### Video Index Page:
-
-Users are able to see all current videos and any new videos are uploaded.
-
-
-#### Sample Code:
