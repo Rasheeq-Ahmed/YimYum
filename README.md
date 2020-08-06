@@ -49,6 +49,49 @@ After a user logs in they are directed to a video feed that contains all video u
 
  <img src='/app/assets/images/readme/video_feed.PNG'>
 
+```
+ {this.props.videos.reverse().filter(video => this.props.currentUser.followingIds.includes(video.creator_id)).map((followVideo, idx) => (
+          <div key={idx} className="index-all">
+            <div className="index-header">
+              <Link to={`/users/${followVideo.creator_id}`}>
+                <div className="index-user-pic">
+                  <img src={this.props.users[followVideo.creator_id].profilePhoto} />
+                </div>
+              </Link>
+              <div className="index-user-details">
+                <div className="index-user-info">
+                  <Link to={`/users/${followVideo.creator_id}`}>
+                    <h1>{followVideo.creator}</h1>
+                  </Link>
+                  <Link to={`/users/${followVideo.creator_id}`}>
+                    <h2>{this.props.users[followVideo.creator_id].name}</h2>
+                  </Link>
+                </div>
+              </div>
+              {}
+              <FollowContainer user={this.props.users[followVideo.creator_id]} refresh={this.state.refresh} />
+            </div>
+            <div className="index-body">
+              <div className="index-caption">{followVideo.caption}</div>
+              <div className="index-video">
+                <VideoIndexItem key={idx} video={followVideo} />
+              </div>
+              <div className="index-actions">
+                <LikeContainer key={idx} video={followVideo} videoId={followVideo.id} likes={this.props.likes} />
+
+                <div className='comment-body'>
+                  <img src={window.commentSymbol} className="like-button-liked" />
+                  <h1>{followVideo.comments.length}</h1>
+                </div>
+                {/* <img src={window.commentSymbol} alt="comments"/> */}
+
+
+                {/* <img src={window.shareSymbol} alt="shares"/> */}
+              </div>
+            </div>
+          </div>
+        ))}
+```
 
 ### Following Videos
   Following account's videos appear in this video feed.
