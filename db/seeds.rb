@@ -9,6 +9,8 @@
 require 'open-uri'
 User.destroy_all
 Video.destroy_all
+Comment.destroy_all
+
 
 
 
@@ -91,3 +93,6 @@ video10.media.attach(io: video10_media, filename: 'icecream.mp4')
 
 video11_media = open("https://yimyum-seeds.s3-us-west-1.amazonaws.com/tinysteak.mp4")
 video11.media.attach(io: video11_media, filename: 'tinysteak.mp4')
+
+
+comment1 = ("")
