@@ -134,14 +134,20 @@
     /* background-color: palegreen; */
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 }
+
+.guest-btn {
+        margin-right: 2em; 
+}
+    
 
     .user-nav {
         width: 90%;
         max-width: 25em;
         display: flex;
         justify-content: space-evenly;
+        margin-right: 2em;
     }
 
     .upload {
