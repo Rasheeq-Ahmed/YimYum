@@ -140,6 +140,7 @@ class VideoModal extends React.Component {
         this.props.removeVideo(this.props.currentVideo.id)
         .then (() => {
         this.props.closeModal()
+        this.props.fetchVideos()
 
         })
     }

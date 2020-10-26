@@ -2,6 +2,8 @@ import VideoIndex from './video_index';
 import {connect} from 'react-redux';
 import { fetchVideos,fetchVideo } from '../../../actions/video_actions';
 // import {fetchUsers} from '../../../actions/'
+import {closeModal,openModal} from '../../../actions/modal_actions';
+
 import { fetchUser, fetchUsers } from "../../../actions/user_actions";
 import { fetchComments } from '../../../actions/comment_actions';
 
@@ -23,6 +25,9 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchVideos: () => dispatch(fetchVideos()),
+      closeModal: () => dispatch (closeModal()),
+      openModal: () => dispatch (closeModal()),
+
   fetchVideo: (videoId) => dispatch(fetchVideo(videoId)),
   fetchComments: videoId => dispatch(fetchComments(videoId)),
   fetchUsers: () => dispatch(fetchUsers()),

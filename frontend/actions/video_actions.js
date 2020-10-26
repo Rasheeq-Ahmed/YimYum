@@ -21,6 +21,7 @@ const receiveAllVideos = (videos) => ({
  const deleteVideo = videoId => ({
      type: REMOVE_VIDEO,
      videoId
+     
  })
 
  const receiveVideoErrors = (errors) => ({
@@ -46,6 +47,8 @@ export const fetchVideo = videoId => dispatch => (
         .then(
             video => dispatch(receiveVideo(video)),
             errors => dispatch(receiveVideoErrors(errors.responseJSON)))
+                                // .then(location.reload(), 1000)
+
     )
 
 
@@ -61,7 +64,9 @@ export const fetchVideo = videoId => dispatch => (
 export const removeVideo = (videoId) => (dispatch) =>
          Video_APIUtil.deleteVideo(videoId).then(
            () => dispatch(deleteVideo(videoId)),
+           (location.reload(), 1000),
            (errors) => dispatch(receiveVideoErrors(errors.responseJSON))
+
          );
 
         

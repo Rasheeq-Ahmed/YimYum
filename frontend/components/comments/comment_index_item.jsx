@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 class CommentIndexItem extends React.Component {
 
@@ -101,10 +102,14 @@ class CommentIndexItem extends React.Component {
             <li className="commentItem-all">
                     <div className="commentItem-body">
                         <div className="commentItem-pic">
+                             <Link to={`/users/${commentAuthor.id}`} onClick={() => this.props.closeModal()}>
                             <img src={commentAuthor.profilePhoto} alt="" />
+                             </Link>
                         </div>
                         <div className="commentItem-info">
+                             <Link to={`/users/${commentAuthor.id}`} onClick={() => this.props.closeModal()}>
                             <h1>{commentAuthor.username}</h1>
+                             </Link>
                             <p>{this.props.comment.body}</p>
                         {this.renderDeleteBtn()}
                         </div>

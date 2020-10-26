@@ -167,4 +167,4 @@ class VideoEdit extends React.Component {
   }
 }
 
-export default VideoEdit;
+export default withRouter(VideoEdit);

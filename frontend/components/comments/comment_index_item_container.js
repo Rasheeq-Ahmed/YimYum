@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import CommentIndex from './comment_index';
 import { fetchComments, createComment, deleteComment } from '../../actions/comment_actions';
 import {fetchVideos} from '../../actions/video_actions'
+import {closeModal,openModal} from '../../actions/modal_actions';
+
 import CommentIndexItem from './comment_index_item';
 import { withRouter } from 'react-router-dom';
 // import { openModal} from '../../actions/modal_actions'
@@ -16,7 +18,9 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    fetchVideos: () => dispatch(fetchVideos())
+    fetchVideos: () => dispatch(fetchVideos()),
+    closeModal: () => dispatch (closeModal()),
+
     // fetchComments: videoId => dispatch(fetchComments(videoId)),
     // createComment: comment => dispatch(createComment(comment)),
     // deleteComment: commentId => dispatch(deleteComment(commentId)),

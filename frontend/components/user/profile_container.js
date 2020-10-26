@@ -2,6 +2,8 @@ import { connect } from "react-redux";
 import { fetchVideos } from "../../actions/video_actions";
 import { fetchUser ,fetchUsers} from '../../actions/user_actions'
 import { createFollow, deleteFollow } from '../../actions/follow_actions'
+import {closeModal,openModal} from '../../actions/modal_actions';
+
 import Profile from './profile'
 import { withRouter } from "react-router-dom";
 
@@ -43,6 +45,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => ({
     fetchUsers: () => dispatch (fetchUsers()),
+    closeModal: () => dispatch (closeModal()),
     fetchUser: id => dispatch(fetchUser(id)),
     fetchVideos: () => dispatch(fetchVideos()),
     createFollow: follow => dispatch(createFollow(follow)),

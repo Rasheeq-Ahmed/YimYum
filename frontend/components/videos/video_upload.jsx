@@ -19,6 +19,7 @@ class VideoUpload extends React.Component {
         this.handleInput = this.handleInput.bind(this)
         this.handleFile = this.handleFile.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleRefresh = this.handleRefresh.bind(this)
     }
 
     // componentDidMount() {
@@ -45,6 +46,12 @@ class VideoUpload extends React.Component {
         }
     }
 
+    handleRefresh(e){
+    e.preventDefault();
+    this.setState({ mssg: "Refresh" })
+  }
+
+
     handleSubmit(e){
       e.preventDefault();
         const formData = new FormData();
@@ -55,19 +62,36 @@ class VideoUpload extends React.Component {
         }
 
         this.props.createVideo(formData)
-            .then( () => {
-                this.setState({
+         this.setState({
                     caption: '',
                     videoFile: null,
                 })
-            }).then(()=> this.props.history.push(`/users/${this.currentUser.id}`))
+          window.alert("Video has been uploaded!")
+          this.props.history.push(`/users/${this.props.currentUser.id}`)
+
+
+          // this.props.history.goBack();
+          // this.props.history.push('/trending')
+
+        
 
     }
+
+    //    this.props.createVideo(formData)
+    //         .then( () => {
+    //             this.setState({
+    //                 caption: '',
+    //                 videoFile: null,
+    //             })
+    //         }).then(()=> this.props.history.push(`/users/${this.currentUser.id}`))
+
+    // }
 
     
 
 
     render () {
+      console.log(this.props)
         const preview = this.state.videoUrl ? <video controls src={this.state.videoUrl}/> : null;
         
         if (this.state.videoFile===null) {
@@ -195,7 +219,7 @@ class VideoUpload extends React.Component {
                       <div className="upload-buttons">
                         {/* <button className="upload-btn1"disabled>Cancel</button> */}
                         <button
-                          onClick={this.handleSubmit}
+                          onClick={(e) => {this.handleSubmit(e); this.handleRefresh(e)}}
                           className="upload-btn"
                         >
                           Post
@@ -219,4 +243,4 @@ class VideoUpload extends React.Component {
 }
 
 
-export default VideoUpload;
+export default withRouter(VideoUpload);

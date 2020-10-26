@@ -53,7 +53,7 @@ class CommentIndex extends React.Component {
         this.setState({ body: "", user_id: this.props.currentUser.id, video_id: this.props.currentVideo.id });
         let video_id = this.props.currentVideo.id;
         this.props.createComment({ body: this.state.body, video_id })
-        // this.props.fetchComments(this.props.currentVideo.id)
+        this.props.fetchComments(this.props.currentVideo.id)
 
     }
 

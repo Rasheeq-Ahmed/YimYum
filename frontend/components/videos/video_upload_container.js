@@ -1,6 +1,8 @@
 import {connect} from 'react-redux';
-import {createVideo} from '../../actions/video_actions'
+import {createVideo, fetchVideos} from '../../actions/video_actions'
 import VideoUpload from './video_upload'
+import { fetchUser ,fetchUsers} from '../../actions/user_actions'
+
 import { withRouter } from 'react-router-dom';
 
 
@@ -10,6 +12,9 @@ const mapStateToProps = (state, ownProps) => ({
 
 
 const mapDispatchToProps = dispatch => ({
+    fetchVideos: () => dispatch(fetchVideos()),
+    fetchUsers: () => dispatch (fetchUsers()),
+    fetchUser: id => dispatch(fetchUser(id)),
     createVideo: formData => dispatch(createVideo(formData)),
     // clearSessionErrors: () => dispatch(clearSessionErrors())
 });

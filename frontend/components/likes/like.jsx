@@ -61,4 +61,4 @@ class Like extends React.Component {
     }
 }
 
-export default Like;
+export default withRouter(Like);

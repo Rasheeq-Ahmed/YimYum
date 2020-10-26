@@ -97,8 +97,9 @@
     .commentItem-pic {
         height: 100%;
     }
-    .commentItem-pic > img {
+    .commentItem-pic > a > img {
         height: 100%;
+        border-radius: 50%;
     }
 
     .commentItem-info {
@@ -112,7 +113,7 @@
         position: relative;
     }
 
-    .commentItem-info > h1 {
+    .commentItem-info > a > h1 {
         font-weight: bold;
     }
     .commentItem-info > p {

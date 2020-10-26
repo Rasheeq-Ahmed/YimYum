@@ -13,7 +13,7 @@ export const openModal = (modal, id) =>{
 export const closeModal = () => {
     return {
         type: CLOSE_MODAL
-                    // .then(location.reload(), 1000)
+                    // .then(location.reload(), 3000)
                     
 
     }

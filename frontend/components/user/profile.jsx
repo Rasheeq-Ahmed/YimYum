@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ProfileItem from './profile_item'
 import VideoIndexItem from "../videos/video_index/video_index_item_container";
+
 import NavBar from '../nav_bar/nav_bar_container'
 import { Link, withRouter } from "react-router-dom";
 import FollowContainer from '../follows/follow_container';
@@ -11,7 +12,8 @@ class Profile extends Component {
     super(props);
 
     this.state = {
-        confirmDelete: false
+        confirmDelete: false,
+        refresh: false
     };
 
     this.renderEdit = this.renderEdit.bind(this)
@@ -22,6 +24,10 @@ class Profile extends Component {
   }
 
   componentDidMount() {
+    this.props.closeModal();
+    
+    // this.setState({mssg: 'hello'})
+    // this.forceUpdate();
     this.props.fetchUsers();
     this.props.fetchVideos()
     // .then(
@@ -33,14 +39,37 @@ class Profile extends Component {
     if (this.props.user === undefined) {
       this.props.fetchUsers();
     }
+    // if (this.props.videos === this.props.fetchVideos()) {
+    //   this.props.fetchVideos();
+    // }
+    // this.setState({mssg: 'bye'})
+
+
   }
 
+  
 
   // componentDidUpdate(prevProps) {
   //   if (prevProps.user.bio !== this.props.user.bio) {
   //     this.props.fetchUsers()
   //   }
   // }
+
+//   componentDidUpdate(prevProps,prevState) {
+//   // Typical usage (don't forget to compare props):
+//   if (this.props.videos.length !== prevProps.videos.length) {
+//     this.props.fetchVideos();
+//     this.props.fetchUsers()
+    
+//   }
+//   // if (prevState.refresh !== this.state.refresh) {
+//   //   this.setState({refresh: true})
+//   //   this.props.fetchVideos();
+//   //   this.props.fetchUsers()
+//   //   this.setState({refresh: false})
+
+//   // }
+// }
 
 
 
@@ -127,6 +156,7 @@ class Profile extends Component {
           </Link>
       );
     } else {
+      // this.props.fetchVideos()
       return (
         <div className="profile-grid">
           <div className="profile-items">
@@ -142,8 +172,11 @@ class Profile extends Component {
   }
 
   render() {
+
+    // if this.state.refresh ==
+ 
     if (!this.props.user) {
-      // this.props.fetchUsers()
+      this.props.fetchUsers()
         return null;
     }
     if (!this.props.videos) {
@@ -182,7 +215,7 @@ class Profile extends Component {
                 {this.props.user.bio}
               </div>
               <div className="prof-stats">
-                <li>{this.props.videos.length} Videos</li>
+                <li>{this.props.user.video_ids.length} Videos</li>
                 <li>{this.props.user.followerIds.length} Followers</li>
                 <li>{this.props.user.followingIds.length} Following</li>
 

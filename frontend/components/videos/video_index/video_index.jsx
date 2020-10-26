@@ -5,6 +5,8 @@ import VideoIndexItem from './video_index_item_container'
 import LikeContainer from '../../likes/like_container'
 import { Link, withRouter } from "react-router-dom";
 import FollowContainer from '../../follows/follow_container'
+import {openModal} from '../../../actions/modal_actions';
+
 
 
 
@@ -35,6 +37,7 @@ class VideoIndex extends React.Component {
     }
 
     componentDidMount() {
+      this.props.closeModal()
       this.setState({loading:true})
         this.props.fetchUsers();
 
@@ -247,6 +250,10 @@ class VideoIndex extends React.Component {
         this.props.fetchUsers();
       }
 
+      
+
+
+
       return (
         <div className="video-body">
           <div className="top-btn">
@@ -283,8 +290,15 @@ class VideoIndex extends React.Component {
                    <LikeContainer key={idx} video={video} videoId={video.id} likes={this.props.likes} />
 
                   <div className='comment-body'>
-                    <img src={window.commentSymbol} className="like-button-liked" />
-                    <h1>{video.comments.length}</h1>
+                    <img src={window.commentSymbol} className="like-button-liked" onClick={()=>dispatch(openModal('show',video.id))}/>
+                    <h1>
+                      {/* {video.comments.length} */}
+                    {/* {this.props.comments.filter(comment => comment.video_id === video.id).length} */}
+                    
+                    
+                    
+                    
+                    </h1>
                   </div>
                   {/* <img src={window.commentSymbol} alt="comments"/> */}
 
@@ -363,8 +377,12 @@ class VideoIndex extends React.Component {
                 <LikeContainer key={idx} video={followVideo} videoId={followVideo.id} likes={this.props.likes} />
 
                 <div className='comment-body'>
-                  <img src={window.commentSymbol} className="like-button-liked" />
-                  <h1>{followVideo.comments.length}</h1>
+                  <img src={window.commentSymbol} className="like-button-liked" onClick={()=>dispatch(openModal('show',video.id))} />
+                  <h1>
+                    {/* {followVideo.comments.length} */}
+                    {/* {this.props.comments.filter(comment => comment.video_id === followVideo.id).length} */}
+
+                  </h1>
                 </div>
                 {/* <img src={window.commentSymbol} alt="comments"/> */}
 

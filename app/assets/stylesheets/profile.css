@@ -164,6 +164,7 @@
 
     .prof-vid-body {
         height: 100%;
+        max-height: fit-content;
         width:100%;
         background-color: whitesmoke;
          display: flex;
@@ -179,16 +180,17 @@
     .profile-grid {
     /* background-color: lavender; */
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     width: fit-content ;
     height: fit-content;
     
 }
 .profile-items {
-    /* background-color: lemonchiffon; */
-    width: 42em;
+    background-color: whitesmoke;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     /* display: grid;
     grid-template-columns: auto auto auto auto;
     row-gap: 1em;

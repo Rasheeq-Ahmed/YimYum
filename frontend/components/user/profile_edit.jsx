@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, withRouter } from "react-router-dom";
 // import UpdateProfilePhotoContainer from "./update_profile_photo_container";
 import NavBar from "../nav_bar/nav_bar_container";
 import { Link } from "react-router-dom";
@@ -37,7 +37,11 @@ class ProfileEdit extends React.Component {
     currentUser.profilePhoto = this.state.profilePhoto;
 
     this.props.updateUser(currentUser)
-      .then(this.props.history.goBack());
+    window.alert("Profile has been updated!")
+
+    // this.props.history.push(`/users/${currentUser.id}`)
+
+      this.props.history.goBack();
   }
 
   update(field) {
@@ -172,6 +176,7 @@ class ProfileEdit extends React.Component {
                   onChange={this.update("bio")}
                 />
               </div>
+              
               <button className="edit-button" onClick={(e) => {this.handleSubmit(e); this.handlePicSubmit(e)} }>
                 Update
               </button>
@@ -188,4 +193,4 @@ class ProfileEdit extends React.Component {
   }
 }
 
-export default ProfileEdit;
+export default withRouter(ProfileEdit);
