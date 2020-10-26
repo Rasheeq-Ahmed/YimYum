@@ -377,7 +377,7 @@ class VideoIndex extends React.Component {
                 <LikeContainer key={idx} video={followVideo} videoId={followVideo.id} likes={this.props.likes} />
 
                 <div className='comment-body'>
-                  <img src={window.commentSymbol} className="like-button-liked" onClick={()=>dispatch(openModal('show',video.id))} />
+                  <img src={window.commentSymbol} className="like-button-liked" onClick={()=>dispatch(openModal('show',followVideo.id))} />
                   <h1>
                     {/* {followVideo.comments.length} */}
                     {/* {this.props.comments.filter(comment => comment.video_id === followVideo.id).length} */}

@@ -71,23 +71,24 @@ flex-direction: column;
       outline: none;
       border: none;
       /* padding: .5em; */
-      color: rgba(255, 255, 255, 0.575);
-      background-color: rgba(88, 88, 88, 0.534);
+      color: white;
+      background-color: rgba(151, 151, 151, 0.849);
       cursor: pointer;
       transition: 1s;
       display: flex;
       align-items: center;
       text-align: center;
       justify-content: center;
-      width: 2em;
-      height: 2em;
-      /* font-size: 2em; */
+      width: 50px;
+      height: 50px;
+      font-size: 50px;
+      transition: 2s ease;
     }
 
     #closeVidModal:hover {
-      background-color: rgba(172, 172, 172, 0.534);
-      color: rgb(255, 255, 255);
-      transition: 1s;
+      color:  white;
+      background-color: #fe2c55;
+      transition: 2s ease;
 
     }
 
