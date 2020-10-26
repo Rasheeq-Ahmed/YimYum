@@ -161,10 +161,11 @@ class Login extends React.Component {
               </button>
             </div>
             <div className="signup-redirect">
-              Need an account
+              <p> Need an account? Click </p>
               <Link className="link" to="/signup">
-                ? Click here to sign up.
+               <p>here</p> 
               </Link>
+              <p>to sign up.</p>
             </div>
           </form>
         </div>

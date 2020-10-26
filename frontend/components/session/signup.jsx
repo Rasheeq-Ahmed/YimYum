@@ -100,7 +100,13 @@ class Signup extends React.Component{
                     <button className="form-btn"> Login</button>
                   </Link>
                 </div>
-                {/* <div className="signup-redirect">Have an account<NavLink className="link" to="/signup">? Click here to log in.</NavLink></div> */}
+                <div className="signup-redirect">
+                   <p> Have an account? Click </p>
+              <Link className="link" to="/login">
+               <p>here</p> 
+              </Link>
+              <p>to sign up.</p>
+                  </div>
               </form>
             </div>
             {/* <footer className="footer-container">
