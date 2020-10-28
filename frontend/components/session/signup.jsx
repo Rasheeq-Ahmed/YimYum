@@ -105,7 +105,7 @@ class Signup extends React.Component{
               <Link className="link" to="/login">
                <p>here</p> 
               </Link>
-              <p>to sign up.</p>
+              <p>to log in.</p>
                   </div>
               </form>
             </div>

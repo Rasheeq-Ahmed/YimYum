@@ -248,14 +248,22 @@
                         flex-direction: column;
                     }
 
+                    
                      .index-user-info> a > h1 {
                         font-size: 1.3em;
                         font-weight: bold;
+                        
+                    }
+                    .index-user-info > a:hover {
+                        text-decoration: underline;
+
                     }
                      .index-user-info > a > h2 {
                         font-size: 1.2em;
                         /* font-weight: bold; */
                     }
+
+                    
 
 
                      .index-user-details > button {
