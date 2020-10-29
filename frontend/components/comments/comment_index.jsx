@@ -54,6 +54,7 @@ class CommentIndex extends React.Component {
         let video_id = this.props.currentVideo.id;
         this.props.createComment({ body: this.state.body, video_id })
         this.props.fetchComments(this.props.currentVideo.id)
+        // this.setState({ body: "", user_id: this.props.currentUser.id, video_id: this.props.currentVideo.id });
 
     }
 
@@ -110,7 +111,7 @@ class CommentIndex extends React.Component {
                 <div className="comment-form">
 
                     <form className="comment-inner-form">
-                        <input type="text" className="comment-text" placeholder="Add a comment..." defaultValue={this.state.body} onChange={this.handleChange} />
+                        <input type="text" className="comment-text" placeholder="Add a comment..." value={this.state.body} onChange={this.handleChange} />
                         <button onClick={e => this.handleComment(e)}>Post</button>
                     </form>
 
