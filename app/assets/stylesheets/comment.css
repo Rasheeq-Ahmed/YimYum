@@ -30,6 +30,10 @@
           justify-content: space-between;
       }
 
+      .comment-inner-form > button {
+          cursor:pointer
+      }
+
       .comment-text {
         height: 100%;
         width: 60%;
